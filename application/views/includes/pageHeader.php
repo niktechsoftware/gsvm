@@ -48,7 +48,7 @@
           <li class="dropdown"><a href="#" data-toggle="dropdown"
               class="nav-link dropdown-toggle nav-link-lg nav-link-user"> 
               <?php if(strlen($this->session->userdata('image'))>0){?>
-              <img alt="image" src="<?php echo base_url();?>assets/img/users/<?php echo $this->session->userdata('image');?>"
+              <img alt="image" src="<?php echo base_url();?>assets/img/<?php echo $this->session->userdata('image');?>"
               <?php }else {?>
               <img alt="image" src="<?php echo base_url();?>assets/img/default.jpg"
               

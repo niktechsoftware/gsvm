@@ -7,7 +7,8 @@
             <li class="dropdown">
               <a href="#" class="nav-link has-dropdown"><i data-feather="briefcase"></i><span>Employee</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="<?php echo base_url();?>index.php/adminController/addproduct/">Add New Employee </a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/adminController/addemployee/">Add New Employee </a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/adminController/employee_list/">Employee List </a></li>
                 <li><a class="nav-link" href="widget-data.html">Serach Edit And Delete</a></li>
                 <li><a class="nav-link" href="widget-data.html">Study Assign</a></li>
               </ul>
@@ -28,7 +29,7 @@
               <a href="#" class="nav-link has-dropdown"><i data-feather="user-check"></i><span>Patient</span></a>
               <ul class="dropdown-menu">
              
-                <li><a href="<?php echo base_url();?>index.php/customer/customer_list/<?php echo $r->id;;?>">Add New Patient </a></li>
+                <li><a href="<?php echo base_url();?>index.php/patient/addpatient">Add New Patient </a></li>
             	<li><a href="<?php echo base_url();?>index.php/customer/customer_list/<?php echo $r->id;;?>">Search Edit & Delete </a></li>
               </ul>
             </li>
