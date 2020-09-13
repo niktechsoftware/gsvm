@@ -8,7 +8,7 @@
                   <div class="card-body">
                     <div class="author-box-center">
 					<?php if(strlen($crecord->row()->logo > 0)):?>
-													<img alt="" height="128" width="138" src="<?php echo base_url();?>assets/img/users/<?php echo $crecord->row()->logo;?>" />
+													<img alt="" height="128" width="138" src="<?php echo base_url();?>assets/img/<?php echo $crecord->row()->logo;?>" />
 												<?php else:?>
 													<img alt="" width="128" src="<?php echo base_url();?>assets/img/default.png" />	
 												<?php endif;?>
@@ -103,7 +103,7 @@
                           </div>
                       </div>
                       <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="profile-tab2">
-                        <form method="post" class="needs-validation" action="<?php echo base_url();?>index.php/customer/admin_edit_profile" enctype="multipart/form-data"   >
+                        <form method="post" class="needs-validation" action="<?php echo base_url();?>index.php/adminController/admin_edit_profile" enctype="multipart/form-data"   >
                           <div class="card-header">
                             <h4>Edit Profile</h4>
                           </div>
@@ -155,7 +155,7 @@
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
                               <div class="form-group col-md-2 col-12"><label>Email 2 </label></div>
-                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="email" value="<?php echo $crecord->row()->email2; ?>">
+                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="email2" value="<?php echo $crecord->row()->email2; ?>">
                                 <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>
@@ -170,7 +170,7 @@
                               </div>
                             </div>
 							<div class="row">
-							<div class="form-group col-md-2 col-12"><label>Fax No</label></div>
+							<div class="form-group col-md-2 col-12"><label>Adhaar No</label></div>
 							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="adhar" value="<?php echo $crecord->row()->fax_number; ?>">
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
@@ -185,7 +185,7 @@
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
                               <div class="form-group col-md-2 col-12"><label>Nationality</label></div>
-                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="dob" value="<?php echo $crecord->row()->nationality; ?>">
+                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="nat" value="<?php echo $crecord->row()->nationality; ?>">
                                 <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>
@@ -195,7 +195,7 @@
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
                               <div class="form-group col-md-2 col-12"><label>Logo</label></div>
-                              <div class="form-group col-md-4 col-12"><input type="file" class="form-control" name="photo" value="<?php echo $crecord->row()->logo; ?>">
+                              <div class="form-group col-md-4 col-12"><input type="file" class="form-control" name="logo" value="<?php echo $crecord->row()->logo; ?>">
                                 <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>

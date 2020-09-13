@@ -24,7 +24,22 @@ function getrecord(){
 		$reg=$this->db->get("customer_complain");
 		return $reg;
 	}
-
+	public function update_admin_profile($data){
+		
+		$result = $this->db->update("general_settings",$data);
+		if($result):
+			return true;
+		endif;
+	}
+	
+public function addemployee($data){
+		$info=$this->db->insert("employee_info",$data);
+		return $info;
+	}
+	public function getinfo(){
+		$info=$this->db->get("employee_info");
+		return $info;
+	}
     }
     
     ?>

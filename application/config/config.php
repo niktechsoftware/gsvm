@@ -23,7 +23,7 @@
 |
 */
 
-$config['base_url'] = 'http://localhost/gsvmadmin/';
+$config['base_url'] = 'http://localhost/gsvm/';
 
 
 
