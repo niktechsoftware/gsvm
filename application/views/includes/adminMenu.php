@@ -9,8 +9,7 @@
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="<?php echo base_url();?>index.php/adminController/addemployee/">Add New Employee </a></li>
                 <li><a class="nav-link" href="<?php echo base_url();?>index.php/adminController/employee_list/">Employee List </a></li>
-                <li><a class="nav-link" href="widget-data.html">Serach Edit And Delete</a></li>
-                <li><a class="nav-link" href="widget-data.html">Study Assign</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/adminController/studyAssign/">Study Assign</a></li>
               </ul>
             </li>
             

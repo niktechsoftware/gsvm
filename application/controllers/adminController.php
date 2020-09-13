@@ -206,11 +206,11 @@ $data=array(
 public function employee_list(){
 		$this->load->model('Adminmodel');
 		$data['row']=$this->Adminmodel->getinfo();
-		$data['pageTitle'] = ' Customer list';
-		$data['smallTitle'] =' Customer list';
-		$data['mainPage'] =  'Customer list';
-		$data['subPage'] =' Customer list';
-		$data['title'] =' Customer list';
+		$data['pageTitle'] = ' Employee list';
+		$data['smallTitle'] =' Employee list';
+		$data['mainPage'] =  'Employee list';
+		$data['subPage'] =' Employee list';
+		$data['title'] =' Employee list';
 		$data['headerCss'] = 'headerCss/customerlistcss';
 		$data['footerJs'] = 'footerJs/customerlistjs';
 		$data['mainContent'] = 'employee_list';
@@ -218,7 +218,105 @@ public function employee_list(){
 
 }
 
+public function studyAssign(){
+	$this->load->model('Adminmodel');
+	$data['record']=$this->Adminmodel->getEmployee();
+	$data['pageTitle'] = ' Employee Role';
+	$data['smallTitle'] =' Employee Role';
+	$data['mainPage'] =  'Employee Role';
+	$data['subPage'] =' Employee list';
+	$data['title'] =' Assign Role';
+	$data['headerCss'] = 'headerCss/customerlistcss';
+	$data['footerJs'] = 'footerJs/customerlistjs';
+	$data['mainContent'] = 'asignrole';
+	$this->load->view("includes/mainContent", $data);
+	
+}
 
+public function updatePermissionStatus(){
+	$eid = $this->input->post("eid");
+	$sp = $this->input->post("sp");
+	
+	
+	$this->db->where("plan_id",$sp);
+	$this->db->where("employee_id",$eid);
+	$spo = $this->db->get("assign_plan");
+	if($spo->num_rows()>0){
+		$data['plan_id']=$sp;
+		$this->db->where("id",$spo->row()->id);
+		if($this->db->update("assign_plan",$data)){
+			echo "Update";
+		}
+	}else{
+		$data['plan_id']		=	$sp;
+		$data['sub_plan_id']	=	0;
+		$data['employee_id']	=	$eid;
+		if($this->db->insert("assign_plan",$data)){
+			echo "Insert";
+	}
+	}
+	
+}
+
+function supdatePermissionStatus(){
+	$eid = $this->input->post("eid");
+	$sp = $this->input->post("sp");
+	$ssp = $this->input->post("ssp");
+	
+	$this->db->where("plan_id",$sp);
+	$this->db->where("employee_id",$eid);
+	$this->db->where("sub_plan_id",$ssp);
+	$spo = $this->db->get("assign_plan");
+	if($spo->num_rows()>0){
+		$data['plan_id']=$sp;
+		$data['sub_plan_id']=$ssp;
+		$this->db->where("id",$spo->row()->id);
+		if($this->db->update("assign_plan",$data)){
+			echo "Update";
+		}
+	}else{
+		$data['plan_id']		=	$sp;
+		$data['sub_plan_id']	=	$ssp;
+		$data['employee_id']	=	$eid;
+		if($this->db->insert("assign_plan",$data)){
+			echo "Insert";
+		}
+	}
+	
+	}
+
+function deletePermissionStatus(){
+	$eid = $this->input->post("eid");
+	$sp = $this->input->post("sp");
+	$this->db->where("plan_id",$sp);
+	$this->db->where("employee_id",$eid);
+	if($this->db->delete("assign_plan")){
+		echo "Success";
+	}else{
+		echo "Try Again";
+	}
+}
+
+function sdeletePermissionStatus(){
+	$eid = $this->input->post("eid");
+	$sp = $this->input->post("sp");
+	$ssp = $this->input->post("ssp");
+	$this->db->where("plan_id",$sp);
+	$this->db->where("sub_plan_id",$ssp);
+	$this->db->where("employee_id",$eid);
+	if($this->db->delete("assign_plan")){
+		echo "Success";
+	}else{
+		echo "Try Again";
+	}
+}
+public function getPermissionStatus(){
+	$eid = $this->input->post("eid");
+		//print_r($plan_recotd->result());
+			$data["eid"]=$eid;
+			$this->load->view("permission",$data);
+		
+	}
 }
 
 ?>

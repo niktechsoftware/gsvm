@@ -14,7 +14,7 @@
 												<?php endif;?>
                       <div class="clearfix"></div>
                       <div class="author-box-name">
-                        <a href="#"><?php echo $crecord->row()->customer_name; ?></a>
+                        <a href="#"><?php echo $crecord->row()->employee_iname; ?></a>
                       </div>
 					  <div class="author-box-job">User Id:<?php  echo $crecord->row()->username; ?></div>
                     </div>
@@ -69,7 +69,7 @@
                           <div class="card-body">
                             <div class="row">
                               <div class="form-group col-md-3 col-12"><label>Name :</label></div>
-							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->customer_name; ?></label></div>
+							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->employee_iname; ?></label></div>
                               <div class="form-group col-md-3 col-12"><label>Father Name :</label></div>
 							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->fname; ?></label> </div>
                             </div>
@@ -115,18 +115,14 @@
                               <div class="form-group col-md-3 col-12"><label>Date Of Birth :</label></div>
 							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->dob; ?></label> </div>
                             </div>
+						
 							<div class="row">
-                              <div class="form-group col-md-3 col-12"><label>Joiner Name:</label></div>
-							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->joiner_name; ?></label></div>
-                              <div class="form-group col-md-3 col-12"><label>Position :</label></div>
+							 <div class="form-group col-md-3 col-12"><label>Position :</label></div>
 							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->position; ?></label> </div>
-                            </div>
-							<div class="row">
+                           
                               <div class="form-group col-md-3 col-12"><label>Join Date:</label></div>
 							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->joining_date;?></label></div>
-                              <div class="form-group col-md-3 col-12"><label>Active Date :</label></div>
-							  <div class="form-group col-md-3 col-12"> <label><?php  echo $crecord->row()->active_date;?></label> </div>
-                            </div>
+                                </div>
 							
 							
                           </div>
@@ -144,15 +140,15 @@
 							  <div class="form-group col-md-4 col-12">
 							   <?php 
 							       if($this->session->userdata("login_type")==1){  ?>
-							      <input type="text" class="form-control" name="cname" value="<?php echo $crecord->row()->customer_name; ?>">
+							      <input type="text" class="form-control" name="cname" value="<?php echo $crecord->row()->employee_iname; ?>">
 							      <?php } else{ 
-							      if($crecord->row()->customer_name){
+							      if($crecord->row()->employee_iname){
 							      ?>
-							       <input type="text" class="form-control" name="cname" value="<?php echo $crecord->row()->customer_name; ?>" readonly="" >
+							       <input type="text" class="form-control" name="cname" value="<?php echo $crecord->row()->employee_iname; ?>" readonly="" >
 							    
 							      
 							      <?php } else{ ?>
-							       <input type="text" class="form-control" name="cname" value="<?php echo $crecord->row()->customer_name; ?>">
+							       <input type="text" class="form-control" name="cname" value="<?php echo $crecord->row()->employee_iname; ?>">
 							    
 							     <?php } }?>
                                 <div class="invalid-feedback">Please fill in the first name</div>
