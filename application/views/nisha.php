@@ -5,50 +5,6 @@
 				<div class="col-xs-12 col-md-12 col-lg-12">
 					<div class="card">
 						<div class="card-header">
-							<ul id="myTab" class="nav nav-tabs" >
-								<li class="active"><a href="#myTab_example1" data-toggle="tab">
-										<i class="green fa fa-home"></i>Registration Form&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-								</a></li>
-								<li><a href="#myTab_example2" data-toggle="tab"> <i
-										class="green fa fa-home"></i>Patient Medical Histoty&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-									</a>
-								</li>
-								<li><a href="#myTab_example3" data-toggle="tab"> <i
-										class="green fa fa-home"></i>Patient Diet&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-									</a>
-								</li>
-								<li><a href="#myTab_example4" data-toggle="tab"> <i
-										class="green fa fa-home"></i>Family's Medical History&nbsp&nbsp&nbsp&nbsp
-									</a>
-								</li>
-								<li><a href="#myTab_example5" data-toggle="tab"> <i
-										class="green fa fa-home"></i>Patient Smoking Status&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-									</a>
-								</li>
-								<li><a href="#myTab_example6" data-toggle="tab"> <i
-										class="green fa fa-home"></i>Patient Alcohol Status&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-									</a>
-								</li>
-								<li><a href="#myTab_example7" data-toggle="tab"> <i
-										class="green fa fa-home"></i>Exercise Habit&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-									</a>
-								</li>
-
-							</ul>
-						</div>
-		</div>
-	</div>
-</div>	
-							<div class="tab-content">
-		<!--********************************************************************************************************	-->				
-								<div class="tab-pane fade in active" id="myTab_example1">
-									
-	<div class="section">
-		<div class="section-body">
-			<div class="row">
-				<div class="col-xs-12 col-md-12 col-lg-12">
-					<div class="card">
-						<div class="card-header">
 							<h4>Add Patient Form</h4>
 
 						</div>
@@ -68,7 +24,7 @@
 														<div class="form-group">
 															<input type="text" class="form-control"
 																value="" name="fname"
-																 required="required">
+																id="name" required="required">
 														</div>
 								
                                          </div>
@@ -86,7 +42,7 @@
 														<div class="form-group">
 															<input type="text" class="form-control"
 																value="" name="mname"
-															required="required">
+																id="name" required="required">
 														</div>
 								
                                          </div>
@@ -108,7 +64,7 @@
 														<div class="form-group">
 															<input type="text" class="form-control"
 																value="" name="lname"
-															 required="required">
+																id="name" required="required">
 														</div>
 								
                                          </div>
@@ -126,7 +82,7 @@
 														<div class="form-group">
 															<input type="text" class="form-control"
 																value="" name="father"
-																 required="required">
+																id="name" required="required">
 														</div>
 								
                                          </div>
@@ -150,7 +106,7 @@
 														<div class="form-group">
 															<input type="text" class="form-control"
 																value="" name="mother"
-																required="required">
+																id="name" required="required">
 														</div>
 								
                                          </div>
@@ -177,7 +133,7 @@
 															<lebel>FEMALE</lebel>
 															<input type="radio" class="form-control"
 																value="female" name="gender"
-																 required="required" style="height:20px; width:20px;">
+																id="name" required="required" style="height:20px; width:20px;">
 																
 														</div>
 								
@@ -186,7 +142,7 @@
 														<div class="form-group">
 															TRANSGENDER<input type="radio" class="form-control"
 																value="transgender" name="gender"
-																required="required" style="height:20px; width:20px;">
+																id="name" required="required" style="height:20px; width:20px;">
 																
 														</div>
 								
@@ -211,7 +167,7 @@
 														<div class="form-group">
 															<input type="text" class="form-control"
 																value="" name="address"
-																 required="required">
+																id="name" required="required">
 														</div>
 								
                                          </div>
@@ -229,7 +185,7 @@
 														<div class="form-group">
 															<input type="text" class="form-control"
 																value="" name="post"
-															required="required">
+																id="name" required="required">
 														</div>
 								
                                          </div>
@@ -253,7 +209,7 @@
 														<div class="form-group">
 															<input type="text" class="form-control"
 																value="" name="tehsil"
-																 required="required">
+																id="name" required="required">
 														</div>
 								
                                          </div>
@@ -271,7 +227,7 @@
 														<div class="form-group">
 															<input type="text" class="form-control"
 																value="" name="block"
-															required="required">
+																id="name" required="required">
 														</div>
 								
                                          </div>
@@ -423,7 +379,7 @@
 														<div class="form-group">
 															<input type="text" class="form-control"
 																value="" name="number"
-																 required="required">
+																id="name" required="required">
 														</div>
 								
                                          </div>
@@ -441,7 +397,7 @@
 														<div class="form-group">
 															<input type="text" class="form-control"
 																value="" name="mobile"
-															 required="required">
+																id="name" required="required">
 														</div>
 								
                                          </div>
@@ -464,7 +420,7 @@
 														<div class="form-group">
 															<input type="text" class="form-control"
 																value="" name="voter"
-															required="required">
+																id="name" required="required">
 														</div>
 								
                                          </div>
@@ -482,7 +438,7 @@
 														<div class="form-group">
 															<input type="text" class="form-control"
 																value="" name="adhaar"
-															 required="required">
+																id="name" required="required">
 														</div>
 								
                                          </div>
@@ -505,7 +461,7 @@
 														<div class="form-group">
 															<input type="text" class="form-control"
 																value="" name="pancard"
-																 required="required">
+																id="name" required="required">
 														</div>
 								
                                          </div>
@@ -523,7 +479,7 @@
 														<div class="form-group">
 															<input type="date" class="form-control"
 																value="" name="dob"
-																 required="required">
+																id="name" required="required">
 														</div>
 								
                                          </div>
@@ -547,7 +503,7 @@
 														<div class="form-group">
 															<input type="email" class="form-control"
 																value="" name="email"
-																required="required">
+																id="name" required="required">
 														</div>
 								
                                          </div>
@@ -565,7 +521,7 @@
 														<div class="form-group">
 															<input type="password" class="form-control"
 																value="" name="password"
-																required="required">
+																id="name" required="required">
 														</div>
 								
                                          </div>
@@ -607,93 +563,3 @@
 		</div>
 	</div>
 </div>
-
-
-								</div>
-			<!-- ********************************************************************************************************	-->				
-
-								<div class="tab-pane fade" id="myTab_example2">
-								
-									<div class="row">
-										<div class="col-sm-12">
-											<div class="panel panel-calendar">
-												
-												<div class="panel-body">
-dfdfdfd
-fggfgf
-													</div>
-											</div>
-										</div>
-									
-									</div>
-								</div>
-		<!--	********************************************************************************************************	-->				
-
-								<div class="tab-pane fade in active" id="myTab_example3">
-									<div class="col-sm-12">
-											<div class="panel panel-calendar">
-												<div class="panel-body">
-
-dfdd
-													</div>
-											</div>
-										</div>
-								
-								</div>
-
-			<!--********************************************************************************************************-->
-									<div class="tab-pane fade in active" id="myTab_example4">
-									<div class="col-sm-12">
-											<div class="panel panel-calendar">
-												
-												<div class="panel-body">
-													dfdff
-											
-											</div>
-										</div>
-								
-								</div>
-					</div>
-					<!--********************************************************************************************************	-->			
-
-									<div class="tab-pane fade in active" id="myTab_example5">
-									<div class="col-sm-12">
-											<div class="panel panel-calendar">
-												<div class="panel-body">
-													dfdd
-												</div>
-												
-											</div>
-										</div>
-								
-								</div>
-				<!--	********************************************************************************************************-->
-									<div class="tab-pane fade in active" id="myTab_example6">
-									<div class="col-sm-12">
-											<div class="panel panel-calendar">
-												
-												<div class="panel-body">
-													dfdfdfd
-											</div>
-										</div>
-								
-								</div>
-							</div>
-				<!--	********************************************************************************************************-->
-									<div class="tab-pane fade in active" id="myTab_example7">
-									<div class="col-sm-12">
-											<div class="panel panel-calendar">
-												
-												<div class="panel-body">
-												fddfdff
-											</div>
-										</div>
-								
-								</div>
-							</div>
-				<!--	********************************************************************************************************-->
-						</div>
-					</div>
-				</div>
-			</div>
-			
