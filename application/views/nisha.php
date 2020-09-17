@@ -8,7 +8,7 @@
 							<h4>Add Patient Form</h4>
 
 						</div>
-						<form method="post"	action="<?php echo base_url()?>index.php/patient/addpatinfo" enctype="multipart/Form-data" >
+						<form method="post"	action="<?php echo base_url();?>index.php/patient/addpatinfo" enctype="multipart/Form-data" >
 							<div class="card-body">
 								<div class="row" id="regForm">
 									<div class="col-md-12 col-lg-12 col-xs-12">
@@ -541,7 +541,7 @@
 													<div class="col-md-9">
 														<div class="form-group">
 															<button type="submit" class="btn btn-primary"
-																id="regisbtn" style="margin-left:70%;">
+																id="regForm" style="margin-left:70%;">
 																<i class="far fa-edit">&nbsp;Submit</i>
 															</button>
 														</div>

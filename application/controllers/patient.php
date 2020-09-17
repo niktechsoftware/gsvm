@@ -13,11 +13,26 @@
 	    $data['mainContent'] = 'addpatient';
 	    $this->load->view("includes/mainContent", $data);
 	}
+public function patient_diet()
+{
+echo $this->input->post("gender");
+echo $this->input->post("dinner");
+echo $this->input->post("lunch");
+echo $this->input->post("snakes");
+echo $this->input->post("snakes");
+echo $this->input->post("snakes");
+
+echo $this->input->post("snakes");
+echo $this->input->post("snakes");
+
+echo $this->input->post("snakes");
+
+}
+
 
 	public function nisha()
 	{   
-
-	    $data['pageTitle'] = 'Patient Form';
+	 $data['pageTitle'] = 'Patient Form';
 		$data['smallTitle'] = 'Patient Form';
 	    $data['mainPage'] = 'Patient Form';
 		$data['subPage'] = 'Patient Form';
@@ -25,7 +40,7 @@
 	    $data['headerCss'] = 'headerCss/dashboardCss';
 		$data['footerJs'] = 'footerJs/customerJs';
 	    $data['mainContent'] = 'nisha';
-	    $this->load->view("includes/mainContent", $data);
+	    $this->load->view("includes/mainContent",$data);
 	}
 	public function addpatinfo(){
 		$data=array(

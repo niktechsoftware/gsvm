@@ -8,7 +8,7 @@
 							<h4>Patient Diet Form</h4>
 
 						</div>
-						<form method="post"	action="<?php echo base_url()?>index.php/patient/addpatinfo" enctype="multipart/Form-data" >
+						<form method="post"	action="<?php echo base_url();?>index.php/patient/patient_diet" enctype="multipart/Form-data"   id="nameform"  novalidate>
 							<div class="card-body">
 								<div class="row" id="regForm">
 
@@ -24,7 +24,7 @@
 													<div class="col-md-2">
 														<div class="form-group">
 															VEG<input type="radio" class="form-control"
-																value="male" name="gender"
+																value="veg" name="gender"
 																id="name" required="required" style="height:20px; width:20px;">
 																
 														</div>
@@ -33,7 +33,7 @@
 														<div class="form-group">
 															<lebel>NON-VEG</lebel>
 															<input type="radio" class="form-control"
-																value="female" name="gender"
+																value="non-veg" name="gender"
 																id="name" required="required" style="height:20px; width:20px;">
 																
 														</div>
@@ -42,7 +42,7 @@
                                          <div class="col-md-3">
 														<div class="form-group">
 															OMNIVOROUS<input type="radio" class="form-control"
-																value="transgender" name="gender"
+																value="omnivorous" name="gender"
 																id="name" required="required" style="height:20px; width:20px;">
 																
 														</div>
@@ -60,7 +60,7 @@
 													<div class="col-md-2">
 														<div class="form-group">
 															BREAK-FAST<input type="checkbox" class="form-control"
-																value="male" name="gender"
+																value="breakfast" name="breakfast"
 																id="name" required="required" style="height:20px; width:20px;">
 																
 														</div>
@@ -69,7 +69,7 @@
 														<div class="form-group">
 															<lebel>LUNCH</lebel>
 															<input type="checkbox" class="form-control"
-																value="female" name="gender"
+																value="lunch" name="lunch"
 																id="name" required="required" style="height:20px; width:20px;">
 																
 														</div>
@@ -78,7 +78,7 @@
                                          <div class="col-md-2">
 														<div class="form-group">
 															SNAKES<input type="checkbox" class="form-control"
-																value="transgender" name="gender"
+																value="snakes" name="snakes"
 																id="name" required="required" style="height:20px; width:20px;">
 																
 														</div>
@@ -87,7 +87,7 @@
                                           <div class="col-md-2">
 														<div class="form-group">
 															DINNER<input type="checkbox" class="form-control"
-																value="transgender" name="gender"
+																value="dinner" name="dinner"
 																id="name" required="required" style="height:20px; width:20px;">
 																
 														</div>
@@ -392,7 +392,7 @@
 														
 															<input type="text" class="form-control"
 																placeholder="FREQUENCY/DAY" name="milk"
-																id="milk" required="required" ">
+																id="milk" required="required">
 																
 														</div>
                                       
@@ -432,7 +432,7 @@
 														
 															<input type="text" class="form-control"
 																placeholder="FREQUENCY/DAY" name="tea"
-																id="tea" required="required" ">
+																id="tea" required="required" >
 																
 														</div>
                                       
@@ -471,7 +471,7 @@
 														
 															<input type="text" class="form-control"
 																placeholder="FREQUENCY/DAY" name="coffee"
-																id="coffee" required="required" ">
+																id="coffee" required="required" >
 																
 														</div>
 								
@@ -512,7 +512,7 @@
 														
 															<input type="text" class="form-control"
 																placeholder="FREQUENCY/DAY" name="coffee"
-																id="water" required="required" ">
+																id="water" required="required" >
 																
 														</div>
                                       
@@ -528,8 +528,8 @@
 													<div class="col-md-3"></div>
 													<div class="col-md-9">
 														<div class="form-group">
-															<button type="submit" class="btn btn-primary"
-																id="regisbtn" style="margin-left:70%;">
+															<button type="submit" class="btn btn-primary" form="nameform"
+																  style="margin-left:70%;">
 																<i class="far fa-edit">&nbsp;Submit</i>
 															</button>
 														</div>
@@ -552,16 +552,6 @@
 </div>
 </div>
 </div>
-
-
-
-
-
-
-
-
-	
-	
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 											<script>
