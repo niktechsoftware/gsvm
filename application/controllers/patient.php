@@ -43,7 +43,18 @@ echo $this->input->post("snakes");
 	    $this->load->view("includes/mainContent",$data);
 	}
 	public function addpatinfo(){
-		$data=array(
+
+			$this->load->model("Patientmodel");
+		    $tblnm ="reg_patient_info";
+		    $maxid	=	$this->Patientmodel->pat_max($tblnm);
+		    $tblnm ="reg_patient_info";
+		    $maxid	=	$maxid+1;
+			$username="GSVM".$maxid;
+			$rn=rand(9999,99999);
+			$usern1=$maxid+$rn;
+			$username1="GSVM".$usern1;
+			$data=array(
+				'username'=>$username1,
 				'first_name'=>$this->input->post("fname"),
 				'middle_name'=>$this->input->post("mname"),
 				'last_name'=> $this->input->post("lname"),
@@ -70,7 +81,7 @@ echo $this->input->post("snakes");
 
 );
 
-				$this->load->model("Patientmodel");
+				
 				$this->Patientmodel->addpatient($data);	 
 				redirect('patient/nisha'); 
 				//echo "submmitted";
@@ -127,6 +138,37 @@ echo $this->input->post("snakes");
 		$this->load->view("includes/mainContent", $data);
 	    
 	}
+	function newform(){
+	    $data['pageTitle'] = 'Patient Exercise';
+		$data['smallTitle'] = 'Patient Exercise';
+		$data['mainPage'] = 'Patient Exercise';
+		$data['subPage'] = 'Patient Exercise';
+		$data['title'] = 'Patient Exercise';
+		$data['headerCss'] = 'headerCss/dashboardCss';
+		$data['footerJs'] = 'footerJs/customerJs';
+		$data['mainContent'] = 'newform';
+		$this->load->view("includes/mainContent", $data);
+	    
+	}
+	
+	function matchid(){
+		$username=$this->input->post("username");
+		$this->load->model("Patientmodel");
+		$result=$this->Patientmodel->matchid();
+		//print_r($result);
+		if($result->num_rows()>0){
+
+		if($username==$result->username){
+			echo "matched";
+			//redirect(base_url()."index.php/welcome/registration/success/".$username);
+		}
+		else{
+			echo "not matched";
+			//redirect(base_url()."index.php/welcome/index/fail");
+		}
+	}
+}
+	
    
 }
 
