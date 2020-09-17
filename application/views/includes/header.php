@@ -15,7 +15,6 @@
   <!-- Custom style CSS -->
   <link rel="stylesheet" href="<?php echo base_url();?>assets/css/custom.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-                        
   <link rel='shortcut icon' type='image/x-icon' href='<?php echo base_url();?>assets/img/favicon.ico' />
  <?php echo $this->load->view($headerCss); ?>
   </head>

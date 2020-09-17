@@ -8,7 +8,7 @@
 							<h4>Patient Diet Form</h4>
 
 						</div>
-						<form method="post"	action="<?php echo base_url();?>index.php/patient/patient_diet" enctype="multipart/Form-data"   id="nameform"  novalidate>
+						<form method="post"	action="<?php echo base_url();?>index.php/patient/patient_diet" enctype="multipart/Form-data"   id="nameform">
 							<div class="card-body">
 								<div class="row" id="regForm">
 
@@ -124,7 +124,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="meat1" name="meat"
+																value="nomeat" name="meat"
 																id="meat1" required="required" style="height:20px; width:20px;">
 																
 														</div>
@@ -444,7 +444,7 @@
 										
 												<div class="col-xs-12 col-md-12 col-lg-12">
 
-												
+											
 													<div class="form-group row">
 													<div class="col-md-4">
 														<label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp3. &nbsp &nbsp &nbspCOFFEE:<span title="Required" style="color: red;">*</span></label>

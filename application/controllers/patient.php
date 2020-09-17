@@ -153,22 +153,15 @@ echo $this->input->post("snakes");
 	
 	function matchid(){
 		$username=$this->input->post("username");
-		$this->load->model("Patientmodel");
-		$result=$this->Patientmodel->matchid();
-		//print_r($result);
-		if($result->num_rows()>0){
-
-		if($username==$result->username){
-			echo "matched";
+		$this->db->where("id",$username);
+		$res=$this->db->get("reg_patient_info")->row();
+		if($res){
+	//if($username==$result->username){
+			redirect(base_url()."index.php/patient/newform/sucess/".$username);
 			//redirect(base_url()."index.php/welcome/registration/success/".$username);
 		}
 		else{
-			echo "not matched";
-			//redirect(base_url()."index.php/welcome/index/fail");
-		}
-	}
-}
-	
-   
-}
 
+			redirect(base_url()."index.php/patient/newform/false/");
+		}
+	}}

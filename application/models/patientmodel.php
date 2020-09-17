@@ -14,9 +14,7 @@
 							return 1; 
 						}
         }
-        function matchid(){
-		
-		$res=$this->db->get("reg_patient_info");
-		return $res;	
+        function matchid($username){
+			
 	}
     }
