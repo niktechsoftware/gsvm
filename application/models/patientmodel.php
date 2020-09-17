@@ -19,4 +19,25 @@
 		$res=$this->db->get("reg_patient_info");
 		return $res;	
 	}
+	 function insertdiet($data){
+		
+		$res=$this->db->insert("reg_patient_diet",$data);
+		return $res;	
+	}
+	function smoking_status($data){
+		
+		$res=$this->db->insert("reg_smoking_status",$data);
+		return $res;	
+	}
+	function alcohol_status($data){
+		
+		$res=$this->db->insert("reg_alcohol_status",$data);
+		return $res;	
+	}
+	function exercise_status($data){
+		
+		$res=$this->db->insert("reg_exercise_habit",$data);
+		return $res;	
+	}
+
     }
