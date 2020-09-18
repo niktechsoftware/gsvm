@@ -35,7 +35,16 @@
                <li><a href="<?php echo base_url();?>index.php/patient/coronary">Coronary Artery Desease </a></li>
               </ul>
             </li>
-            
+             <li class="dropdown">
+              <a href="#" class="nav-link has-dropdown"><i data-feather="copy"></i><span>Proforma</span></a>
+              <ul class="dropdown-menu">
+               
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/daybookController/daybook/2">Notice</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/daybookController/daybookTrans/2">Contact Us</a></li>
+                 <li><a class="nav-link" href="<?php echo base_url();?>index.php/daybookController/daybookTrans/2">Gallery</a></li>
+                <li><a class="nav-link" href="card.html">Marquee Content</a></li>
+              </ul>
+            </li>
             <li class="dropdown">
               <a href="#" class="nav-link has-dropdown"><i data-feather="command"></i><span>Reports</span></a>
               <ul class="dropdown-menu">

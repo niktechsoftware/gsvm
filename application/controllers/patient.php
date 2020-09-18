@@ -147,6 +147,8 @@ public function coronary()
 	    
 	}
 
+
+
 	
 
 	function matchid(){
@@ -270,7 +272,21 @@ public function coronary()
 
 		}
 
-		
+//*************************************************************************************************************************
+//*******************************************************************************************************************************************	
+
+		function Oral_Cancer_Proforma(){
+	    $data['pageTitle'] = 'Oral_Cancer_Proforma';
+		$data['smallTitle'] = 'Oral_Cancer_Proforma';
+		$data['mainPage'] = 'Oral_Cancer_Proforma';
+		$data['subPage'] = 'Oral_Cancer_Proforma';
+		$data['title'] = 'Oral_Cancer_Proforma';
+		$data['headerCss'] = 'headerCss/dashboardCss';
+		$data['footerJs'] = 'footerJs/customerJs';
+		$data['mainContent'] = 'newform';
+		$this->load->view("includes/mainContent", $data);
+	    
+	}
 
    
 }
