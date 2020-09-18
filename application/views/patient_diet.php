@@ -197,24 +197,23 @@
 									</div>
 									</div>
 								</div>
-										<div class="col-xs-12 col-md-12 col-lg-12">
+					<!-----************************************************************************************
+					**************************************************************************************************-->
+
+		<div class="col-xs-12 col-md-12 col-lg-12">
 
 												<div class="form-group row">
-													
-												</br>
-												</br>
-												</br>
+												
 													<div class="col-md-2">
 														<div class="form-group">
 															<lebel>2.FISH</lebel>
 														</div>
 													</div>
-												
-                                         <div class="col-md-1">
+													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="fish" name="fish"
-																id="meat" style="height:20px; width:20px;">
+																value="yes" name="fish"
+																id="meat"  style="height:20px; width:20px;">
 																
 														</div>
 								
@@ -222,22 +221,22 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="nofish" name="fish"
-																id="meat1" style="height:20px; width:20px;">
+																value="no" name="fish"
+																id="meat1"  style="height:20px; width:20px;">
 																
 														</div>
 								
                                          </div>
-                                         	</div>
-                                         	<div class="col-xs-6 col-md-6 col-lg-6">
+                                           		</div>
+                                         		<div class="col-xs-6 col-md-6 col-lg-6">
                                          		<div id="eat1">
                                          <div class="col-md-2">
 									<div class="form-group">
 										1.DAILY
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="fduration" id="daily" value="daily1"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="fduration" value="daily1"/>
 										</div>
 									</div>
-										<div id="fquan">
+									<div id="fquan1">
                                          <div class="col-md-4">
 									<div class="form-group">
 										 <input  class="form-control" placeholder="Duration" type="text" name="fquant1" id=""/>
@@ -248,75 +247,65 @@
 									 <div class="col-md-2">
 									<div class="form-group">
 										2.WEEK
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="When Left" type="radio" name="fduration" value="week1" id="week"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="When Left" type="radio" name="fduration" value="week1"/>
 										</div>
 
                                      </div>
-                                     <div id="fquan2">
+                                      <div id="fquan2">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="fquant2" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="fquant1" id=""/>
 										</div>
 									</div>
 									
 									</div>
-                                       <div class="col-md-3">
+									 <div class="col-md-3">
 									<div class="form-group">
 										3.MONTH
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="fduration" value="month1" id="month"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="fduration" value="month1" />
 										</div>
 									</div>
 									<div id="fquan3">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="fquant3" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="fquant1" id=""/>
 										</div>
 									</div>
 									
 									</div>
-
-									  <div class="col-md-3">
+									<div class="col-md-3">
 									<div class="form-group">
 										4.YEAR
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="fduration" value="year1" id="year"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="fduration" value="year1"/>
 										</div>
 									</div>
 										</div>
-										
-									
-									<div id="fquan4">
+										<div id="fquan4">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="fquant4" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="fquant1" id=""/>
 										</div>
 									</div>
 									</div>
 									</div>
 								</div>
-                                         		</div>
 
-                                         	</div>
-
-
-
-                                         	<div class="col-xs-12 col-md-12 col-lg-12">
+								<!-----************************************************************************************
+					**************************************************************************************************-->
+						<div class="col-xs-12 col-md-12 col-lg-12">
 
 												<div class="form-group row">
-													
-												</br>
-												</br>
-												</br>
+												
 													<div class="col-md-2">
 														<div class="form-group">
 															<lebel>3.DESSERTS</lebel>
 														</div>
 													</div>
-												
-                                         <div class="col-md-1">
+													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="dessert" name="dessert"
-																 style="height:20px; width:20px;">
+																value="ok" name="dessert"
+																  style="height:20px; width:20px;">
 																
 														</div>
 								
@@ -324,24 +313,22 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="nodessert" name="dessert"
-																style="height:20px; width:20px;">
+																value="notok" name="dessert"
+																 style="height:20px; width:20px;">
 																
 														</div>
 								
                                          </div>
-                                         		</div>
-
-
-                                         			<div class="col-xs-6 col-md-6 col-lg-6">
+                                           		</div>
+                                           		<div class="col-xs-6 col-md-6 col-lg-6">
                                          		<div id="eat2">
                                          <div class="col-md-2">
 									<div class="form-group">
 										1.DAILY
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="dduration" id="daily" value="daily2"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="dduration" value="daily2"/>
 										</div>
 									</div>
-										<div id="dquan1">
+									<div id="dquan1">
                                          <div class="col-md-4">
 									<div class="form-group">
 										 <input  class="form-control" placeholder="Duration" type="text" name="dquant1" id=""/>
@@ -349,7 +336,6 @@
 									</div>
 									
 									</div>
-
 									 <div class="col-md-2">
 									<div class="form-group">
 										2.WEEK
@@ -357,71 +343,61 @@
 										</div>
 
                                      </div>
-                                     <div id="dquan2">
+                                      <div id="dquan2">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="dquant2" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="dquant1" id=""/>
 										</div>
 									</div>
 									
 									</div>
-                                       <div class="col-md-3">
+									 <div class="col-md-3">
 									<div class="form-group">
 										3.MONTH
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="dduration" value="month2"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="dduration" value="month2" />
 										</div>
 									</div>
 									<div id="dquan3">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="dquant3" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="dquant1" id=""/>
 										</div>
 									</div>
 									
 									</div>
-
-									  <div class="col-md-3">
+									<div class="col-md-3">
 									<div class="form-group">
 										4.YEAR
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="dduration" value="year2" />
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="dduration" value="year2"/>
 										</div>
 									</div>
 										</div>
-										
-									
-									<div id="dquan4">
+										<div id="dquan4">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="dquant4" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="dquant1" id=""/>
 										</div>
 									</div>
 									</div>
 									</div>
 								</div>
-                                         		</div>
 
-                                         	</div>
-                                         	</div>
-
-                                         	<!--*****************************************************************-->
-                                         		<div class="col-xs-12 col-md-12 col-lg-12">
+					<!-----************************************************************************************
+					**************************************************************************************************-->
+						<div class="col-xs-12 col-md-12 col-lg-12">
 
 												<div class="form-group row">
-													
-												</br>
-												</br>
-												</br>
+												
 													<div class="col-md-2">
 														<div class="form-group">
 															<lebel>4.PORK</lebel>
 														</div>
 													</div>
-												
-                                         <div class="col-md-1">
+													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="1" name="pork"
-																id="meat"  style="height:20px; width:20px;">
+																value="yes1" name="pork"
+																  style="height:20px; width:20px;">
 																
 														</div>
 								
@@ -429,125 +405,459 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="0" name="pork"
-																id="meat1" style="height:20px; width:20px;">
+																value="no1" name="pork"
+																 style="height:20px; width:20px;">
 																
 														</div>
 								
                                          </div>
-                                         		</div>
-                                         	</div>
+                                           		</div>
+                                           		<div class="col-xs-6 col-md-6 col-lg-6">
+                                         		<div id="eat3">
+                                         <div class="col-md-2">
+									<div class="form-group">
+										1.DAILY
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="pduration" value="daily3"/>
+										</div>
+									</div>
+									<div id="pquan1">
+                                         <div class="col-md-4">
+									<div class="form-group">
+										 <input  class="form-control" placeholder="Duration" type="text" name="pquant1" id=""/>
+										</div>
+									</div>
+									
+									</div>
+									 <div class="col-md-2">
+									<div class="form-group">
+										2.WEEK
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="When Left" type="radio" name="pduration" value="week3"/>
+										</div>
+
+                                     </div>
+                                      <div id="pquan2">
+                                         <div class="col-md-4">
+									<div class="form-group">
+										 <input  class="form-control" placeholder="Duration" type="text" name="pquant1" id=""/>
+										</div>
+									</div>
+									
+									</div>
+									 <div class="col-md-3">
+									<div class="form-group">
+										3.MONTH
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="pduration" value="month3" />
+										</div>
+									</div>
+									<div id="pquan3">
+                                         <div class="col-md-4">
+									<div class="form-group">
+										 <input  class="form-control" placeholder="Duration" type="text" name="pquant1" id=""/>
+										</div>
+									</div>
+									
+									</div>
+										<div class="col-md-3">
+									<div class="form-group">
+										4.YEAR
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="pduration" value="year3"/>
+										</div>
+									</div>
+										</div>
+										<div id="pquan4">
+                                         <div class="col-md-4">
+									<div class="form-group">
+										 <input  class="form-control" placeholder="Duration" type="text" name="pquant1" id=""/>
+										</div>
+									</div>
+									</div>
+									</div>
+								</div>
+													<!-----************************************************************************************
+					**************************************************************************************************-->
+						<div class="col-xs-12 col-md-12 col-lg-12">
+
+												<div class="form-group row">
+												
+													<div class="col-md-2">
+														<div class="form-group">
+															<lebel>5.CHICKEN</lebel>
+														</div>
+													</div>
+													<div class="col-md-1">
+														<div class="form-group">
+															YES<input type="radio" class="form-control"
+																value="yes2" name="chicken"
+																  style="height:20px; width:20px;">
+																
+														</div>
+								
+                                         </div>
+                                         <div class="col-md-1">
+														<div class="form-group">
+															NO<input type="radio" class="form-control"
+																value="no2" name="chicken"
+																 style="height:20px; width:20px;">
+																
+														</div>
+								
+                                         </div>
+                                           		</div>
+													<div class="col-xs-6 col-md-6 col-lg-6">
+                                         		<div id="eat4">
+                                         <div class="col-md-2">
+									<div class="form-group">
+										1.DAILY
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="cduration" value="daily4"/>
+										</div>
+									</div>
+									<div id="cquan1">
+                                         <div class="col-md-4">
+									<div class="form-group">
+										 <input  class="form-control" placeholder="Duration" type="text" name="cquant1" id=""/>
+										</div>
+									</div>
+									
+									</div>
+									 <div class="col-md-2">
+									<div class="form-group">
+										2.WEEK
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="When Left" type="radio" name="cduration" value="week4"/>
+										</div>
+
+                                     </div>
+                                      <div id="cquan2">
+                                         <div class="col-md-4">
+									<div class="form-group">
+										 <input  class="form-control" placeholder="Duration" type="text" name="cquant1" id=""/>
+										</div>
+									</div>
+									
+									</div>
+									 <div class="col-md-3">
+									<div class="form-group">
+										3.MONTH
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="cduration" value="month4" />
+										</div>
+									</div>
+									<div id="cquan3">
+                                         <div class="col-md-4">
+									<div class="form-group">
+										 <input  class="form-control" placeholder="Duration" type="text" name="cquant1" id=""/>
+										</div>
+									</div>
+									
+									</div>
+									<div class="col-md-3">
+									<div class="form-group">
+										4.YEAR
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="cduration" value="year4"/>
+										</div>
+									</div>
+										</div>
+										<div id="cquan4">
+                                         <div class="col-md-4">
+									<div class="form-group">
+										 <input  class="form-control" placeholder="Duration" type="text" name="cquant1" id=""/>
+										</div>
+									</div>
+									</div>
+									</div>
+								</div>
                                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-----************************************************************************************
+					**************************************************************************************************-->
+				<div class="col-xs-12 col-md-12 col-lg-12">
+
+												<div class="form-group row">
+												
+													<div class="col-md-2">
+														<div class="form-group">
+															<lebel>6.FRIED FOODS</lebel>
+														</div>
+													</div>
+													<div class="col-md-1">
+														<div class="form-group">
+															YES<input type="radio" class="form-control"
+																value="yes3" name="fried"
+																  style="height:20px; width:20px;">
+																
+														</div>
+								
+                                         </div>
+                                         <div class="col-md-1">
+														<div class="form-group">
+															NO<input type="radio" class="form-control"
+																value="no3" name="fried"
+																 style="height:20px; width:20px;">
+																
+														</div>
+								
+                                         </div>
+                                           		</div>
+                                           		<div class="col-xs-6 col-md-6 col-lg-6">
+                                         		<div id="eat5">
+                                         <div class="col-md-2">
+									<div class="form-group">
+										1.DAILY
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="ffduration" value="daily5"/>
+										</div>
+									</div>
+									<div id="ffquan1">
+                                         <div class="col-md-4">
+									<div class="form-group">
+										 <input  class="form-control" placeholder="Duration" type="text" name="ffquant1" id=""/>
+										</div>
+									</div>
+									
+									</div>
+									 <div class="col-md-2">
+									<div class="form-group">
+										2.WEEK
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="When Left" type="radio" name="ffduration" value="week5"/>
+										</div>
+
+                                     </div>
+                                      <div id="ffquan2">
+                                         <div class="col-md-4">
+									<div class="form-group">
+										 <input  class="form-control" placeholder="Duration" type="text" name="ffquant1" id=""/>
+										</div>
+									</div>
+									
+									</div>
+									 <div class="col-md-3">
+									<div class="form-group">
+										3.MONTH
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="ffduration" value="month5" />
+										</div>
+									</div>
+									<div id="ffquan3">
+                                         <div class="col-md-4">
+									<div class="form-group">
+										 <input  class="form-control" placeholder="Duration" type="text" name="ffquant1" id=""/>
+										</div>
+									</div>
+									
+									</div>
+									<div class="col-md-3">
+									<div class="form-group">
+										4.YEAR
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="ffduration" value="year5"/>
+										</div>
+									</div>
+										</div>
+										<div id="ffquan4">
+                                         <div class="col-md-4">
+									<div class="form-group">
+										 <input  class="form-control" placeholder="Duration" type="text" name="ffquant1" id=""/>
+										</div>
+									</div>
+									</div>
+									</div>
+								</div>
+                                     <!-----************************************************************************************
+					**************************************************************************************************-->
+			<div class="col-md-12 col-lg-12 col-xs-12">
+										<div class="row">
+										
+												<div class="col-xs-12 col-md-12 col-lg-12">
+
+												<div class="form-group row">
+													<div class="col-md-12">
+														<label>NUMBER OF SERVINGS(CUPS,GLASSES OR CONTAINERS)PER WEEK YOU USUALLY CONSUME OF:<span title="Required" style="color: red;">*</span></label>
+													</div>
+												</div>
+													<div class="form-group row">
+													<div class="col-md-4">
+														<label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp1. &nbsp &nbsp &nbspMILK:<span title="Required" style="color: red;">*</span></label>
+													</div>
+													<div class="col-md-2">
+														<div class="form-group">
+															YES<input type="radio" class="form-control"
+																value="yes" name="milk"
+																style="height:20px; width:20px;">
+																
+														</div>
+													</div>
+														<div class="col-md-2">
+														<div class="form-group">
+															<lebel>NO</lebel>
+															<input type="radio" class="form-control"
+																value="no" name="milk"
+																style="height:20px; width:20px;">
+																
+														</div>
+								
+                                         </div>
+                                          <div class="col-md-2">
+														
+															<input type="text" class="form-control"
+																placeholder="FREQUENCY/DAY" name="milk"
+																id="milk">
+																
+														</div>
+                                      
+												</div>
+											</div>
+								
+											
+                  <!--************************************************************************************-->
+
+                  <div class="col-md-12 col-lg-12 col-xs-12">
+										<div class="row">
+										
+												<div class="col-xs-12 col-md-12 col-lg-12">
+													<div class="form-group row">
+													<div class="col-md-4">
+														<label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp2. &nbsp &nbsp &nbspTEA:<span title="Required" style="color: red;">*</span></label>
+													</div>
+													<div class="col-md-2">
+														<div class="form-group">
+															YES<input type="radio" class="form-control"
+																value="tea" name="tea"
+																id="t1"  style="height:20px; width:20px;">
+																
+														</div>
+													</div>
+														<div class="col-md-2">
+														<div class="form-group">
+															<lebel>NO</lebel>
+															<input type="radio" class="form-control"
+																value="tea1" name="tea"
+																id="t2"  style="height:20px; width:20px;">
+																
+														</div>
+								
+                                         </div>
+                                          <div class="col-md-2">
+														
+															<input type="text" class="form-control"
+																placeholder="FREQUENCY/DAY" name="tea"
+																id="tea">
+																
+														</div>
+                                      
+												</div>
+											</div>
+										
+                  <!--************************************************************************************-->
+                  <div class="col-md-12 col-lg-12 col-xs-12">
+										<div class="row">
+										
+												<div class="col-xs-12 col-md-12 col-lg-12">
+
+												
+													<div class="form-group row">
+													<div class="col-md-4">
+														<label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp3. &nbsp &nbsp &nbspCOFFEE:<span title="Required" style="color: red;">*</span></label>
+													</div>
+													<div class="col-md-2">
+														<div class="form-group">
+															YES<input type="radio" class="form-control"
+																value="coffee" name="coffee"
+																id="co1" style="height:20px; width:20px;">
+																
+														</div>
+													</div>
+														<div class="col-md-2">
+														<div class="form-group">
+															<lebel>NO</lebel>
+															<input type="radio" class="form-control"
+																value="coffee1" name="coffee"
+																id="co2"  style="height:20px; width:20px;">
+																
+														</div>
+								
+                                         </div>
+                                         <div class="col-md-2">
+														
+															<input type="text" class="form-control"
+																placeholder="FREQUENCY/DAY" name="coffee"
+																id="coffee" >
+																
+														</div>
+								
+                                         </div>
+                                      
+												</div>
+											</div>
+											</div>
+										
+                  <!--************************************************************************************-->
+                  <div class="col-md-12 col-lg-12 col-xs-12">
+										<div class="row">
+										
+												<div class="col-xs-12 col-md-12 col-lg-12">
+
+												
+													<div class="form-group row">
+													<div class="col-md-4">
+														<label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp4. &nbsp &nbsp &nbspGLASSES OF WATER:<span title="Required" style="color: red;">*</span></label>
+													</div>
+													<div class="col-md-2">
+														<div class="form-group">
+															YES<input type="radio" class="form-control"
+																value="wate" name="water"
+																id="wate"  style="height:20px; width:20px;">
+																
+														</div>
+													</div>
+														<div class="col-md-2">
+														<div class="form-group">
+															<lebel>NO</lebel>
+															<input type="radio" class="form-control"
+																value="wate1" name="water"
+																id="wat2"  style="height:20px; width:20px;">
+																
+														</div>
+								
+                                         </div>
+                                          <div class="col-md-2">
+														
+															<input type="text" class="form-control"
+																placeholder="FREQUENCY/DAY" name="coffee"
+																id="water">
+																
+														</div>
+                                      
+												</div>
+											</div>
+										
+                  <!--************************************************************************************-->
+
+	<div class="col-md-12 col-lg-12 col-xs-12">
+										<div class="row">
+										
+											<div class="col-xs-12 col-md-12 col-lg-12">
+												<div class="form-group row">
+													<div class="col-md-3"></div>
+													<div class="col-md-9">
+														<div class="form-group">
+															<button type="submit" class="btn btn-primary"
+																id="regisbtn" style="margin-left:70%;">
+																<i class="far fa-edit">&nbsp;Submit</i>
+															</button>
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+
+
+</div>	
+
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
 
@@ -657,14 +967,13 @@
 </script>
 <!----*********************************************************************************************-->
 
-
-				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 											<script>
 												$("#eat1").hide();
-												$("#fquan").hide();
+												$("#fquan1").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="fish")
+											if($(this).val()=="yes")
 											{
 											$("#eat1").show();
 											
@@ -673,14 +982,15 @@
 											{
 									
 											$("#eat1").hide();
-											$("#fquan").hide();
+											$("#fquan1").hide();
 											}
 											});
 											});
 </script>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 											<script>
-												$("#eat1").hide();
+												//$("#eat").hide();
 												$("#fquan1").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
@@ -699,9 +1009,10 @@
 											});
 											});
 </script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 											<script>
-												$("#eat1").hide();
+												//$("#eat").hide();
 											$("#fquan2").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
@@ -720,9 +1031,10 @@
 											});
 											});
 </script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 											<script>
-												$("#eat1").hide();
+												//$("#eat").hide();
 												$("#fquan3").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
@@ -743,11 +1055,11 @@
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 											<script>
-												$("#eat1").hide();
+												//$("#eat").hide();
 												$("#fquan4").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="year")
+											if($(this).val()=="year1")
 											{
 												$("#eat1").show();
 											$("#fquan4").show();
@@ -763,14 +1075,13 @@
 											});
 </script>
 <!----*********************************************************************************************-->
-	
-					<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 											<script>
 												$("#eat2").hide();
 												$("#dquan1").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="dessert")
+											if($(this).val()=="ok")
 											{
 											$("#eat2").show();
 											
@@ -786,13 +1097,34 @@
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 											<script>
-												$("#eat2").hide();
-												$("#dquan2").hide();
+												//$("#eat").hide();
+												$("#dquan1").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
 											if($(this).val()=="daily2")
 											{
 												$("#eat2").show();
+											$("#dquan1").show();
+											
+											}
+											else
+											{
+									
+											//$("#eat").show();
+											$("#dquan1").hide();
+											}
+											});
+											});
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+											<script>
+												//$("#eat").hide();
+											$("#dquan2").hide();
+											$(document).ready(function(){
+											$("input[type='radio']").change(function(){
+											if($(this).val()=="week2")
+											{
+											$("#eat2").show();
 											$("#dquan2").show();
 											
 											}
@@ -807,7 +1139,7 @@
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 											<script>
-												$("#eat2").hide();
+												//$("#eat").hide();
 												$("#dquan3").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
@@ -826,11 +1158,534 @@
 											});
 											});
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+											<script>
+												//$("#eat").hide();
+												$("#dquan4").hide();
+											$(document).ready(function(){
+											$("input[type='radio']").change(function(){
+											if($(this).val()=="year2")
+											{
+												$("#eat2").show();
+											$("#dquan4").show();
+											
+											}
+											else
+											{
+									
+											//$("#eat").show();
+											$("#dquan4").hide();
+											}
+											});
+											});
+</script>
+				
 <!----*********************************************************************************************-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+											<script>
+												$("#eat3").hide();
+												$("#pquan1").hide();
+											$(document).ready(function(){
+											$("input[type='radio']").change(function(){
+											if($(this).val()=="yes1")
+											{
+											$("#eat3").show();
+											
+											}
+											else
+											{
+									
+											$("#eat3").hide();
+											$("#pquan1").hide();
+											}
+											});
+											});
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+											<script>
+												//$("#eat").hide();
+												$("#pquan1").hide();
+											$(document).ready(function(){
+											$("input[type='radio']").change(function(){
+											if($(this).val()=="daily3")
+											{
+												$("#eat3").show();
+											$("#pquan1").show();
+											
+											}
+											else
+											{
+									
+											//$("#eat").show();
+											$("#pquan1").hide();
+											}
+											});
+											});
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+											<script>
+												//$("#eat").hide();
+											$("#pquan2").hide();
+											$(document).ready(function(){
+											$("input[type='radio']").change(function(){
+											if($(this).val()=="week3")
+											{
+											$("#eat3").show();
+											$("#pquan2").show();
+											
+											}
+											else
+											{
+									
+											//$("#eat").show();
+											$("#pquan2").hide();
+											}
+											});
+											});
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+											<script>
+												//$("#eat").hide();
+												$("#pquan3").hide();
+											$(document).ready(function(){
+											$("input[type='radio']").change(function(){
+											if($(this).val()=="month3")
+											{
+												$("#eat3").show();
+											$("#pquan3").show();
+											
+											}
+											else
+											{
+									
+											//$("#eat").show();
+											$("#pquan3").hide();
+											}
+											});
+											});
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+											<script>
+												//$("#eat").hide();
+												$("#pquan4").hide();
+											$(document).ready(function(){
+											$("input[type='radio']").change(function(){
+											if($(this).val()=="year3")
+											{
+												$("#eat3").show();
+											$("#pquan4").show();
+											
+											}
+											else
+											{
+									
+											//$("#eat").show();
+											$("#pquan4").hide();
+											}
+											});
+											});
+</script>
+<!----*********************************************************************************************-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+											<script>
+												$("#eat4").hide();
+												$("#cquan1").hide();
+											$(document).ready(function(){
+											$("input[type='radio']").change(function(){
+											if($(this).val()=="yes2")
+											{
+											$("#eat4").show();
+											
+											}
+											else
+											{
+									
+											$("#eat4").hide();
+											$("#cquan1").hide();
+											}
+											});
+											});
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+											<script>
+												//$("#eat").hide();
+												$("#cquan1").hide();
+											$(document).ready(function(){
+											$("input[type='radio']").change(function(){
+											if($(this).val()=="daily4")
+											{
+												$("#eat4").show();
+											$("#cquan1").show();
+											
+											}
+											else
+											{
+									
+											//$("#eat").show();
+											$("#cquan1").hide();
+											}
+											});
+											});
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+											<script>
+												//$("#eat").hide();
+											$("#cquan2").hide();
+											$(document).ready(function(){
+											$("input[type='radio']").change(function(){
+											if($(this).val()=="week4")
+											{
+											$("#eat4").show();
+											$("#cquan2").show();
+											
+											}
+											else
+											{
+									
+											//$("#eat").show();
+											$("#cquan2").hide();
+											}
+											});
+											});
+</script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+											<script>
+												//$("#eat").hide();
+												$("#cquan3").hide();
+											$(document).ready(function(){
+											$("input[type='radio']").change(function(){
+											if($(this).val()=="month4")
+											{
+												$("#eat4").show();
+											$("#cquan3").show();
+											
+											}
+											else
+											{
+									
+											//$("#eat").show();
+											$("#cquan3").hide();
+											}
+											});
+											});
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+											<script>
+												//$("#eat").hide();
+												$("#cquan4").hide();
+											$(document).ready(function(){
+											$("input[type='radio']").change(function(){
+											if($(this).val()=="year4")
+											{
+												$("#eat4").show();
+											$("#cquan4").show();
+											
+											}
+											else
+											{
+									
+											//$("#eat").show();
+											$("#cquan4").hide();
+											}
+											});
+											});
+</script>
 <!----*********************************************************************************************-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+											<script>
+												$("#eat5").hide();
+												$("#ffquan1").hide();
+											$(document).ready(function(){
+											$("input[type='radio']").change(function(){
+											if($(this).val()=="yes3")
+											{
+											$("#eat5").show();
+											
+											}
+											else
+											{
+									
+											$("#eat5").hide();
+											$("#ffquan1").hide();
+											}
+											});
+											});
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+											<script>
+												//$("#eat").hide();
+												$("#ffquan1").hide();
+											$(document).ready(function(){
+											$("input[type='radio']").change(function(){
+											if($(this).val()=="daily5")
+											{
+												$("#eat5").show();
+											$("#ffquan1").show();
+											
+											}
+											else
+											{
+									
+											//$("#eat").show();
+											$("#ffquan1").hide();
+											}
+											});
+											});
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+											<script>
+												//$("#eat").hide();
+											$("#ffquan2").hide();
+											$(document).ready(function(){
+											$("input[type='radio']").change(function(){
+											if($(this).val()=="week5")
+											{
+											$("#eat5").show();
+											$("#ffquan2").show();
+											
+											}
+											else
+											{
+									
+											//$("#eat").show();
+											$("#ffquan2").hide();
+											}
+											});
+											});
+</script>
 
-<!----*********************************************************************************************-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+											<script>
+												//$("#eat").hide();
+												$("#ffquan3").hide();
+											$(document).ready(function(){
+											$("input[type='radio']").change(function(){
+											if($(this).val()=="month5")
+											{
+												$("#eat5").show();
+											$("#ffquan3").show();
+											
+											}
+											else
+											{
+									
+											//$("#eat").show();
+											$("#ffquan3").hide();
+											}
+											});
+											});
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+											<script>
+												//$("#eat").hide();
+												$("#ffquan4").hide();
+											$(document).ready(function(){
+											$("input[type='radio']").change(function(){
+											if($(this).val()=="year5")
+											{
+												$("#eat5").show();
+											$("#ffquan4").show();
+											
+											}
+											else
+											{
+									
+											//$("#eat").show();
+											$("#ffquan4").hide();
+											}
+											});
+											});
+</script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+											<script>
+												//$("#eat").hide();
+												$("#water").hide();
+											$(document).ready(function(){
+											$("input[type='radio']").change(function(){
+											if($(this).val()=="wate")
+											{
+											$("#water").show();
+											
+											}
+											else
+											{
+									
+											//$("#eat").hide();
+											$("#water").hide();
+											}
+											});
+											});
+</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+											<script>
+												//$("#eat").hide();
+												$("#coffee").hide();
+											$(document).ready(function(){
+											$("input[type='radio']").change(function(){
+											if($(this).val()=="coffee")
+											{
+											$("#coffee").show();
+											
+											}
+											else
+											{
+									
+											//$("#eat").hide();
+											$("#coffee").hide();
+											}
+											});
+											});
+</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+											<script>
+												//$("#eat").hide();
+												$("#tea").hide();
+											$(document).ready(function(){
+											$("input[type='radio']").change(function(){
+											if($(this).val()=="tea")
+											{
+											$("#tea").show();
+											
+											}
+											else
+											{
+									
+											//$("#eat").hide();
+											$("#tea").hide();
+											}
+											});
+											});
+</script>
+											
+														<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+											<script>
+												//$("#eat").hide();
+												$("#milk").hide();
+											$(document).ready(function(){
+											$("input[type='radio']").change(function(){
+											if($(this).val()=="yes")
+											{
+											$("#milk").show();
+											
+											}
+											else
+											{
+									
+											//$("#eat").hide();
+											$("#milk").hide();
+											}
+											});
+											});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!----*********************************************************************************************-->
 	
