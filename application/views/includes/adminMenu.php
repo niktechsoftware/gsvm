@@ -28,13 +28,11 @@
               <a href="#" class="nav-link has-dropdown"><i data-feather="user-check"></i><span>Patient</span></a>
               <ul class="dropdown-menu">
              
-                <li><a href="<?php echo base_url();?>index.php/patient/addpatient">Add New Patient </a></li>
-                 <li><a href="<?php echo base_url();?>index.php/patient/nisha">Add New Patient </a></li>
-                   <li><a href="<?php echo base_url();?>index.php/patient/diet">diet</a></li>
-                 <li><a href="<?php echo base_url();?>index.php/patient/smoking_status">Smoking </a></li>
-                      <li><a href="<?php echo base_url();?>index.php/patient/alcohol_status">alcohol</a></li>
-                          <li><a href="<?php echo base_url();?>index.php/patient/patient_exercise">alcohol</a></li>
+                <li><a href="<?php echo base_url();?>index.php/patient/addpatient">Add  Patient Information </a></li>
+                
             	<li><a href="<?php echo base_url();?>index.php/customer/customer_list/<?php echo $r->id;;?>">Search Edit & Delete </a></li>
+
+               <li><a href="<?php echo base_url();?>index.php/patient/coronary">Coronary Artery Desease </a></li>
               </ul>
             </li>
             
@@ -49,9 +47,7 @@
               
               </ul>
             </li>
-           
-          
-            <li class="dropdown">
+             <li class="dropdown">
               <a href="#" class="nav-link has-dropdown"><i data-feather="mail"></i><span>Mobile SMS</span></a>
               <ul class="dropdown-menu">
                <li><a class="nav-link" href="<?php echo base_url();?>index.php/adminController/sms_setting">Sms Setting</a></li>
@@ -74,4 +70,3 @@
             </li>
            
           </ul>
-          

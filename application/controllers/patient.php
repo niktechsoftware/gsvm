@@ -13,19 +13,30 @@
 	    $data['mainContent'] = 'addpatient';
 	    $this->load->view("includes/mainContent", $data);
 	}
-
-	public function nisha()
-	{   
-
-	    $data['pageTitle'] = 'Patient Form';
+public function coronary()
+{
+	 $data['pageTitle'] = 'Patient Form';
 		$data['smallTitle'] = 'Patient Form';
 	    $data['mainPage'] = 'Patient Form';
 		$data['subPage'] = 'Patient Form';
 		$data['title'] = 'Patient Form';
 	    $data['headerCss'] = 'headerCss/dashboardCss';
 		$data['footerJs'] = 'footerJs/customerJs';
-	    $data['mainContent'] = 'nisha';
-	    $this->load->view("includes/mainContent", $data);
+	    $data['mainContent'] = 'coronary';
+	    $this->load->view("includes/mainContent",$data);
+}
+
+	public function pat_registration_form()
+	{   
+	 $data['pageTitle'] = 'Patient Form';
+		$data['smallTitle'] = 'Patient Form';
+	    $data['mainPage'] = 'Patient Form';
+		$data['subPage'] = 'Patient Form';
+		$data['title'] = 'Patient Form';
+	    $data['headerCss'] = 'headerCss/dashboardCss';
+		$data['footerJs'] = 'footerJs/customerJs';
+	    $data['mainContent'] = 'registration_form';
+	    $this->load->view("includes/mainContent",$data);
 	}
 	public function addpatinfo(){
 
@@ -137,6 +148,22 @@
 	}
 
 	
+
+	function matchid(){
+		$username=$this->input->post("username");
+		$this->db->where("id",$username);
+		$res=$this->db->get("reg_patient_info")->row();
+		if($res){
+	
+			redirect(base_url()."index.php/patient/newform/sucess/".$username);
+			
+		}
+		else{
+
+			redirect(base_url()."index.php/patient/newform/false/");
+		}
+	}
+
 		function patient_diet(){
 				$data=array(
 				'reg_id'=>$this->input->post('id'),
@@ -247,4 +274,3 @@
 
    
 }
-
