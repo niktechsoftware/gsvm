@@ -9,7 +9,7 @@
 							<h4>Patient Registration  Form</h4>
 
 						</div>
-						<form method="post"	action="<?php echo base_url()?>index.php/patient/addpatinfo" enctype="multipart/Form-data" >
+						<form method="post"	action="<?php echo base_url()?>index.php/patient/pat_registration_form" enctype="multipart/Form-data" >
 							<div class="card-body">
 								<div class="row" id="regForm">
 

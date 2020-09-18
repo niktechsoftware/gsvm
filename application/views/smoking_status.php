@@ -1,3 +1,5 @@
+
+<?php $uri=$this->uri->segment('3'); ?>
 <div class="main-content">
 	<div class="section">
 		<div class="section-body">
@@ -8,7 +10,8 @@
 							<h4>Patient Smoking Status</h4>
 
 						</div>
-						<form method="post"	action="<?php echo base_url()?>index.php/patient/addpatinfo" enctype="multipart/Form-data" >
+						<form method="post"	action="<?php echo base_url()?>index.php/patient/patient_smokingstatus" enctype="multipart/Form-data" >
+							<input type="hidden" name="id" value="<?php echo $uri; ?>">
 							<div class="card-body">
 								<div class="row" id="regForm">
 									<div class="col-md-12 col-lg-12 col-xs-12">
@@ -111,7 +114,7 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																name="know" value="know" style="height:20px; width:20px;">
+																name="know" value="noknow" style="height:20px; width:20px;">
 																
 														</div>
 													</div>
@@ -119,7 +122,7 @@
 														<div class="form-group">
 															<lebel>DON'T KNOW</lebel>
 															<input type="radio" class="form-control" 
-																name="know" value="know" style="height:20px; width:20px;">
+																name="know" value="don't_know" style="height:20px; width:20px;">
 																
 											</div>
 								 </div>
@@ -143,8 +146,8 @@
 													<div class="col-md-2">
 														<div class="form-group">
 															PAAN WITH MASALA<input type="checkbox" class="form-control"
-																value="male" name="gender"
-																id="name" required="required" style="height:20px; width:20px;">
+																value="1" name="paan"
+															 style="height:20px; width:20px;">
 																
 														</div>
 													</div>
@@ -152,8 +155,8 @@
 														<div class="form-group">
 															<lebel>TAMBAKOO</lebel>
 															<input type="checkbox" class="form-control"
-																value="female" name="gender"
-																id="name" required="required" style="height:20px; width:20px;">
+																value="1" name="tambacco"
+														 style="height:20px; width:20px;">
 																
 														</div>
 								
@@ -161,8 +164,8 @@
                                          <div class="col-md-2">
 														<div class="form-group">
 															ZARDA/VIZAPATTA KHAINI<input type="checkbox" class="form-control"
-																value="transgender" name="gender"
-																id="name" required="required" style="height:20px; width:20px;">
+																value="1" name="zarda"
+														 style="height:20px; width:20px;">
 																
 														</div>
 								
@@ -170,8 +173,8 @@
                                           <div class="col-md-2">
 														<div class="form-group">
 															OTHER<input type="checkbox" class="form-control"
-																value="transgender" name="gender"
-																id="name" required="required" style="height:20px; width:20px;">
+																value="1" name="other"
+													style="height:20px; width:20px;">
 																
 														</div>
 								

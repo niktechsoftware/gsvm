@@ -29,12 +29,10 @@
               <ul class="dropdown-menu">
              
                 <li><a href="<?php echo base_url();?>index.php/patient/addpatient">Add  Patient Information </a></li>
-                 <li><a href="<?php echo base_url();?>index.php/patient/nisha">Add New Patient </a></li>
-                   <li><a href="<?php echo base_url();?>index.php/patient/diet">diet</a></li>
-                 <li><a href="<?php echo base_url();?>index.php/patient/smoking_status">Smoking </a></li>
-                      <li><a href="<?php echo base_url();?>index.php/patient/alcohol_status">alcohol</a></li>
-                          <li><a href="<?php echo base_url();?>index.php/patient/patient_exercise">Patient Exercise</a></li>
+                
             	<li><a href="<?php echo base_url();?>index.php/customer/customer_list/<?php echo $r->id;;?>">Search Edit & Delete </a></li>
+
+               <li><a href="<?php echo base_url();?>index.php/patient/coronary">Coronary Artery Desease </a></li>
               </ul>
             </li>
             

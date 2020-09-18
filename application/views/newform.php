@@ -55,11 +55,11 @@ if($id){?>
 	
 <div class="row">
 	<div></div>
-    <div class="col-2 " style="margin-left:5%;"><button type="button" class="btn btn-primary"><a href="<?php echo base_url();?>index.php/patient/diet/<?php echo $id;?>"><h5 style="color:white;"> Patient Diet</h5></a></button>	</div>
-    <div class="col-2 "><button type="button" class="btn btn-primary"><a href="<?php echo base_url();?>index.php/patient/smoking_status/<?php echo $id;?>"><h5 style="color:white;">Smoking_Status</h5></a></button>	</div>
-     <div class="col-2 "><button type="button" class="btn btn-primary"><a href="<?php echo base_url();?>index.php/patient/alcohol_status/<?php echo $id;?>"><h5 style="color:white;">Alcohol Status</S></h5></a></button>	</div>
+    <div class="col-2 " style="margin-left:5%;"><button type="button" class="btn btn-info"><a href="<?php echo base_url();?>index.php/patient/diet/<?php echo $id;?>"><h5 style="color:white;"> Diet Status</h5></a></button>	</div>
+    <div class="col-2 "><button type="button" class="btn btn-info"><a href="<?php echo base_url();?>index.php/patient/smoking_status/<?php echo $id;?>"><h4 style="color:white;">Smoking Status</h4></a></button>	</div>
+     <div class="col-2 "><button type="button" class="btn btn-info"><a href="<?php echo base_url();?>index.php/patient/alcohol_status/<?php echo $id;?>"><h5 style="color:white;">Alcohol Status</S></h5></a></button>	</div>
  
-      <div class="col-2"><button type="button" class="btn btn-primary"><a href="<?php echo base_url();?>index.php/patient/patient_exercise/<?php echo $id;?>"><h5 style="color:white;">Exercise Habit</h5></a></button>	</div>
+      <div class="col-2"><button type="button" class="btn btn-info"><a href="<?php echo base_url();?>index.php/patient/patient_exercise/<?php echo $id;?>"><h5 style="color:white;">Exercise Habit</h5></a></button>	</div>
     </div>
 	<?php	}?>		
 </div>

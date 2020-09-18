@@ -1,3 +1,4 @@
+<?php $uri=$this->uri->segment('3'); ?>
 <div class="main-content">
 	<div class="section">
 		<div class="section-body">
@@ -8,7 +9,8 @@
 							<h4>Patient Exercise Habit</h4>
 
 						</div>
-						<form method="post"	action="<?php echo base_url()?>index.php/patient/addpatinfo" enctype="multipart/Form-data" >
+						<form method="post"	action="<?php echo base_url()?>index.php/patient/patient_exercisestatus" enctype="multipart/Form-data" norequired >
+							<input type="hidden" name="id" value="<?php echo $uri; ?>">
 							<div class="card-body">
 								<div class="row" id="regForm">
 									<div class="col-md-12 col-lg-12 col-xs-12">
@@ -24,7 +26,7 @@
 													<div class="col-md-2">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																name="answer" value="yes" style="height:20px; width:20px;">
+																name="sitting" value="1" style="height:20px; width:20px;">
 																
 													
 														</div>
@@ -33,7 +35,7 @@
 													<div class="col-md-2">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																name="answer" value="no" style="height:20px; width:20px;">
+																name="sitting" value="0" style="height:20px; width:20px;">
 																
 														</div>
 													</div>
@@ -59,7 +61,7 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															1.YOGA<input type="checkbox" class="form-control"
-																name="answer" value="okk" style="height:20px; width:20px;">
+																name="yoga" value="yoga" style="height:20px; width:20px;">
 																
 													
 														</div>
@@ -68,49 +70,49 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															2.GYM<input type="checkbox" class="form-control"
-																name="answer" value="no" style="height:20px; width:20px;">
+																name="gym" value="gym" style="height:20px; width:20px;">
 																
 														</div>
 													</div>
 													<div class="col-md-4">
 														<div class="form-group">
 															3.SAKHA<input type="checkbox" class="form-control"
-																name="answer" value="no" style="height:20px; width:20px;">
+																name="sakha" value="sakha" style="height:20px; width:20px;">
 																
 														</div>
 													</div>
 													<div class="col-md-4">
 														<div class="form-group">
 															4.WALK<input type="checkbox" class="form-control"
-																name="answer" value="no" style="height:20px; width:20px;">
+																name="walk" value="walk" style="height:20px; width:20px;">
 																
 														</div>
 													</div>
 													<div class="col-md-4">
 														<div class="form-group">
 															5.RUNNING<input type="checkbox" class="form-control"
-																name="answer" value="no" style="height:20px; width:20px;">
+																name="running" value="running" style="height:20px; width:20px;">
 																
 														</div>
 													</div>
 													<div class="col-md-4">
 														<div class="form-group">
 															6.SWIMMING<input type="checkbox" class="form-control"
-																name="answer" value="no" style="height:20px; width:20px;">
+																name="swimming" value="swimming" style="height:20px; width:20px;">
 																
 														</div>
 													</div>
 													<div class="col-md-4">
 														<div class="form-group">
 															7.NEVER<input type="checkbox" class="form-control"
-																name="answer" value="no" style="height:20px; width:20px;">
+																name="never" value="never" style="height:20px; width:20px;">
 																
 														</div>
 													</div>
 													<div class="col-md-4">
 														<div class="form-group">
 															8.OTHER<input type="checkbox" class="form-control"
-																name="answer" value="no" style="height:20px; width:20px;">
+																name="other" value="other" style="height:20px; width:20px;">
 																
 														</div>
 													</div>
@@ -131,8 +133,9 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="fname"
-																id="name" required="required">
+																value="" name="frequency"
+																 
+																>
 														</div>
 								
                                          </div>
@@ -167,8 +170,8 @@
 													<div class="col-md-5">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="fname"
-																id="name" required="required">
+																value="" name="sedantary"
+															>
 														</div>
 								
                                          </div>
@@ -184,8 +187,8 @@
 													<div class="col-md-5">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="fname"
-																id="name" required="required">
+																value="" name="moderate"
+																 >
 														</div>
 								
                                          </div>
@@ -201,8 +204,7 @@
 													<div class="col-md-5">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="fname"
-																id="name" required="required">
+																value="" name="vigorous">
 														</div>
 								
                                          </div>
@@ -226,8 +228,8 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="fname"
-																id="name" required="required">
+																value="" name="duration"
+																>
 														</div>
 								
                                          </div>
@@ -260,36 +262,36 @@
 													</div>
 													<div class="col-md-2">
 														<div class="form-group">
-															Less than4 Months<input type="checkbox" class="form-control"
-																value="male" name="gender"
-																id="name" required="required" style="height:20px; width:20px;">
+															Less than4 Months<input type="radio" class="form-control"
+																value="1" name="routine"
+																 style="height:20px; width:20px;">
 																
 														</div>
 													</div>
 														<div class="col-md-2">
 														<div class="form-group">
 															<lebel>3-6 Months</lebel>
-															<input type="checkbox" class="form-control"
-																value="female" name="gender"
-																id="name" required="required" style="height:20px; width:20px;">
+															<input type="radio" class="form-control"
+																value="2" name="routine"
+																style="height:20px; width:20px;">
 																
 														</div>
 								
                                          </div>
                                          <div class="col-md-2">
 														<div class="form-group">
-															6-12 months<input type="checkbox" class="form-control"
-																value="transgender" name="gender"
-																id="name" required="required" style="height:20px; width:20px;">
+															6-12 months<input type="radio" class="form-control"
+																value="3" name="routine"
+															style="height:20px; width:20px;">
 																
 														</div>
 								
                                          </div>
                                           <div class="col-md-2">
 														<div class="form-group">
-															more than a year<input type="checkbox" class="form-control"
-																value="transgender" name="gender"
-																id="name" required="required" style="height:20px; width:20px;">
+															more than a year<input type="radio" class="form-control"
+																value="4" name="routine"
+																 style="height:20px; width:20px;">
 																
 														</div>
 								
@@ -316,8 +318,8 @@
 														<div class="form-group">
 
 															<textarea class="form-control"
-																value="male" name="gender"
-																id="name" required="required" ></textarea>
+																value="" name="activity"
+																 ></textarea>
 																
 														</div>
 													</div>
@@ -343,8 +345,8 @@
 														<div class="form-group">
 
 															<textarea class="form-control"
-																value="male" name="gender"
-																id="name" required="required" ></textarea>
+																value="male" name="fitness"
+																 ></textarea>
 																
 														</div>
 													</div>
@@ -370,8 +372,7 @@
 														<div class="form-group">
 
 															<textarea class="form-control"
-																value="male" name="gender"
-																id="name" required="required" ></textarea>
+																value="male" name="improve_fitness" ></textarea>
 																
 														</div>
 													</div>
@@ -397,8 +398,7 @@
 														<div class="form-group">
 
 															<input type="text" class="form-control"
-																value="" name="gender"
-																id="name" required="required" >
+																value="" name="sleep_hour">
 																
 														</div>
 													</div>
@@ -425,8 +425,7 @@
 														<div class="form-group">
 
 															<input type="text" class="form-control"
-																value="" name="gender"
-																id="name" required="required" >
+																value="" name="exposure" >
 																
 														</div>
 													</div>

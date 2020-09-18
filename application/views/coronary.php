@@ -6,7 +6,7 @@
 				<div class="col-xs-12 col-md-12 col-lg-12">
 					<div class="card">
 						<div class="card-header">
-							<h4>Patient Diet Form</h4>
+							<h4>Patient Coronary Artery Desease Form</h4>
 
 						</div>
 
