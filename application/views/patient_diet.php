@@ -9,10 +9,8 @@
 							<h4>Patient Diet Form</h4>
 
 						</div>
-
 						<form method="post"	action="<?php echo base_url()?>index.php/patient/patient_diet" enctype="multipart/Form-data" >
 								<input type="hidden" name="id" value="<?php echo $uri; ?>">
-
 							<div class="card-body">
 								<div class="row" id="regForm">
 
@@ -28,10 +26,8 @@
 													<div class="col-md-2">
 														<div class="form-group">
 															VEG<input type="radio" class="form-control"
-
 																value="veg" name="dietary_habit"
 																  style="height:20px; width:20px;">
-
 																
 														</div>
 													</div>
@@ -41,7 +37,6 @@
 															<input type="radio" class="form-control"
 																value="nonveg" name="dietary_habit"
 																  style="height:20px; width:20px;">
-
 																
 														</div>
 								
@@ -49,10 +44,8 @@
                                          <div class="col-md-3">
 														<div class="form-group">
 															OMNIVOROUS<input type="radio" class="form-control"
-
 																value="omnivorous" name="dietary_habit"
 																style="height:20px; width:20px;">
-
 																
 														</div>
 								
@@ -70,7 +63,6 @@
 														<div class="form-group">
 															BREAK-FAST<input type="checkbox" class="form-control"
 																value="breakfast" name="breakfast"
-
 																id="name" style="height:20px; width:20px;">
 																
 														</div>
@@ -80,9 +72,7 @@
 															<lebel>LUNCH</lebel>
 															<input type="checkbox" class="form-control"
 																value="lunch" name="lunch"
-
 																id="name"  style="height:20px; width:20px;">
-
 																
 														</div>
 								
@@ -90,10 +80,8 @@
                                          <div class="col-md-2">
 														<div class="form-group">
 															SNAKES<input type="checkbox" class="form-control"
-
 																value="snakes" name="snake"
 																id="name"  style="height:20px; width:20px;">
-
 																
 														</div>
 								
@@ -102,9 +90,7 @@
 														<div class="form-group">
 															DINNER<input type="checkbox" class="form-control"
 																value="dinner" name="dinner"
-
 																id="name"  style="height:20px; width:20px;">
-
 																
 														</div>
 								
@@ -140,7 +126,6 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-
 																value="0" name="meat"
 																id="meat1"  style="height:20px; width:20px;">
 																
@@ -426,7 +411,6 @@
 														</div>
 								
                                          </div>
-
                                            		</div>
                                            		<div class="col-xs-6 col-md-6 col-lg-6">
                                          		<div id="eat3">
@@ -449,7 +433,6 @@
 										2.WEEK
 										 <input style="height:20px; width:20px;" class="form-control" placeholder="When Left" type="radio" name="pduration" value="week3"/>
 										</div>
-
 
                                      </div>
                                       <div id="pquan2">
@@ -1261,7 +1244,6 @@
 											});
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 											<script>
 												//$("#eat").hide();
 												$("#pquan3").hide();

@@ -99,19 +99,32 @@ class customer extends CI_Controller{
 			if($dt){
 			  redirect("clogin/customer_profile");
 			}
-				
-	  
-
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
-	  
+			}
+			function Diagnosis_of_disease(){
+	    $data['pageTitle'] = 'Hypertension_Proforma';
+		$data['smallTitle'] = 'Hypertension_Proforma';
+		$data['mainPage'] = 'Hypertension_Proforma';
+		$data['subPage'] = 'Hypertension_Proforma';
+		$data['title'] = 'Hypertension_Proforma';
+		$data['headerCss'] = 'headerCss/dashboardCss';
+		$data['footerJs'] = 'footerJs/customerJs';
+		$data['mainContent'] = 'diagnosis_of_disease';
+		$this->load->view("includes/mainContent", $data);
+	    
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

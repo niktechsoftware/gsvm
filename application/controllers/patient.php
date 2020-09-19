@@ -276,14 +276,38 @@ public function coronary()
 //*******************************************************************************************************************************************	
 
 		function Oral_Cancer_Proforma(){
-	    $data['pageTitle'] = 'Oral_Cancer_Proforma';
-		$data['smallTitle'] = 'Oral_Cancer_Proforma';
-		$data['mainPage'] = 'Oral_Cancer_Proforma';
-		$data['subPage'] = 'Oral_Cancer_Proforma';
-		$data['title'] = 'Oral_Cancer_Proforma';
+	    $data['pageTitle'] = 'Oral Cancer ';
+		$data['smallTitle'] = 'Oral Cancer ';
+		$data['mainPage'] = 'Oral Cancer ';
+		$data['subPage'] = 'Oral Cancer ';
+		$data['title'] = 'Oral Cancer ';
 		$data['headerCss'] = 'headerCss/dashboardCss';
 		$data['footerJs'] = 'footerJs/customerJs';
-		$data['mainContent'] = 'newform';
+		$data['mainContent'] = 'oral_cancer_proforma';
+		$this->load->view("includes/mainContent", $data);
+	    
+	}
+	function Breast_Cancer_Proforma(){
+	    $data['pageTitle'] = 'Breast Cancer ';
+		$data['smallTitle'] = 'Breast Cancer ';
+		$data['mainPage'] = 'Breast Cancer ';
+		$data['subPage'] = 'Breast Cancer ';
+		$data['title'] = 'Breast Cancer ';
+		$data['headerCss'] = 'headerCss/dashboardCss';
+		$data['footerJs'] = 'footerJs/customerJs';
+		$data['mainContent'] = 'breast_cancer_proforma';
+		$this->load->view("includes/mainContent", $data);
+	    
+	}
+	function Hypertension_Proforma(){
+	    $data['pageTitle'] = 'Hypertension_Proforma';
+		$data['smallTitle'] = 'Hypertension_Proforma';
+		$data['mainPage'] = 'Hypertension_Proforma';
+		$data['subPage'] = 'Hypertension_Proforma';
+		$data['title'] = 'Hypertension_Proforma';
+		$data['headerCss'] = 'headerCss/dashboardCss';
+		$data['footerJs'] = 'footerJs/customerJs';
+		$data['mainContent'] = 'hypertension_proforma';
 		$this->load->view("includes/mainContent", $data);
 	    
 	}
