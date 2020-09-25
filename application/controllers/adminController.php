@@ -198,7 +198,7 @@ $data=array(
 
 				$this->load->model("Adminmodel");
 				$this->Adminmodel->addemployee($data);	 
-				redirect('adminController/addemployeeinfo'); 
+				redirect('adminController/addemployee'); 
 				//echo "submmitted";
 				//print_r($data);
 }

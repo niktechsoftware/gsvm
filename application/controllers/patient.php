@@ -154,7 +154,20 @@ public function coronary()
 		$this->load->view("includes/mainContent", $data);
 	    
 	}
+public function patient_list(){
+		$this->load->model('Patientmodel');
+		$data['row']=$this->Patientmodel->getpatientinfo();
+		$data['pageTitle'] = ' Employee list';
+		$data['smallTitle'] =' Employee list';
+		$data['mainPage'] =  'Employee list';
+		$data['subPage'] =' Employee list';
+		$data['title'] =' Employee list';
+		$data['headerCss'] = 'headerCss/customerlistcss';
+		$data['footerJs'] = 'footerJs/customerlistjs';
+		$data['mainContent'] = 'patient_list';
+		$this->load->view("includes/mainContent", $data);
 
+}
 
 
 	
@@ -175,7 +188,10 @@ public function coronary()
 	}
 
 		function patient_diet(){
+			echo $this->input->post('pid');
+			exit();
 				$data=array(
+
 				'reg_id'=>$this->input->post('id'),
 					'dietary_habit'=>$this->input->post("dietary_habit"),
 					'break_fast'=>$this->input->post("breakfast"),
@@ -196,8 +212,19 @@ public function coronary()
 					'number_of_timing_pork'=>$this->input->post('number_of_timing_pork'),
 					'chicken'=>$this->input->post('chicken'),
 					'chicken_routine'=>$this->input->post('chicken_routine'),
-
-
+					'number_of_chicken_timing'=>$this->input->post('number_of_chicken_timing'),
+					'fried_food'=>$this->input->post('fried_food'),
+					'fried_routine'=>$this->input->post('fried_routine'),
+					'number_of_fried_timing'=>$this->input->post('number_of_fried_timing'),
+					'milk'=>$this->input->post('milk'),
+					'number_of_glassesof_milk'=>$this->input->post('number_of_glassesof_milk'),
+					'number_of_timimg'=>$this->input->post('number_of_timimg'),
+					'tea'=>$this->input->post('tea'),
+					'number_of_glassesof_tea'=>$this->input->post('number_of_glassesof_tea'),
+					'coffee'=>$this->input->post('coffee'),
+					'number_of_cupof_coffee'=>$this->input->post('number_of_cupof_coffee'),
+					'water'=>$this->input->post('water'),
+					'number_of_glassesof_water'=>$this->input->post('number_of_glassesof_water'),
 					);
 				$this->load->model('Patientmodel');
 				$this->Patientmodel->insertdiet($data);

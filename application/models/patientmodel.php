@@ -37,5 +37,9 @@
 		$res=$this->db->insert("reg_exercise_habit",$data);
 		return $res;	
 	}
+		function getpatientinfo(){
+    		$pat_record = $this->db->query("select * from reg_patient_info");
+    		return $pat_record;
+    	}
 
     }
