@@ -8,7 +8,7 @@
 							<h4>Breast Cancer Poforma</h4>
 
 						</div>
-						<form method="post"	action="<?php echo base_url()?>index.php/adminController/addemployeeinfo" enctype="multipart/Form-data" >
+						<form method="post"	action="<?php echo base_url()?>index.php/customer/breast_cancer_proforma" enctype="multipart/Form-data" >
 							<div class="card-body">
 								<div class="row" id="regForm">
 									<div class="col-md-12 col-lg-12 col-xs-12">
@@ -45,8 +45,8 @@
 													</div>
 													<div class="col-md-4">
 														<div class="form-group">
-															<input type="date" class="form-control"
-																value="" name="dob">
+															<input type="text" class="form-control"
+																value="" name="age">
 														</div>
 								
                                          </div>
@@ -69,7 +69,7 @@
 											 <div class="col-md-2">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes" name="breastfeed"
+																value="1" name="breastfeed"
 																 style="height:20px; width:20px;">
 																
 														</div>
@@ -78,7 +78,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="no" name="breastfeed"
+																value="0" name="breastfeed"
 															 style="height:20px; width:20px;">
 																
 														</div>
@@ -102,7 +102,7 @@
 											 <div class="col-md-3">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																 name="breastbaby">
+																 name="duration">
 																
 														</div>
 								
@@ -128,7 +128,7 @@
 													<div class="col-md-2">
 														<div class="form-group">
 															1.Miscarriage<input type="checkbox" class="form-control"
-																value="miscarriage" name="miscarriage"
+																value="1" name="miscarriage"
 																style="height:20px; width:20px;">
 																
 														</div>
@@ -137,7 +137,7 @@
 														<div class="form-group">
 															<lebel>2.Abortion</lebel>
 															<input type="checkbox" class="form-control"
-																value="abortion" name="abortion"
+																value="1" name="abortion"
 																style="height:20px; width:20px;">
 																
 														</div>
@@ -146,7 +146,7 @@
                                          <div class="col-md-2">
 														<div class="form-group">
 															3.Ectopic Pregnancy<input type="checkbox" class="form-control"
-																value="ectopic" name="ectopic"
+																value="1" name="ectopic"
 															  style="height:20px; width:20px;">
 																
 														</div>
@@ -169,7 +169,7 @@
 											 <div class="col-md-2">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes" name="visited"
+																value="1" name="visited"
 																 style="height:20px; width:20px;">
 																
 														</div>
@@ -178,7 +178,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="no" name="visited"
+																value="0" name="visited"
 															 style="height:20px; width:20px;">
 																
 														</div>
@@ -201,7 +201,7 @@
 											 <div class="col-md-2">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes" name="disease"
+																value="1" name="disease"
 																 style="height:20px; width:20px;">
 																
 														</div>
@@ -210,7 +210,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="no" name="disease"
+																value="0" name="disease"
 															 style="height:20px; width:20px;">
 																
 														</div>
@@ -234,7 +234,7 @@
 											 <div class="col-md-4">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																 name="breastbaby" placeholder="Any Steroid Therapy">
+																 name="drugs" placeholder="Any Steroid Therapy">
 																
 														</div>
 								
@@ -247,38 +247,7 @@
 											</div>
 
 	<!--**********************************************************-->	
-		<div class="col-xs-12 col-md-12 col-lg-12">
-
-												<div class="form-group row">
-													<div class="col-md-6">
-														<label>HAS ANY MEMBER OF YOUR FAMILY BEEN DIAGOSED OF BREAST CANCER?<span title="Required" style="color: red;">*</span></label>
-													</div>
-												</br>
-												
-											 <div class="col-md-2">
-														<div class="form-group">
-															YES<input type="radio" class="form-control"
-																value="yes" name="familycancer"
-																 style="height:20px; width:20px;">
-																
-														</div>
-								
-                                         </div>
-                                         <div class="col-md-1">
-														<div class="form-group">
-															NO<input type="radio" class="form-control"
-																value="no" name="familycancer"
-															 style="height:20px; width:20px;">
-																
-														</div>
-								
-                                         </div>
-                                         
-												</div>
-
-
-											</div>
-				<!--****************************************************************************************************************-->	
+	
 				<div class="col-xs-12 col-md-12 col-lg-12">
 
 												<div class="form-group row">
@@ -290,7 +259,7 @@
 											 <div class="col-md-2">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes" name="familycancer"
+																value="1" name="familycancer"
 																 style="height:20px; width:20px;">
 																
 														</div>
@@ -299,7 +268,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="no" name="familycancer"
+																value="0" name="familycancer"
 															 style="height:20px; width:20px;">
 																
 														</div>
@@ -322,7 +291,7 @@
 											 <div class="col-md-2">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes" name="familycancer"
+																value="yes" name="ovariancancer"
 																 style="height:20px; width:20px;">
 																
 														</div>
@@ -331,7 +300,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="no" name="familycancer"
+																value="no" name="ovariancancer"
 															 style="height:20px; width:20px;">
 																
 														</div>
@@ -395,7 +364,7 @@
 													<div class="col-md-2">
 														<div class="form-group">
 															1.SISTER<input type="checkbox" class="form-control"
-																value="mother" name="mother"
+																value="sister" name="sister"
 																style="height:20px; width:20px;">
 																
 														</div>
@@ -404,7 +373,7 @@
 														<div class="form-group">
 															<lebel>2.COUSIN</lebel>
 															<input type="checkbox" class="form-control"
-																value="father" name="father"
+																value="cousin" name="cousin"
 																style="height:20px; width:20px;">
 																
 														</div>
@@ -413,7 +382,7 @@
                                          <div class="col-md-2">
 														<div class="form-group">
 															3.OTHERS(specify)<input type="checkbox" class="form-control"
-																value="aunt" name="aunt"
+																value="other" name="other"
 															  style="height:20px; width:20px;">
 																
 														</div>
@@ -437,7 +406,7 @@
 													<div class="col-md-2">
 														<div class="form-group">
 															1.SELF<input type="radio" class="form-control"
-																value="SELF" name="examination"
+																value="self" name="examination"
 																style="height:20px; width:20px;">
 																
 														</div>
@@ -469,8 +438,7 @@
 													<div class="col-md-8">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="address"
-																id="name" required="required">
+																value="" name="ageofmenarche">
 														</div>
 								
                                          </div>
@@ -487,8 +455,7 @@
 													<div class="col-md-8">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="address"
-																id="name" required="required">
+																value="" name="ageofmenopausal">
 														</div>
 								
                                          </div>
@@ -515,7 +482,7 @@
 													<div class="col-md-2">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes1" name="primary"
+																value="1" name="primary"
 																style="height:20px; width:20px;">
 																
 														</div>
@@ -524,7 +491,7 @@
 														<div class="form-group">
 															<lebel>NO</lebel>
 															<input type="radio" class="form-control"
-																value="no1" name="primary"
+																value="0" name="primary"
 																style="height:20px; width:20px;">
 																
 														</div>
@@ -535,28 +502,9 @@
 
 
 											</div>
-											<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-											<script>
-												//$("#eat").hide();
-											$("#primary").hide();
-											$(document).ready(function(){
-											$("input[type='radio']").change(function(){
-											if($(this).val()=="yes1")
-											{
-											$("#primary").show();
 											
-											}
-											else
-											{
-									
-											//$("#eat").hide();
-											$("#primary").hide();
-											}
-											});
-											});
-</script>
 		<!--******************************************************************************************************************************-->	
-		
+	
 
 <div class="col-xs-12 col-md-12 col-lg-12">
 
@@ -688,7 +636,7 @@
 												<div class="col-md-9">
 														<div class="form-group">
 															<textarea class="form-control"
-																value="" name="petscan"
+																value="" name="cabreast"
 															></textarea>
 														</div>
 								
@@ -711,7 +659,7 @@
 												<div class="col-md-9">
 														<div class="form-group">
 															<textarea class="form-control"
-																value="" name="petscan"
+																value="" name="erreport"
 															></textarea>
 														</div>
 								
@@ -925,6 +873,25 @@
 
 		<!--******************************************************************************************************************************-->	
 
+					<div class="col-md-12 col-lg-12 col-xs-12">
+										<div class="row">
+										
+											<div class="col-xs-12 col-md-12 col-lg-12">
+												<div class="form-group row">
+													<div class="col-md-3"></div>
+													<div class="col-md-9">
+														<div class="form-group">
+															<button type="submit" class="btn btn-primary"
+																id="regisbtn" style="margin-left:70%;">
+																<i class="far fa-edit">&nbsp;Submit</i>
+															</button>
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</div>						
 
 
 

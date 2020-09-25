@@ -18,7 +18,7 @@
               <ul class="dropdown-menu">
               <?php $sp = $this->db->get("study_plan");
               foreach($sp->result() as $r):?>
-                <li><a href="<?php echo base_url();?>index.php/customer/Diagnosis_of_disease/<?php echo $r->id;?>"><?php echo $r->plan_name;?> </a></li>
+                <li><a href="<?php echo base_url();?>index.php/customer/<?php echo $r->page_name;?>/<?php echo $r->id;?>"><?php echo $r->plan_name;?> </a></li>
               <?php endforeach;
               ?>
               
@@ -28,7 +28,7 @@
               <a href="#" class="nav-link has-dropdown"><i data-feather="user-check"></i><span>Patient</span></a>
               <ul class="dropdown-menu">
              
-                <li><a href="<?php echo base_url();?>index.php/patient/addpatient">Add  Patient Information </a></li>
+                <li><a href="<?php echo base_url();?>index.php/customer/addpatient">Add  Patient Information </a></li>
                 
               <li><a href="<?php echo base_url();?>index.php/customer/customer_list/<?php echo $r->id;;?>">Search Edit & Delete </a></li>
 
@@ -41,7 +41,7 @@
               <ul class="dropdown-menu">
                  <?php $sp = $this->db->get("study_plan");
               foreach($sp->result() as $r):?>
-                <li><a href="<?php echo base_url();?>index.php/customer/customer_list/<?php echo $r->id;;?>"><?php echo $r->plan_name;?> </a></li>
+                <li><a href="<?php echo base_url();?>index.php/customer/customer_list/<?php echo $r->id;?>"><?php echo $r->plan_name;?> </a></li>
               <?php endforeach;
               ?>
               

@@ -192,6 +192,28 @@
 		     	$this->db->where("c_id",$cid);
 		 	return $this->db->get("autopool_details");
 		 }
+		  function oral_cancer_proforma($data){
+		     $oral=	$this->db->insert("oral_cancer_proforma",$data);
+		 	return $oral;
+		 }
+		   function breast_cancer_proforma($data){
+		     $breast=	$this->db->insert("breast_cancer_proforma",$data);
+		 	return $breast;
+		 }
+		  function diabetes_proforma($data){
+		     $diabetes=	$this->db->insert("diabetes_proforma",$data);
+		 	return $diabetes;
+		 }
+		   function hypertension_proforma($data){
+		     $hypertension=	$this->db->insert("hypertension_proforma",$data);
+		 	return $hypertension;
+		 	
+		 }
+		    function coronary_proforma($data){
+		     $coronary=	$this->db->insert("coronary_proforma",$data);
+		 	return $coronary;
+		 	
+		 }
 		 
 		
 		//aarju mathods

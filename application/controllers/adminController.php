@@ -84,7 +84,7 @@ Class AdminController extends CI_Controller{
 				'nationality'=>$this->input->post("nat")
 
 );
-	 $this->load->library('upload');
+		 $this->load->library('upload');
 
 			$photo_name = time().trim($_FILES['logo']['name']);
 			$photo_name=str_replace(' ', '_', $photo_name);

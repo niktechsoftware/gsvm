@@ -72,7 +72,7 @@
 													<div class="col-md-2">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																name="alcohol" value="1" style="height:20px; width:20px;">
+																name="alcohol" value="yes_alco" style="height:20px; width:20px;">
 																
 													
 														</div>
@@ -81,7 +81,7 @@
 													<div class="col-md-2">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																name="alcohol" value="0" style="height:20px; width:20px;">
+																name="alcohol" value="no_alco" style="height:20px; width:20px;">
 																
 														</div>
 													</div>
@@ -234,7 +234,7 @@
 												$("#alc").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="1")
+											if($(this).val()=="yes_alco")
 											{
 											$("#alc").show();
 											
@@ -252,7 +252,7 @@
 												$("#alc").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="0")
+											if($(this).val()=="no_alco")
 											{
 											$("#alc").hide();
 											
@@ -260,7 +260,7 @@
 											else
 											{
 											
-											$("#alc").show();
+											//$("#alc").show();
 											}
 											});
 											});
