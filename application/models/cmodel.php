@@ -1,4 +1,3 @@
-
 <?php 
     class Cmodel extends CI_Model{
 			
@@ -49,14 +48,11 @@
         	  	$gty = $this->db->get("silver_tree");
         	  	$getpg = $gty->row()->c_id;
         	  }
-        	  //
-        	
         	 
-        	  
         	  $this->db->where("mpin",$mpin);
         	  $this->db->update("mpin",$data);
         	  $mobile = $checksv->row()->mobilenumber;
-        	  $cname =$checksv->row()->customer_name;
+        	  $cname =$checksv->row()->employee_iname;
         	  $sms = "Dear Customer ".$cname."Your ID is Successfully Activated.Welcome to Umravati Marketing Pvt.Ltd. http://www.umpl.in.net";
         	  sms($mobile,$sms);
         	  return true;
@@ -67,7 +63,7 @@
         
         
         function insertCustomer($data){
-            $query =$this->db->insert('customer_info',$data);
+            $query =$this->db->insert('employee_info',$data);
             return $query; 
         }
         
@@ -76,7 +72,7 @@
         	$c_ID=$this->db->get($table);
         	if($c_ID->num_rows()>0){
         		$data = array(
-        		'msg' =>  '<div class ="alert alert-success">'.$c_ID->row()->customer_name.'</div>',
+        		'msg' =>  '<div class ="alert alert-success">'.$c_ID->row()->employee_name.'</div>',
         		'checkv'=>true		
         	);
         	}else{
@@ -97,7 +93,7 @@
         function getrowid($username){
         	$this->db->where("username",$username);
         		$this->db->where("status",1);
-        	$getrow = $this->db->get("customer_info")->row()->id;
+        	$getrow = $this->db->get("employee_info")->row()->id;
         	return $getrow;
         }
 			function abc($id)
@@ -139,7 +135,7 @@
 		//aarju mathods
 		function getcustomerdata($matchcon,$status,$tblname){
 			if($status==2){
-				$req = $this->db->query("select customer_info.id,customer_info.parent_id,customer_info.customer_name,customer_info.fname,customer_info.status,customer_info.mobilenumber,customer_info.email,customer_info.current_address,customer_info.city,pay_details.reffno,pay_details.transaction,pay_details.uploadfile from customer_info,pay_details where customer_info.id = pay_details.c_id and customer_info.status=0");
+				$req = $this->db->query("select employee_info.id,employee_info.parent_id,employee_info.employee_iname,employee_info.fname,employee_info.status,employee_info.mobilenumber,employee_info.email,employee_info.current_address,employee_info.city,pay_details.reffno,pay_details.transaction,pay_details.uploadfile from employee_info,pay_details where employee_info.id = pay_details.c_id and employee_info.status=0");
 
 				return $req;
 			}else{

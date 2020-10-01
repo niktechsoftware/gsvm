@@ -1,7 +1,4 @@
-
 <?php class patient extends CI_Controller{
-
-
 public function coronary()
 {
 	 $data['pageTitle'] = 'Patient Form';
@@ -49,10 +46,7 @@ public function coronary()
 			$config['allowed_types'] = 'gif|jpg|jpeg|png';
 			$config['max_size'] = '500';
 			$config['file_name'] = $photo_name;
-	  if (!empty($_FILES['image']['name'])) {
-			$this->upload->initialize($config);
-			if($this->upload->do_upload('image')){
-			$data=array(
+				$data=array(
 				'username'=>$username1,
 				'first_name'=>$this->input->post("fname"),
 				'middle_name'=>$this->input->post("mname"),
@@ -76,22 +70,21 @@ public function coronary()
 				'aadhar_card'=>$this->input->post("adhaar"),
 				'pan_card'=>$this->input->post("pancard"),
 				'password'=>$this->input->post("password"),
-				'martial_status'=>$this->input->post("martial"),
-				 'image'=>$photo_name
-
-
-);
+				'martial_status'=>$this->input->post("martial")
+	        );
+	  if (!empty($_FILES['image']['name'])) {
+			$this->upload->initialize($config);
+			if($this->upload->do_upload('image')){
+			$data['image'] =    $photo_name;
 			}
 					else{
 					 echo "Somthing going wrong. Please Contact Site administrator";
 					    }}else{
 						echo "file not Select";
 						  }
-		$this->Patientmodel->addpatient($data);	 
-				redirect('patient/pat_registration_form'); 
-				//echo "submmitted";
-				//print_r($data);
-
+		    $this->Patientmodel->addpatient($data);	 
+		redirect('patient/pat_registration_form/suceess'); 
+			
 	}
 	public function diet()
 	{   
@@ -312,11 +305,5 @@ public function patient_list(){
 
 
 		}
-
-//*************************************************************************************************************************
-//*******************************************************************************************************************************************	
-
-		
-   
+ 
 }
-

@@ -1,7 +1,4 @@
-
-<?php
-class customer extends CI_Controller{
-	
+<?php class customer extends CI_Controller{
 	function __construct()
 	{
 		parent::__construct();
@@ -38,16 +35,16 @@ class customer extends CI_Controller{
 			}
 		}
 		$matchcon="status";
-		$tblname="customer_info";
+		$tblname="employee_info";
 	
 		$dt = $this->cmodel->getcustomerdata($matchcon,$status,$tblname);
 		$data['row']=$dt;
 		$data['uriv'] = $uriv;
-		$data['pageTitle'] = $page.' Customer list';
-		$data['smallTitle'] = $page.' Customer list';
-		$data['mainPage'] = $page.' Customer list';
-		$data['subPage'] = $page.' Customer list';
-		$data['title'] = $page.' Customer list';
+		$data['pageTitle'] = $page.' Employee list';
+		$data['smallTitle'] = $page.' Employee list';
+		$data['mainPage'] = $page.' Employee list';
+		$data['subPage'] = $page.' Employee list';
+		$data['title'] = $page.' Employee list';
 		$data['headerCss'] = 'headerCss/customerlistcss';
 		$data['footerJs'] = 'footerJs/customerlistjs';
 		$data['mainContent'] = 'active_list';
@@ -58,8 +55,7 @@ class customer extends CI_Controller{
    function	 edit_profile(){
 	  $cid= $this->input->post("id");
 	  	$photo_name = time().trim($_FILES['photo']['name']);
-	  	
-	  $data["customer_name"]= $this->input->post("cname");
+	  $data["employee_iname"]= $this->input->post("cname");
 	  $data["fname"]= $this->input->post("fname");
 	  $data["city"]= $this->input->post("city");
 	  $data["state"]= $this->input->post("state");
@@ -76,14 +72,14 @@ class customer extends CI_Controller{
 	  $data["password"]= $this->input->post("password");
 	  
 	 // $data["photo"]= $this->input->post("photo");
-	  
-	  	$this->load->library('upload');
+	  	if (!empty($_FILES['photo']['name'])){
+	  	    $this->load->library('upload');
 			$image_path = realpath(APPPATH . '../assets/img/users/');
 			$config['upload_path'] = $image_path;
 			$config['allowed_types'] = 'gif|jpg|jpeg|png';
-			$config['max_size'] = '500';
+			$config['max_size'] = '50000';
 			$config['file_name'] = $photo_name;
-				if (!empty($_FILES['photo']['name'])) {
+			
 			$this->upload->initialize($config);
 			 $f1= $this->upload->do_upload('photo');
 	     	$data["image"]=$photo_name;
@@ -95,11 +91,11 @@ class customer extends CI_Controller{
 				      $data["image"]= $cust_dt->row()->image;
 				   }
 				}
-			     	$this->db->where("id",$cid);
-			$dt=	$this->db->update("customer_info",$data);
-			if($dt){
-			  redirect("clogin/customer_profile");
-			}
+			     	        $this->db->where("id",$cid);
+			        $dt=	$this->db->update("employee_info",$data);
+        			if($dt){
+        			  redirect("clogin/customer_profile");
+        			}
 			}
 
 			function Diagnosis_of_disease(){
@@ -795,6 +791,4 @@ function matchempid(){
 			redirect(base_url()."index.php/customer/observation/false/");
 		}
 	}
-
-
 }

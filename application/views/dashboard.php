@@ -6,9 +6,9 @@
               <div class="card l-bg-green-dark">
                 <div class="card-statistic-3">
                   <div class="card-icon card-icon-large"><i class="fa fa-award"></i></div>
-                  <a href="<?php echo base_url();?>index.php/customer/customer_list/1">
+                  <a href="#">
                   <div class="card-content text-white">
-                    <h4 class="card-title">Active List</h4>
+                    <h4 class="card-title">Employee List</h4>
                     <span>
                   
                     </span>
@@ -26,9 +26,9 @@
               <div class="card l-bg-cyan-dark">
                 <div class="card-statistic-3">
                   <div class="card-icon card-icon-large"><i class="fa fa-briefcase"></i></div>
-                  <a href="<?php echo base_url();?>index.php/customer/customer_list/2">
+                  <a href="#">
                   <div class="card-content text-white">
-                    <h4 class="card-title"> InActive List</h4>
+                    <h4 class="card-title"> Assign Roll</h4>
                     <span> 
                     
                     
@@ -47,9 +47,9 @@
               <div class="card l-bg-purple-dark">
                 <div class="card-statistic-3">
                   <div class="card-icon card-icon-large"><i class="fa fa-globe"></i></div>
-                  <a href="<?php echo base_url();?>index.php/customer/customer_list/3">
+                  <a href="">
                   <div class="card-content text-white">
-                    <h4 class="card-title"> Paid InActive List</h4>
+                    <h4 class="card-title"> Todays Form </h4>
                     <span>
                     
                     </span>
@@ -67,17 +67,10 @@
               <div class="card l-bg-orange-dark">
                 <div class="card-statistic-3">
                   <div class="card-icon card-icon-large"><i class="fa fa-money-bill-alt"></i></div>
-                  <a href="<?php echo base_url();?>index.php/daybookController/daybook/1">
+                  <a href="#">
                   <div class="card-content text-white">
-                    <h4 class="card-title">Outer DayBook</h4>
-                    <div class="row">
-                    <div class="col-md-6">
-                    <span>Credit</span>
-                    </div>
-                    <div class="col-md-6">
-                    <span>Debit</span>
-                    </div>
-                    </div>
+                    <h4 class="card-title">Pending Corrections</h4>
+                  
                     <div class="row">
                     <div class="col-md-6">
                     <span>
@@ -100,84 +93,7 @@
               </div>
             </div>
           </div>
-          <div class="row">
-          <div class="col-xl-3 col-lg-6">
-              <div class="card l-bg-green-dark">
-                <div class="card-statistic-3">
-                  <div class="card-icon card-icon-large"><i class="fa fa-money-bill-alt"></i></div>
-                  <a href="<?php echo base_url();?>index.php/daybookController/daybook/2">
-                  <div class="card-content text-white">
-                    <h4 class="card-title">Inner DayBook</h4>
-                    <div class="row">
-                    <div class="col-md-6">
-                    <span>Credit</span>
-                    </div>
-                    <div class="col-md-6">
-                    <span>Debit</span>
-                    </div>
-                    </div>
-                    <div class="row">
-                    <div class="col-md-6">
-                    <span>
-                  0.00                    
-                  </span>
-                    </div>
-                    <div class="col-md-6">
-                    <span>
-                    
-                    </span>
-                    </div>
-                    </div>
-                    <div class="progress mt-1 mb-1" data-height="8">
-                      <div class="progress-bar l-bg-green" role="progressbar" data-width="25%" aria-valuenow="25"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    
-                  </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-            
-           <!-- // roi and pool details-->
-             <div class="col-xl-3 col-lg-6">
-              <div class="card l-bg-green-dark">
-                <div class="card-statistic-3">
-                  <div class="card-icon card-icon-large"><i class="fa fa-money-bill-alt"></i></div>
-                  <a href="<?php echo base_url();?>index.php/daybookController/getroiandpool">
-                  <div class="card-content text-white">
-                    <h4 class="card-title">[POOL Details] ROI ID's</h4>
-                    <div class="row">
-                    <div class="col-md-6">
-                    <span>Auto Pool</span>
-                    </div>
-                    <div class="col-md-6">
-                    <span>New Comming Roi</span>
-                    </div>
-                    </div>
-                    <div class="row">
-                    <div class="col-md-6">
-                    <span>
-                  
-                    </span>
-                    </div>
-                    <div class="col-md-6">
-                    <span>
-                    </span>
-                    </div>
-                    </div>
-                    <div class="progress mt-1 mb-1" data-height="8">
-                      <div class="progress-bar l-bg-green" role="progressbar" data-width="25%" aria-valuenow="25"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    
-                  </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-           <!-- //roi and pool details-->
-          </div>
+      
           <div class="row">
             <div class="col-12 col-sm-12 col-lg-6">
               <div class="card">
