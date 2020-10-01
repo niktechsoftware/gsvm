@@ -1,3 +1,4 @@
+
 <div class="main-content">
 	<div class="section">
 		<div class="section-body">
@@ -231,13 +232,13 @@
 						<div class="col-md-12 col-lg-12 col-xs-12">
 										<div class="row">
 										<div class="col-md-12">
-												
+														<label>COUNTRY</label>
 													</div>
 											<div class="col-xs-6 col-md-6 col-lg-6">
 
 												<div class="form-group row">
 													<div class="col-md-3">
-														<label>COUNTRY</label>
+														<label><span title="Required" style="color: red;">*</span></label>
 													</div>
 													<div class="col-md-9">
 														<div class="form-group">
@@ -436,3 +437,4 @@
 		</div>
 	</div>
 </div>
+

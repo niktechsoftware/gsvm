@@ -1,3 +1,4 @@
+
 <style>
 table {
   font-family: arial, sans-serif;
@@ -14,4 +15,5 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
 </style>

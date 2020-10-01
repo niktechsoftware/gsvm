@@ -43,7 +43,7 @@
                             <td><?php echo $data->address;?></td>
                     		  <td><?php echo $data->username;?></td>
                     		  
-                            <td><div class="badge badge-warning badge-shadow "><a href="#">Edit</a></div><div class="badge badge-danger badge-shadow "><a href="#">Delete</a></div></td>
+                            <td><div class="badge badge-warning badge-shadow "><a>Edit</a></div><div class="badge badge-danger badge-shadow "><a>Delete</a></div></td>
               
                           </tr>
                           

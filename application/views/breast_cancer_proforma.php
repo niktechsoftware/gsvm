@@ -1,4 +1,4 @@
-<?php //$uri=$this->uri->segment('3'); ?>
+
 <div class="main-content">
 	<div class="section">
 		<div class="section-body">
@@ -10,7 +10,6 @@
 
 						</div>
 						<form method="post"	action="<?php echo base_url()?>index.php/customer/breast_cancer_proforma" enctype="multipart/Form-data" >
-						    		<input type="hidden" name="pid" value="<?php //echo $uri; ?>">
 							<div class="card-body">
 								<div class="row" id="regForm">
 									<div class="col-md-12 col-lg-12 col-xs-12">
@@ -898,22 +897,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 												
 								</div>
 							</div>
@@ -924,4 +907,5 @@
 			</div>
 		</div>
 	</div>
+
 	

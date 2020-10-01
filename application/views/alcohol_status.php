@@ -1,3 +1,4 @@
+
 <?php $uri=$this->uri->segment('3'); ?>
 <div class="main-content">
 	<div class="section">
@@ -273,6 +274,4 @@
 </div>
 </div>
 </div>
-
-									
 

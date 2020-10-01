@@ -1,3 +1,4 @@
+
 <ul class="sidebar-menu">
             <li class="menu-header">Main</li>
             <li class="dropdown active">
@@ -29,9 +30,10 @@
               <ul class="dropdown-menu">
              
                 <li><a href="<?php echo base_url();?>index.php/customer/addpatient">Add  Patient Information </a></li>
-                 <li><a href="<?php echo base_url();?>index.php/patient/patient_list">Search Edit & Delete </a></li>
+                
+              <li><a href="<?php echo base_url();?>index.php/patient/patient_list">Search Edit & Delete </a></li>
 
-                <li><a href="<?php echo base_url();?>index.php/customer/coronary">Coronary Artery Desease </a></li>
+               <li><a href="<?php echo base_url();?>index.php/patient/coronary">Coronary Artery Desease </a></li>
               </ul>
             </li>
             
@@ -67,5 +69,5 @@
                 <li><a class="nav-link" href="card.html">Marquee Content</a></li>
               </ul>
             </li>
-           
+
           </ul>

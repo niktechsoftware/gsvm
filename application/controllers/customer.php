@@ -1,3 +1,4 @@
+
 <?php
 class customer extends CI_Controller{
 	
@@ -57,8 +58,8 @@ class customer extends CI_Controller{
    function	 edit_profile(){
 	  $cid= $this->input->post("id");
 	  	$photo_name = time().trim($_FILES['photo']['name']);
-	  	$photo_name=str_replace(' ', '_', $photo_name);
-	  $data["employee_iname"]= $this->input->post("cname");
+	  	
+	  $data["customer_name"]= $this->input->post("cname");
 	  $data["fname"]= $this->input->post("fname");
 	  $data["city"]= $this->input->post("city");
 	  $data["state"]= $this->input->post("state");
@@ -80,24 +81,27 @@ class customer extends CI_Controller{
 			$image_path = realpath(APPPATH . '../assets/img/users/');
 			$config['upload_path'] = $image_path;
 			$config['allowed_types'] = 'gif|jpg|jpeg|png';
-			$config['max_size'] = '2000';
+			$config['max_size'] = '500';
 			$config['file_name'] = $photo_name;
 				if (!empty($_FILES['photo']['name'])) {
 			$this->upload->initialize($config);
-			 if($this->upload->do_upload('photo')){
+			 $f1= $this->upload->do_upload('photo');
 	     	$data["image"]=$photo_name;
 			
-				
+				}else{
+				    $this->db->where("id",$cid);
+				   $cust_dt= $this->db->get("customer_info");
+				   if($cust_dt->num_rows()>0){
+				      $data["image"]= $cust_dt->row()->image;
+				   }
+				}
 			     	$this->db->where("id",$cid);
-		        $this->db->update("employee_info",$data);
-		
-			    redirect("clogin/customer_profile/success");
-			}else{
-			    echo $this->upload->display_errors();
-			    redirect("clogin/customer_profile/fail"); 
+			$dt=	$this->db->update("customer_info",$data);
+			if($dt){
+			  redirect("clogin/customer_profile");
 			}
 			}
-}
+
 			function Diagnosis_of_disease(){
 				
 	    $data['pageTitle'] = 'Diagnosis_of_disease';
@@ -199,7 +203,7 @@ function Oral_Cancer(){
 		$this->load->view("includes/mainContent", $data);
 	    
 	}
-	function bpi(){
+	function Biochemicl_Parameters(){
 	    $data['pageTitle'] = 'Biochemicl_Parameters';
 		$data['smallTitle'] = 'Biochemicl_Parameters';
 		$data['mainPage'] = 'Biochemicl_Parameters';
@@ -214,12 +218,6 @@ function Oral_Cancer(){
 
 
 function observation(){
-    
-    
-    
-    
-    
-    
 	    $data['pageTitle'] = 'Observation';
 		$data['smallTitle'] = 'Observation';
 		$data['mainPage'] = 'Observation';
@@ -227,7 +225,7 @@ function observation(){
 		$data['title'] = 'Observation';
 		$data['headerCss'] = 'headerCss/dashboardCss';
 		$data['footerJs'] = 'footerJs/customerJs';
-		$data['mainContent'] = 'observation';
+		$data['mainContent'] = 'Observation';
 		$this->load->view("includes/mainContent", $data);
 	    
 	}
@@ -303,7 +301,6 @@ function observation(){
 
 function breast_cancer_proforma(){
 	$data=array(
-	   // 'reg_id'=>$this->input->post('pid'),
 		"date"=>date("Y-m-d"),
 	  "many_children"=> $this->input->post("children"),
 	  "your_ageat_first_child_birth"=> $this->input->post("age"),
@@ -779,7 +776,7 @@ function coronary_proforma(){
 );
 			$this->load->model("Cmodel");
 			$this->Cmodel->coronary_proforma($data);	 
-			redirect('customer/coronary'); 
+			redirect('customer/coronary_proforma'); 
 			//echo "submmitted";
 			
 }
@@ -787,7 +784,7 @@ function coronary_proforma(){
 function matchempid(){
 		$username=$this->input->post("username");
 		$this->db->where("id",$username);
-		$res=$this->db->get("reg_patient_info")->row();
+		$res=$this->db->get("employee_info")->row();
 		if($res){
 	
 			redirect(base_url()."index.php/customer/observation/sucess/".$username);
@@ -798,17 +795,6 @@ function matchempid(){
 			redirect(base_url()."index.php/customer/observation/false/");
 		}
 	}
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

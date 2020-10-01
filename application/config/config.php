@@ -1,3 +1,4 @@
+
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /*
@@ -23,7 +24,7 @@
 |
 */
 
-$config['base_url'] = 'https://niktechsoftware.com/gsvm/';
+$config['base_url'] = 'http://localhost/gsvm/';
 
 
 
@@ -370,4 +371,4 @@ $config['proxy_ips'] = '';
 
 
 /* End of file config.php */
-/* Location: ./application/config/config.php */
+

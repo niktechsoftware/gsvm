@@ -1,3 +1,4 @@
+
 <?php
 Class AdminController extends CI_Controller{
 	function __construct()
@@ -318,5 +319,6 @@ public function getPermissionStatus(){
 		
 	}
 }
+
 
 ?>

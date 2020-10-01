@@ -1,3 +1,4 @@
+
 <?php 
     class Cmodel extends CI_Model{
 			
@@ -218,4 +219,5 @@
 		
 		//aarju mathods
     }
+
 ?>

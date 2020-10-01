@@ -1,3 +1,4 @@
+
 <ul class="sidebar-menu">
             <li class="menu-header">Main</li>
             <li class="dropdown active">
@@ -39,7 +40,5 @@
 	                	<li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/1">Filled Sarvy</a></li>
 	            </ul>
             </li>
-           
-         
-             
+ 
           </ul>

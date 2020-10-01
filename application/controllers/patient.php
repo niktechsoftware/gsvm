@@ -1,3 +1,4 @@
+
 <?php class patient extends CI_Controller{
 
 
@@ -118,21 +119,6 @@ public function coronary()
 	    $data['mainContent'] = 'smoking_status';
 	    $this->load->view("includes/mainContent", $data);
 	}
-	public function patient_list(){
-		$this->load->model('Patientmodel');
-		$data['row']=$this->Patientmodel->getpatientinfo();
-		$data['pageTitle'] = ' Employee list';
-		$data['smallTitle'] =' Employee list';
-		$data['mainPage'] =  'Employee list';
-		$data['subPage'] =' Employee list';
-		$data['title'] =' Employee list';
-		$data['headerCss'] = 'headerCss/customerlistcss';
-		$data['footerJs'] = 'footerJs/customerlistjs';
-		$data['mainContent'] = 'patient_list';
-		$this->load->view("includes/mainContent", $data);
-
-}
-
 	function alcohol_status(){
 	    $data['pageTitle'] = 'Alcohol Status';
 		$data['smallTitle'] = 'Alcohol Status';
@@ -169,7 +155,20 @@ public function coronary()
 		$this->load->view("includes/mainContent", $data);
 	    
 	}
+public function patient_list(){
+		$this->load->model('Patientmodel');
+		$data['row']=$this->Patientmodel->getpatientinfo();
+		$data['pageTitle'] = ' Employee list';
+		$data['smallTitle'] =' Employee list';
+		$data['mainPage'] =  'Employee list';
+		$data['subPage'] =' Employee list';
+		$data['title'] =' Employee list';
+		$data['headerCss'] = 'headerCss/customerlistcss';
+		$data['footerJs'] = 'footerJs/customerlistjs';
+		$data['mainContent'] = 'patient_list';
+		$this->load->view("includes/mainContent", $data);
 
+}
 
 
 	
@@ -190,10 +189,11 @@ public function coronary()
 	}
 
 		function patient_diet(){
-		   // echo $this->input->post('pid');
-			//exit();
+			echo $this->input->post('pid');
+			exit();
 				$data=array(
-				'reg_id'=>$this->input->post('pid'),
+
+				'reg_id'=>$this->input->post('id'),
 					'dietary_habit'=>$this->input->post("dietary_habit"),
 					'break_fast'=>$this->input->post("breakfast"),
 					'lunch'=>$this->input->post('lunch'),
@@ -225,22 +225,20 @@ public function coronary()
 					'coffee'=>$this->input->post('coffee'),
 					'number_of_cupof_coffee'=>$this->input->post('number_of_cupof_coffee'),
 					'water'=>$this->input->post('water'),
-					'number_of_glassesof_water'=>$this->input->post('number_of_glassesof_water')
+					'number_of_glassesof_water'=>$this->input->post('number_of_glassesof_water'),
 					);
 				$this->load->model('Patientmodel');
 				$this->Patientmodel->insertdiet($data);
-		           // $this->db->insert("reg_patient_diet",$data);
 				//echo "okkk";
-				redirect(base_url()."index.php/patient/diet");
+				redirect(base_url()."index.php/patient/patient_diet");
 		
 
 
 		}
 
-
 		function patient_smokingstatus(){
 				$data=array(
-					'reg_id'=>$this->input->post('pid'),
+					'reg_id'=>$this->input->post('id'),
 					'your_smoking_status'=>$this->input->post('answer'),
 					'duration'=>$this->input->post('duration'),
 					'when_left'=>$this->input->post('left'),
@@ -321,3 +319,4 @@ public function coronary()
 		
    
 }
+

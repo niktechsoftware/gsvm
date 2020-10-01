@@ -1,3 +1,4 @@
+
 <style>
 table {
   font-family: arial, sans-serif;
@@ -46,7 +47,8 @@ th {
 										</br>
 							<div class="col-md-12 col-lg-12 col-xs-12">
 										<div class="row">						
-		<table style="width:118%; margin-left:2%;">
+
+										<table>
   <tr>
     <th>S.NO.</th>
     <th>PARAMETER</th>
@@ -561,40 +563,6 @@ th {
 </table>
 </div>
 </div>
-  
-								
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 									</div>
@@ -606,4 +574,5 @@ th {
 			</div>
 		</div>
 	</div>
+
 	
