@@ -234,3 +234,9 @@
 [06-Mar-2020 00:04:51 Asia/Calcutta] PHP Fatal error:  Call to undefined function getOneLevelClients() in /home4/niktexfu/public_html/umpl.in.net/usoft/application/controllers/pin.php on line 34
 [06-Mar-2020 00:07:49 Asia/Calcutta] PHP Fatal error:  Call to undefined function length() in /home4/niktexfu/public_html/umpl.in.net/usoft/application/controllers/pin.php on line 37
 [06-Mar-2020 00:09:59 Asia/Calcutta] PHP Fatal error:  Call to undefined function getOneLevelClients() in /home4/niktexfu/public_html/umpl.in.net/usoft/application/controllers/pin.php on line 43
+[27-Sep-2020 10:43:38 Asia/Calcutta] PHP Fatal error:  Call to undefined method Daybook::outer_daybook() in /home/nikteund/public_html/gsvm/application/controllers/daybookController.php on line 27
+[27-Sep-2020 15:57:40 Asia/Calcutta] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/nikteund/public_html/gsvm/application/controllers/customer.php on line 114
+[27-Sep-2020 15:57:46 Asia/Calcutta] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/nikteund/public_html/gsvm/application/controllers/customer.php on line 114
+[27-Sep-2020 15:58:39 Asia/Calcutta] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/nikteund/public_html/gsvm/application/controllers/customer.php on line 114
+[01-Oct-2020 12:13:20 Asia/Calcutta] PHP Fatal error:  Call to undefined method Daybook::outer_daybook() in /home/nikteund/public_html/gsvm/application/controllers/daybookController.php on line 27
+[01-Oct-2020 12:13:55 Asia/Calcutta] PHP Fatal error:  Call to undefined method Daybook::inner_daybook() in /home/nikteund/public_html/gsvm/application/controllers/daybookController.php on line 30

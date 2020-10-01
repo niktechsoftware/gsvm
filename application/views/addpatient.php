@@ -6,10 +6,10 @@
 				<div class="col-xs-12 col-md-12 col-lg-12">
 					<div class="card">
 						<div class="card-header">
-							<h4>Patient Registration  Form</h4>
+							<h4>Patient Registration Form</h4>
 
 						</div>
-						<form method="post"	action="<?php echo base_url()?>index.php/patient/addpatinfo" enctype="multipart/Form-data" >
+						
 							<div class="card-body">
 								<div class="row" id="regForm">
 
@@ -23,7 +23,7 @@
 													</div>
 												<div class="col-md-4">
 														<div class="form-group">
-															<a href="<?php echo base_url();?>index.php/patient/nisha">
+															<a href="<?php echo base_url();?>index.php/patient/pat_registration_form">
 														<button type="submit" class="btn btn-primary"
 																id="regisbtn" style="">
 																New Registration
@@ -53,7 +53,7 @@
 									</div>
 								</div>
 							</div>
-						</form>
+					
 					</div>
 				</div>
 			</div>

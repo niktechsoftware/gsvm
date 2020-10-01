@@ -17,14 +17,14 @@
 							<h4>Oral_Cancer_Proforma</h4>
 
 						</div>
-						<form method="post"	action="<?php echo base_url()?>index.php/adminController/addemployeeinfo" enctype="multipart/Form-data" >
+						<form method="post"	action="<?php echo base_url()?>index.php/customer/oralcancer_proforma" enctype="multipart/Form-data" >
 							<div class="card-body">
 								<div class="row" id="regForm">
 									
 									<div class="col-xs-12 col-md-12 col-lg-12">
 
 												<div class="form-group row">
-													<div class="col-md-12 b" style="background-color: lightgray;">
+													<div class="col-md-12" style="background-color: lightgray;">
 
 														<label>1.FAMILY HISTORY:<span title="Required" style="color: red;">*</span></label>
 													</div>
@@ -127,7 +127,7 @@
 											 <div class="col-md-2">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes" name="treatment"
+																value="1" name="treatment"
 																 style="height:20px; width:20px;">
 																
 														</div>
@@ -136,7 +136,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="no" name="treatment"
+																value="0" name="treatment"
 															 style="height:20px; width:20px;">
 																
 														</div>
@@ -161,7 +161,7 @@
 											 <div class="col-md-2">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes" name="oralcancer"
+																value="ocyes" name="oralcancer" onclick="myFunction()"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -170,7 +170,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="no" name="oralcancer"
+																value="ocno" name="oralcancer"
 															  style="height:20px; width:20px;">
 																
 														</div>
@@ -178,7 +178,7 @@
                                          </div>
                                          	 <div class="col-md-3">
 														<div class="form-group">
-															<textarea name="detail" id="detail" placeholder="fill your details" class="form-control"></textarea>
+															<textarea name="oraldetail" id="familyoralcancerdtl" placeholder="fill your details" class="form-control"></textarea>
 
 														</div>
 														</div>
@@ -188,22 +188,22 @@
 
 
 											</div>
-												<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+												
 											<script>
 												//$("#eat").hide();
-											$("#detail").hide();
+											$("#familyoralcancerdtl").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="yes")
+											if($(this).val()=="ocyes")
 											{
-											$("#detail").show();
+											$("#familyoralcancerdtl").show();
 											
 											}
 											else
 											{
 									
 											//$("#eat").hide();
-											$("#detail").hide();
+											$("#familyoralcancerdtl").hide();
 											}
 											});
 											});
@@ -239,7 +239,7 @@
                                          </div>
                                          	 <div class="col-md-3">
 														<div class="form-group">
-															<textarea name="detail" id="mouthdisease" placeholder="History with medical paper and type of clinic" class="form-control"></textarea>
+															<textarea name="mouthdiseasedetail" id="mouthdiseasedtl" placeholder="History with medical paper and type of clinic" class="form-control"></textarea>
 
 														</div>
 														</div>
@@ -252,19 +252,19 @@
 												<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 											<script>
 												//$("#eat").hide();
-											$("#mouthdisease").hide();
+											$("#mouthdiseasedtl").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
 											if($(this).val()=="yes1")
 											{
-											$("#mouthdisease").show();
+											$("#mouthdiseasedtl").show();
 											
 											}
 											else
 											{
 									
 											//$("#eat").hide();
-											$("#mouthdisease").hide();
+											$("#mouthdiseasedtl").hide();
 											}
 											});
 											});
@@ -285,7 +285,7 @@
 											 <div class="col-md-2">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes2" name="radiotherapy"
+																value="1" name="radiotherapy"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -294,7 +294,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="no2" name="radiotherapy"
+																value="0" name="radiotherapy"
 															  style="height:20px; width:20px;">
 																
 														</div>
@@ -322,7 +322,7 @@
 											 <div class="col-md-2">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes2" name="chemotherapy"
+																value="1" name="chemotherapy"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -331,7 +331,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="no2" name="chemotherapy"
+																value="0" name="chemotherapy"
 															  style="height:20px; width:20px;">
 																
 														</div>
@@ -383,7 +383,7 @@
 													<div class="col-md-9">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																 name="drugs ">
+																 name="ct_scan">
 														</div>
 								
                                          </div>
@@ -400,7 +400,7 @@
 													<div class="col-md-9">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																 name="mri ">
+																 name="mri">
 														</div>
 								
                                          </div>
@@ -436,8 +436,8 @@
 													<div class="col-md-6">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="jobtittle"
-																id="name" required="required">
+																value="" name="squamous_cell"
+																>
 														</div>
 								
                                          </div>
@@ -472,7 +472,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes" name="buccal"
+																value="1" name="buccal"
 																 style="height:20px; width:20px;">
 																
 														</div>
@@ -481,7 +481,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="no" name="buccal"
+																value="0" name="buccal"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -508,7 +508,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes" name="buccal"
+																value="1" name="buccalvestibula"
 																 style="height:20px; width:20px;">
 																
 														</div>
@@ -517,7 +517,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="no" name="buccal"
+																value="0" name="buccalvestibula"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -544,7 +544,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes" name="alveolar"
+																value="1" name="alveolar"
 																 style="height:20px; width:20px;">
 																
 														</div>
@@ -553,7 +553,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="no" name="alveolar"
+																value="0" name="alveolar"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -581,7 +581,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes" name="palate"
+																value="1" name="palate"
 																 style="height:20px; width:20px;">
 																
 														</div>
@@ -590,7 +590,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="no" name="palate"
+																value="0" name="palate"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -617,7 +617,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes" name="vestibule"
+																value="1" name="vestibule"
 																 style="height:20px; width:20px;">
 																
 														</div>
@@ -626,7 +626,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="no" name="vestibule"
+																value="0" name="vestibule"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -653,7 +653,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes" name="tongue"
+																value="1" name="tounge"
 																 style="height:20px; width:20px;">
 																
 														</div>
@@ -662,7 +662,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="no" name="tongue"
+																value="0" name="tounge"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -689,7 +689,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes" name="lip"
+																value="1" name="lip"
 																 style="height:20px; width:20px;">
 																
 														</div>
@@ -698,7 +698,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="no" name="lip"
+																value="0" name="lip"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -732,7 +732,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes" name="well"
+																value="1" name="well_differentiated"
 																 style="height:20px; width:20px;">
 																
 														</div>
@@ -741,7 +741,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="no" name="well"
+																value="0" name="well_differentiated"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -768,7 +768,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes" name="moderately"
+																value="1" name="moderately"
 																 style="height:20px; width:20px;">
 																
 														</div>
@@ -777,7 +777,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="no" name="moderately"
+																value="0" name="moderately"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -804,7 +804,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes" name="poorly"
+																value="1" name="poorly"
 																 style="height:20px; width:20px;">
 																
 														</div>
@@ -813,7 +813,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="no" name="poorly"
+																value="0" name="poorly"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -982,7 +982,7 @@
                                          <div class="col-md-2">
 														<div class="form-group">
 															M0<input type="checkbox" class="form-control"
-																value="m" name="m"
+																value="m0" name="m0"
 															  style="height:20px; width:20px;">
 																
 														</div>

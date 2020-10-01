@@ -533,6 +533,65 @@
 											</div>
 										</div>
 									</div>
+									<div class="col-md-12 col-lg-12 col-xs-12">
+										<div class="row">
+										
+											
+												<div class="col-xs-6 col-md-6 col-lg-6">
+
+												<div class="form-group row">
+													<div class="col-md-3">
+														<label>IMAGE</label>
+													</div>
+													<div class="col-md-9">
+														<div class="form-group">
+															<input type="file" class="form-control"
+																value="" name="image"
+																accept="image/*" capture="camera">
+														</div>
+								
+                                         </div>
+												</div>
+
+
+											</div>
+												<div class="col-xs-6 col-md-6 col-lg-6">
+
+												<div class="form-group row">
+													<div class="col-md-4">
+														<label>MARTIAL STATUS<span title="Required" style="color: red;">*</span></label>
+													</div>
+													<div class="col-md-2">
+														<div class="form-group">
+															MARRIED<input type="radio" class="form-control"
+																value="married" name="martial"
+																 style="height:20px; width:20px;">
+																
+														</div>
+													</div>
+														<div class="col-md-3">
+														<div class="form-group">
+															<lebel>UNMARRIED</lebel>
+															<input type="radio" class="form-control"
+																value="unmarried" name="martial"
+																style="height:20px; width:20px;">
+																
+														</div>
+								
+                                         </div>
+                                         <div class="col-md-2">
+														<div class="form-group">
+															<lebel>WIDOW</lebel>
+															<input type="radio" class="form-control"
+																value="widow" name="martial"
+																 style="height:20px; width:20px;">
+																
+														</div>
+								
+                                         </div>
+											
+										</div>
+									</div>
 
 	<div class="col-md-12 col-lg-12 col-xs-12">
 										<div class="row">
@@ -543,7 +602,7 @@
 													<div class="col-md-9">
 														<div class="form-group">
 															<button type="submit" class="btn btn-primary"
-																id="regisbtn" style="margin-left:70%;">
+																id="" style="margin-left:70%;">
 																<i class="far fa-edit">&nbsp;Submit</i>
 															</button>
 														</div>

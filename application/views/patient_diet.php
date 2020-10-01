@@ -10,7 +10,7 @@
 
 						</div>
 						<form method="post"	action="<?php echo base_url()?>index.php/patient/patient_diet" enctype="multipart/Form-data" >
-								<input type="hidden" name="id" value="<?php echo $uri; ?>">
+								<input type="hidden" name="pid" value="<?php echo $uri; ?>">
 							<div class="card-body">
 								<div class="row" id="regForm">
 
@@ -138,7 +138,7 @@
                                          <div class="col-md-2">
 									<div class="form-group">
 										1.DAILY
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="duration" id="daily" value="daily"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="meat_routine" id="daily" value="daily"/>
 										</div>
 									</div>
 										<div id="quan1">
@@ -152,14 +152,14 @@
 									 <div class="col-md-2">
 									<div class="form-group">
 										2.WEEK
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="When Left" type="radio" name="duration" value="week" id="week"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="When Left" type="radio" name="meat_routine" value="week" id="week"/>
 										</div>
 
                                      </div>
                                      <div id="quan2">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="quant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_meat_timing" id=""/>
 										</div>
 									</div>
 									
@@ -167,13 +167,13 @@
                                        <div class="col-md-3">
 									<div class="form-group">
 										3.MONTH
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="duration" value="month" id="month"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="meat_routine" value="month" id="month"/>
 										</div>
 									</div>
 									<div id="quan3">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="quant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_meat_timing" id=""/>
 										</div>
 									</div>
 									
@@ -182,7 +182,7 @@
 									  <div class="col-md-3">
 									<div class="form-group">
 										4.YEAR
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="duration" value="year" id="year"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="meat_routine" value="year" id="year"/>
 										</div>
 									</div>
 										</div>
@@ -191,7 +191,7 @@
 									<div id="quan4">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="quant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_meat_timing" id=""/>
 										</div>
 									</div>
 									</div>
@@ -212,7 +212,7 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes" name="fish"
+																value="yes_fish" name="fish"
 																id="meat"  style="height:20px; width:20px;">
 																
 														</div>
@@ -221,7 +221,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="no" name="fish"
+																value="no_fish" name="fish"
 																id="meat1"  style="height:20px; width:20px;">
 																
 														</div>
@@ -233,13 +233,13 @@
                                          <div class="col-md-2">
 									<div class="form-group">
 										1.DAILY
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="fduration" value="daily1"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="	fish_routine" value="daily1"/>
 										</div>
 									</div>
 									<div id="fquan1">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="fquant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_fish_timing" id=""/>
 										</div>
 									</div>
 									
@@ -247,14 +247,14 @@
 									 <div class="col-md-2">
 									<div class="form-group">
 										2.WEEK
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="When Left" type="radio" name="fduration" value="week1"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="When Left" type="radio" name="	fish_routine" value="week1"/>
 										</div>
 
                                      </div>
                                       <div id="fquan2">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="fquant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_fish_timing" id=""/>
 										</div>
 									</div>
 									
@@ -262,13 +262,13 @@
 									 <div class="col-md-3">
 									<div class="form-group">
 										3.MONTH
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="fduration" value="month1" />
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="	fish_routine" value="month1" />
 										</div>
 									</div>
 									<div id="fquan3">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="fquant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_fish_timing" id=""/>
 										</div>
 									</div>
 									
@@ -276,14 +276,14 @@
 									<div class="col-md-3">
 									<div class="form-group">
 										4.YEAR
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="fduration" value="year1"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="	fish_routine" value="year1"/>
 										</div>
 									</div>
 										</div>
 										<div id="fquan4">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="fquant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_fish_timing" id=""/>
 										</div>
 									</div>
 									</div>
@@ -304,7 +304,7 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="ok" name="dessert"
+																value="ok" name="desserts"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -313,7 +313,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="notok" name="dessert"
+																value="notok" name="desserts"
 																 style="height:20px; width:20px;">
 																
 														</div>
@@ -325,13 +325,13 @@
                                          <div class="col-md-2">
 									<div class="form-group">
 										1.DAILY
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="dduration" value="daily2"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="desserts_routine" value="daily2"/>
 										</div>
 									</div>
 									<div id="dquan1">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="dquant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_desserts_timing" id=""/>
 										</div>
 									</div>
 									
@@ -339,14 +339,14 @@
 									 <div class="col-md-2">
 									<div class="form-group">
 										2.WEEK
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="When Left" type="radio" name="dduration" value="week2"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="When Left" type="radio" name="desserts_routine" value="week2"/>
 										</div>
 
                                      </div>
                                       <div id="dquan2">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="dquant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_desserts_timing" id=""/>
 										</div>
 									</div>
 									
@@ -354,13 +354,13 @@
 									 <div class="col-md-3">
 									<div class="form-group">
 										3.MONTH
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="dduration" value="month2" />
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="desserts_routine" value="month2" />
 										</div>
 									</div>
 									<div id="dquan3">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="dquant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_desserts_timing" id=""/>
 										</div>
 									</div>
 									
@@ -368,14 +368,14 @@
 									<div class="col-md-3">
 									<div class="form-group">
 										4.YEAR
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="dduration" value="year2"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="desserts_routine" value="year2"/>
 										</div>
 									</div>
 										</div>
 										<div id="dquan4">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="dquant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_desserts_timing" id=""/>
 										</div>
 									</div>
 									</div>
@@ -417,13 +417,13 @@
                                          <div class="col-md-2">
 									<div class="form-group">
 										1.DAILY
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="pduration" value="daily3"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="pork_routine" value="daily3"/>
 										</div>
 									</div>
 									<div id="pquan1">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="pquant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_timing_pork" id=""/>
 										</div>
 									</div>
 									
@@ -431,14 +431,14 @@
 									 <div class="col-md-2">
 									<div class="form-group">
 										2.WEEK
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="When Left" type="radio" name="pduration" value="week3"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="When Left" type="radio" name="pork_routine" value="week3"/>
 										</div>
 
                                      </div>
                                       <div id="pquan2">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="pquant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_timing_pork" id=""/>
 										</div>
 									</div>
 									
@@ -446,13 +446,13 @@
 									 <div class="col-md-3">
 									<div class="form-group">
 										3.MONTH
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="pduration" value="month3" />
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="pork_routine" value="month3" />
 										</div>
 									</div>
 									<div id="pquan3">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="pquant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_timing_pork" id=""/>
 										</div>
 									</div>
 									
@@ -460,14 +460,14 @@
 										<div class="col-md-3">
 									<div class="form-group">
 										4.YEAR
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="pduration" value="year3"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="pork_routine" value="year3"/>
 										</div>
 									</div>
 										</div>
 										<div id="pquan4">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="pquant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_timing_pork" id=""/>
 										</div>
 									</div>
 									</div>
@@ -508,13 +508,13 @@
                                          <div class="col-md-2">
 									<div class="form-group">
 										1.DAILY
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="cduration" value="daily4"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="chicken_routine" value="daily4"/>
 										</div>
 									</div>
 									<div id="cquan1">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="cquant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_chicken_timing" id=""/>
 										</div>
 									</div>
 									
@@ -522,14 +522,14 @@
 									 <div class="col-md-2">
 									<div class="form-group">
 										2.WEEK
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="When Left" type="radio" name="cduration" value="week4"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="When Left" type="radio" name="chicken_routine" value="week4"/>
 										</div>
 
                                      </div>
                                       <div id="cquan2">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="cquant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_chicken_timing" id=""/>
 										</div>
 									</div>
 									
@@ -537,13 +537,13 @@
 									 <div class="col-md-3">
 									<div class="form-group">
 										3.MONTH
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="cduration" value="month4" />
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="chicken_routine" value="month4" />
 										</div>
 									</div>
 									<div id="cquan3">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="cquant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_chicken_timing" id=""/>
 										</div>
 									</div>
 									
@@ -551,14 +551,14 @@
 									<div class="col-md-3">
 									<div class="form-group">
 										4.YEAR
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="cduration" value="year4"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="chicken_routine" value="year4"/>
 										</div>
 									</div>
 										</div>
 										<div id="cquan4">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="cquant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_chicken_timing" id=""/>
 										</div>
 									</div>
 									</div>
@@ -579,7 +579,7 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes3" name="fried"
+																value="fried_food" name="fried_food"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -588,7 +588,7 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="no3" name="fried"
+																value="no_fried_food" name="fried_food"
 																 style="height:20px; width:20px;">
 																
 														</div>
@@ -600,13 +600,13 @@
                                          <div class="col-md-2">
 									<div class="form-group">
 										1.DAILY
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="ffduration" value="daily5"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="fried_routine" value="daily5"/>
 										</div>
 									</div>
 									<div id="ffquan1">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="ffquant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_fried_timing" id=""/>
 										</div>
 									</div>
 									
@@ -614,14 +614,14 @@
 									 <div class="col-md-2">
 									<div class="form-group">
 										2.WEEK
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="When Left" type="radio" name="ffduration" value="week5"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="When Left" type="radio" name="fried_routine" value="week5"/>
 										</div>
 
                                      </div>
                                       <div id="ffquan2">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="ffquant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_fried_timing" id=""/>
 										</div>
 									</div>
 									
@@ -629,13 +629,13 @@
 									 <div class="col-md-3">
 									<div class="form-group">
 										3.MONTH
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="ffduration" value="month5" />
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="fried_routine" value="month5" />
 										</div>
 									</div>
 									<div id="ffquan3">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="ffquant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_fried_timing" id=""/>
 										</div>
 									</div>
 									
@@ -643,14 +643,14 @@
 									<div class="col-md-3">
 									<div class="form-group">
 										4.YEAR
-										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="ffduration" value="year5"/>
+										 <input style="height:20px; width:20px;" class="form-control" placeholder="Duration" type="radio" name="fried_routine" value="year5"/>
 										</div>
 									</div>
 										</div>
 										<div id="ffquan4">
                                          <div class="col-md-4">
 									<div class="form-group">
-										 <input  class="form-control" placeholder="Duration" type="text" name="ffquant1" id=""/>
+										 <input  class="form-control" placeholder="Duration" type="text" name="number_of_fried_timing" id=""/>
 										</div>
 									</div>
 									</div>
@@ -675,7 +675,7 @@
 													<div class="col-md-2">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yes" name="milk"
+																value="milk" name="milk"
 																style="height:20px; width:20px;">
 																
 														</div>
@@ -684,7 +684,7 @@
 														<div class="form-group">
 															<lebel>NO</lebel>
 															<input type="radio" class="form-control"
-																value="no" name="milk"
+																value="no_milk" name="milk"
 																style="height:20px; width:20px;">
 																
 														</div>
@@ -693,7 +693,7 @@
                                           <div class="col-md-2">
 														
 															<input type="text" class="form-control"
-																placeholder="FREQUENCY/DAY" name="milk"
+																placeholder="FREQUENCY/DAY" name="number_of_glassesof_milk"
 																id="milk">
 																
 														</div>
@@ -724,7 +724,7 @@
 														<div class="form-group">
 															<lebel>NO</lebel>
 															<input type="radio" class="form-control"
-																value="tea1" name="tea"
+																value="no_tea" name="tea"
 																id="t2"  style="height:20px; width:20px;">
 																
 														</div>
@@ -733,7 +733,7 @@
                                           <div class="col-md-2">
 														
 															<input type="text" class="form-control"
-																placeholder="FREQUENCY/DAY" name="tea"
+																placeholder="FREQUENCY/DAY" name="number_of_glassesof_tea"
 																id="tea">
 																
 														</div>
@@ -773,7 +773,7 @@
                                          <div class="col-md-2">
 														
 															<input type="text" class="form-control"
-																placeholder="FREQUENCY/DAY" name="coffee"
+																placeholder="FREQUENCY/DAY" name="number_of_cupof_coffee"
 																id="coffee" >
 																
 														</div>
@@ -816,7 +816,7 @@
                                           <div class="col-md-2">
 														
 															<input type="text" class="form-control"
-																placeholder="FREQUENCY/DAY" name="coffee"
+																placeholder="FREQUENCY/DAY" name="number_of_glassesof_water"
 																id="water">
 																
 														</div>
@@ -1398,7 +1398,7 @@
 												$("#ffquan1").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="yes3")
+											if($(this).val()=="fried_food")
 											{
 											$("#eat5").show();
 											
@@ -1565,7 +1565,7 @@
 												$("#milk").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="yes")
+											if($(this).val()=="milk")
 											{
 											$("#milk").show();
 											

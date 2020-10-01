@@ -52,18 +52,65 @@
 		<?php echo "Please Check Your ID";?></span>
 <?php	}
 if($id){?>
-	
-<div class="row">
-	<div></div>
-    <div class="col-2 " style="margin-left:5%;"><button type="button" class="btn btn-info"><a href="<?php echo base_url();?>index.php/patient/diet/<?php echo $id;?>"><h5 style="color:white;"> Diet Status</h5></a></button>	</div>
-    <div class="col-2 "><button type="button" class="btn btn-info"><a href="<?php echo base_url();?>index.php/patient/smoking_status/<?php echo $id;?>"><h4 style="color:white;">Smoking Status</h4></a></button>	</div>
-     <div class="col-2 "><button type="button" class="btn btn-info"><a href="<?php echo base_url();?>index.php/patient/alcohol_status/<?php echo $id;?>"><h5 style="color:white;">Alcohol Status</S></h5></a></button>	</div>
- 
-      <div class="col-2"><button type="button" class="btn btn-info"><a href="<?php echo base_url();?>index.php/patient/patient_exercise/<?php echo $id;?>"><h5 style="color:white;">Exercise Habit</h5></a></button>	</div>
-    </div>
-	<?php	}?>		
-</div>
+		<div class="col-xs-12 col-md-12 col-lg-12">
+										<div class="form-group row">
+											<div class="col-md-12 col-lg-12 col-xs-12">
+										<div class="row">
+										
+												<div class="col-xs-2 col-md-2 col-lg-2" style="margin-left: 8%;">
+												<div class="form-group row">
+													<div class="col-md-3"></div>
+													<div class="col-md-9">
+														<div class="form-group">
+															   
+															<a href="<?php echo base_url();?>index.php/patient/diet/<?php echo $id;?>"><button type="submit" class="btn btn-primary" id=""><i class="fas fa-arrow-circle-right">&nbsp;Diet Status</i></button></a>
+														</div>
+													</div>
+												</div>
 
-		</div>
+											</div>
+											<div class="col-xs-2 col-md-2 col-lg-2" style="margin-left: 8%;">
+												<div class="form-group row">
+													<div class="col-md-3"></div>
+													<div class="col-md-9">
+														<div class="form-group">
+															   
+															<a href="<?php echo base_url();?>index.php/patient/smoking_status/<?php echo $id;?>"><button type="submit" class="btn btn-primary" id=""><i class="fas fa-arrow-circle-right">&nbsp;Smoking Status</i></button></a>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<div class="col-xs-2 col-md-2 col-lg-2" style="margin-left: 8%;">
+												<div class="form-group row">
+													<div class="col-md-3"></div>
+													<div class="col-md-9">
+														<div class="form-group">
+															   
+															<a href="<?php echo base_url();?>index.php/patient/alcohol_status/<?php echo $id;?>"><button type="submit" class="btn btn-primary" id=""><i class="fas fa-arrow-circle-right">&nbsp; Alcohol Status</i></button></a>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<div class="col-xs-2 col-md-2 col-lg-2" style="margin-left: 8%;">
+												<div class="form-group row">
+													<div class="col-md-3"></div>
+													<div class="col-md-9">
+														<div class="form-group">
+															   
+															<a href="<?php echo base_url();?>index.php/patient/patient_exercise/<?php echo $id;?>"><button type="submit" class="btn btn-primary" id=""><i class="fas fa-arrow-circle-right">&nbsp; Exercise Habit</i></button></a>
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+									
+																</div>
+											</div>
+										</div>
+										<?php	}?>
+</div>
 	</div>
 </div>

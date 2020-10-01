@@ -17,6 +17,8 @@
               <a href="#" class="nav-link has-dropdown"><i data-feather="briefcase"></i><span>Sarvy</span></a>
               <ul class="dropdown-menu">
               <?php 
+            
+
               $this->db->distinct();
               $this->db->select("plan_id");
               $this->db->where("employee_id",$this->session->userdata("customer_id"));
@@ -26,7 +28,7 @@
               	$this->db->where("id",$row->plan_id);
               	$spd = $this->db->get("study_plan")->row();
               ?>
-                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/p<?php echo $row->plan_id;?>"><?php echo $spd->plan_name;?></a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/customer/<?php echo $spd->page_name;?>/<?php echo $row->plan_id;?>"><?php echo $spd->plan_name;?></a></li>
                <?php endforeach;}?>
               </ul>
             </li>

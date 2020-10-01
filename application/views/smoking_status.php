@@ -11,7 +11,7 @@
 
 						</div>
 						<form method="post"	action="<?php echo base_url()?>index.php/patient/patient_smokingstatus" enctype="multipart/Form-data" >
-							<input type="hidden" name="id" value="<?php echo $uri; ?>">
+							<input type="hidden" name="pid" value="<?php echo $uri; ?>">
 							<div class="card-body">
 								<div class="row" id="regForm">
 									<div class="col-md-12 col-lg-12 col-xs-12">
@@ -33,10 +33,10 @@
 														</div>
 													</div>
 												
-													<div class="col-md-2">
+													<div class="col-md-2" id="many">
 														<div class="form-group" id="yes1">
 															How many ciggerate a day.?
-														<input class="form-control" type="number" name="many" id="many"/>
+														<input class="form-control" type="number" name="many" id=""/>
 													</div>
 												</div>
 										
@@ -194,7 +194,7 @@
 
 												<div class="form-group row">
 													<div class="col-md-4">
-														<label>:<span title="Required" style="color: red;">*</span></label>
+														
 													</div>
 													<div class="col-md-2">
 														<div class="form-group">

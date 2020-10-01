@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'gsvm';
+$db['default']['username'] = 'nikteund_gsvm';
+$db['default']['password'] = '!Rahulsingh@12345';
+$db['default']['database'] = 'nikteund_gsvm';
 
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';

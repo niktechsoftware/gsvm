@@ -1,18 +1,6 @@
 <?php class patient extends CI_Controller{
 
-	public function addpatient()
-	{   
 
-	    $data['pageTitle'] = 'Patient Form';
-		$data['smallTitle'] = 'Patient Form';
-	    $data['mainPage'] = 'Patient Form';
-		$data['subPage'] = 'Patient Form';
-		$data['title'] = 'Patient Form';
-	    $data['headerCss'] = 'headerCss/dashboardCss';
-		$data['footerJs'] = 'footerJs/customerJs';
-	    $data['mainContent'] = 'addpatient';
-	    $this->load->view("includes/mainContent", $data);
-	}
 public function coronary()
 {
 	 $data['pageTitle'] = 'Patient Form';
@@ -49,6 +37,20 @@ public function coronary()
 			$rn=rand(9999,99999);
 			$usern1=$maxid+$rn;
 			$username1="GSVM".$usern1;
+			 $this->load->library('upload');
+
+			$photo_name = time().trim($_FILES['image']['name']);
+			$photo_name=str_replace(' ', '_', $photo_name);
+			$logo=$this->input->post('image');
+	 		//echo $logo;
+			$image_path = realpath(APPPATH . '../assets/img/');
+			$config['upload_path'] = $image_path;
+			$config['allowed_types'] = 'gif|jpg|jpeg|png';
+			$config['max_size'] = '500';
+			$config['file_name'] = $photo_name;
+	  if (!empty($_FILES['image']['name'])) {
+			$this->upload->initialize($config);
+			if($this->upload->do_upload('image')){
 			$data=array(
 				'username'=>$username1,
 				'first_name'=>$this->input->post("fname"),
@@ -72,14 +74,20 @@ public function coronary()
 				'voter_id'=>$this->input->post("voter"),
 				'aadhar_card'=>$this->input->post("adhaar"),
 				'pan_card'=>$this->input->post("pancard"),
-				//'country'=>$this->input->post("country"),
-				'password'=>$this->input->post("password")
+				'password'=>$this->input->post("password"),
+				'martial_status'=>$this->input->post("martial"),
+				 'image'=>$photo_name
+
 
 );
-
-				
-				$this->Patientmodel->addpatient($data);	 
-				redirect('patient/nisha'); 
+			}
+					else{
+					 echo "Somthing going wrong. Please Contact Site administrator";
+					    }}else{
+						echo "file not Select";
+						  }
+		$this->Patientmodel->addpatient($data);	 
+				redirect('patient/pat_registration_form'); 
 				//echo "submmitted";
 				//print_r($data);
 
@@ -110,6 +118,21 @@ public function coronary()
 	    $data['mainContent'] = 'smoking_status';
 	    $this->load->view("includes/mainContent", $data);
 	}
+	public function patient_list(){
+		$this->load->model('Patientmodel');
+		$data['row']=$this->Patientmodel->getpatientinfo();
+		$data['pageTitle'] = ' Employee list';
+		$data['smallTitle'] =' Employee list';
+		$data['mainPage'] =  'Employee list';
+		$data['subPage'] =' Employee list';
+		$data['title'] =' Employee list';
+		$data['headerCss'] = 'headerCss/customerlistcss';
+		$data['footerJs'] = 'footerJs/customerlistjs';
+		$data['mainContent'] = 'patient_list';
+		$this->load->view("includes/mainContent", $data);
+
+}
+
 	function alcohol_status(){
 	    $data['pageTitle'] = 'Alcohol Status';
 		$data['smallTitle'] = 'Alcohol Status';
@@ -167,37 +190,57 @@ public function coronary()
 	}
 
 		function patient_diet(){
+		   // echo $this->input->post('pid');
+			//exit();
 				$data=array(
-				'reg_id'=>$this->input->post('id'),
+				'reg_id'=>$this->input->post('pid'),
 					'dietary_habit'=>$this->input->post("dietary_habit"),
 					'break_fast'=>$this->input->post("breakfast"),
 					'lunch'=>$this->input->post('lunch'),
 					'snakes'=>$this->input->post("snake"),
 					'dinner'=>$this->input->post('dinner'),
 					'red_meat'=>$this->input->post('meat'),
+					'number_of_meat_timing'=>$this->input->post('number_of_meat_timing'),
+					'meat_routine'=>$this->input->post('meat_routine'),
 					'fish'=>$this->input->post('fish'),
-					'desserts'=>$this->input->post('dessert'),
-					'chicken'=>$this->input->post('chicken'),
-					'fried_food'=>$this->input->post('friedfood'),
+					'fish_routine'=>$this->input->post('fish_routine'),
+					'number_of_fish_timing'=>$this->input->post('number_of_fish_timing'),
+					'desserts'=>$this->input->post('desserts'),
+					'desserts_routine'=>$this->input->post('desserts_routine'),
+					'number_of_desserts_timing'=>$this->input->post('number_of_desserts_timing'),
 					'pork'=>$this->input->post('pork'),
-					'meat_routine'=>$this->input->post('meat_routine')
-
-
-
-
-						);
+					'pork_routine'=>$this->input->post('pork_routine'),
+					'number_of_timing_pork'=>$this->input->post('number_of_timing_pork'),
+					'chicken'=>$this->input->post('chicken'),
+					'chicken_routine'=>$this->input->post('chicken_routine'),
+					'number_of_chicken_timing'=>$this->input->post('number_of_chicken_timing'),
+					'fried_food'=>$this->input->post('fried_food'),
+					'fried_routine'=>$this->input->post('fried_routine'),
+					'number_of_fried_timing'=>$this->input->post('number_of_fried_timing'),
+					'milk'=>$this->input->post('milk'),
+					'number_of_glassesof_milk'=>$this->input->post('number_of_glassesof_milk'),
+					'number_of_timimg'=>$this->input->post('number_of_timimg'),
+					'tea'=>$this->input->post('tea'),
+					'number_of_glassesof_tea'=>$this->input->post('number_of_glassesof_tea'),
+					'coffee'=>$this->input->post('coffee'),
+					'number_of_cupof_coffee'=>$this->input->post('number_of_cupof_coffee'),
+					'water'=>$this->input->post('water'),
+					'number_of_glassesof_water'=>$this->input->post('number_of_glassesof_water')
+					);
 				$this->load->model('Patientmodel');
 				$this->Patientmodel->insertdiet($data);
+		           // $this->db->insert("reg_patient_diet",$data);
 				//echo "okkk";
-				redirect(base_url()."index.php/patient/patient_diet");
+				redirect(base_url()."index.php/patient/diet");
 		
 
 
 		}
 
+
 		function patient_smokingstatus(){
 				$data=array(
-					'reg_id'=>$this->input->post('id'),
+					'reg_id'=>$this->input->post('pid'),
 					'your_smoking_status'=>$this->input->post('answer'),
 					'duration'=>$this->input->post('duration'),
 					'when_left'=>$this->input->post('left'),
@@ -275,42 +318,6 @@ public function coronary()
 //*************************************************************************************************************************
 //*******************************************************************************************************************************************	
 
-		function Oral_Cancer_Proforma(){
-	    $data['pageTitle'] = 'Oral Cancer ';
-		$data['smallTitle'] = 'Oral Cancer ';
-		$data['mainPage'] = 'Oral Cancer ';
-		$data['subPage'] = 'Oral Cancer ';
-		$data['title'] = 'Oral Cancer ';
-		$data['headerCss'] = 'headerCss/dashboardCss';
-		$data['footerJs'] = 'footerJs/customerJs';
-		$data['mainContent'] = 'oral_cancer_proforma';
-		$this->load->view("includes/mainContent", $data);
-	    
-	}
-	function Breast_Cancer_Proforma(){
-	    $data['pageTitle'] = 'Breast Cancer ';
-		$data['smallTitle'] = 'Breast Cancer ';
-		$data['mainPage'] = 'Breast Cancer ';
-		$data['subPage'] = 'Breast Cancer ';
-		$data['title'] = 'Breast Cancer ';
-		$data['headerCss'] = 'headerCss/dashboardCss';
-		$data['footerJs'] = 'footerJs/customerJs';
-		$data['mainContent'] = 'breast_cancer_proforma';
-		$this->load->view("includes/mainContent", $data);
-	    
-	}
-	function Hypertension_Proforma(){
-	    $data['pageTitle'] = 'Hypertension_Proforma';
-		$data['smallTitle'] = 'Hypertension_Proforma';
-		$data['mainPage'] = 'Hypertension_Proforma';
-		$data['subPage'] = 'Hypertension_Proforma';
-		$data['title'] = 'Hypertension_Proforma';
-		$data['headerCss'] = 'headerCss/dashboardCss';
-		$data['footerJs'] = 'footerJs/customerJs';
-		$data['mainContent'] = 'hypertension_proforma';
-		$this->load->view("includes/mainContent", $data);
-	    
-	}
-
+		
    
 }

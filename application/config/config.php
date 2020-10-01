@@ -23,7 +23,7 @@
 |
 */
 
-$config['base_url'] = 'http://localhost/gsvmmedical/';
+$config['base_url'] = 'https://niktechsoftware.com/gsvm/';
 
 
 
