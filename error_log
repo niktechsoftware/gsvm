@@ -255,3 +255,7 @@
 [01-Oct-2020 15:58:22 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/nikteund/public_html/gsvm/application/config/config.php on line 375
 [01-Oct-2020 15:58:24 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/nikteund/public_html/gsvm/application/config/config.php on line 375
 [01-Oct-2020 15:58:54 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/nikteund/public_html/gsvm/application/config/config.php on line 375
+[02-Oct-2020 00:49:19 Asia/Calcutta] PHP Fatal error:  Call to undefined method stdClass::row() in /home/nikteund/public_html/gsvm/application/controllers/adminController.php on line 30
+[02-Oct-2020 00:49:27 Asia/Calcutta] PHP Fatal error:  Call to a member function row() on array in /home/nikteund/public_html/gsvm/application/controllers/adminController.php on line 30
+[02-Oct-2020 14:45:42 Asia/Calcutta] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/nikteund/public_html/gsvm/application/controllers/patient.php on line 316
+[02-Oct-2020 15:14:29 Asia/Calcutta] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/nikteund/public_html/gsvm/application/controllers/patient.php on line 322

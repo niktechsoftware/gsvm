@@ -16,7 +16,7 @@
                       <div class="author-box-name">
                         <a href="#"><?php echo $crecord->row()->employee_iname; ?></a>
                       </div>
-					  <div class="author-box-job">User Id:<?php  echo $crecord->row()->username; ?></div>
+					  <div class="author-box-job">User Id:<?php  echo $crecord->row()->id; ?></div>
                     </div>
                     
                   </div>
@@ -59,6 +59,12 @@
                         <a class="nav-link" id="profile-tab2" data-toggle="tab" href="#settings" role="tab"
                           aria-selected="false">Edit</a>
                       </li>
+                      <?php if($this->session->userdata("login_type")==2){?>
+                        <li class="nav-item">
+                        <a class="nav-link" id="passwordc" data-toggle="tab" href="#password" role="tab"
+                          aria-selected="false">Change Password</a>
+                      </li>
+                      <?php }?>
                     </ul>
                     <div class="tab-content tab-bordered" id="myTab3Content">
                       <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="home-tab2">
@@ -68,60 +74,60 @@
                           </div>
                           <div class="card-body">
                             <div class="row">
-                              <div class="form-group col-md-3 col-12"><label>Name :</label></div>
-							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->employee_iname; ?></label></div>
-                              <div class="form-group col-md-3 col-12"><label>Father Name :</label></div>
-							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->fname; ?></label> </div>
+                              <div class="form-group col-md-2 col-12"><label>Name :</label></div>
+							  <div class="form-group col-md-4 col-12"><label><?php echo $crecord->row()->employee_iname; ?></label></div>
+                              <div class="form-group col-md-2 col-12"><label>Father Name :</label></div>
+							  <div class="form-group col-md-4 col-12"> <label><?php echo $crecord->row()->fname; ?></label> </div>
                             </div>
 							<div class="row">
-                              <div class="form-group col-md-3 col-12"><label>Gender:</label></div>
-							  <div class="form-group col-md-3 col-12"><label><?php  if($crecord->row()->gender == 1){ echo "Male";}else{echo "Female";}?></label></div>
-                              <div class="form-group col-md-3 col-12"><label>Status :</label></div>
-							  <div class="form-group col-md-3 col-12"> <label><?php  if($crecord->row()->status == 1){ echo "<label style='color:green;'>Active</label>";}else{echo "<label style='color:red;'>InActive</label>";}?></label> </div>
+                              <div class="form-group col-md-2 col-12"><label>Gender:</label></div>
+							  <div class="form-group col-md-4 col-12"><label><?php  if($crecord->row()->gender == 1){ echo "Male";}else{echo "Female";}?></label></div>
+                              <div class="form-group col-md-2 col-12"><label>Status :</label></div>
+							  <div class="form-group col-md-4 col-12"> <label><?php  if($crecord->row()->status == 1){ echo "<label style='color:green;'>Active</label>";}else{echo "<label style='color:red;'>InActive</label>";}?></label> </div>
                             </div>
 							<div class="row">
-                              <div class="form-group col-md-3 col-12"><label>City :</label></div>
-							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->city; ?></label></div>
-                              <div class="form-group col-md-3 col-12"><label>State :</label></div>
-							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->state; ?></label> </div>
+                              <div class="form-group col-md-2 col-12"><label>City :</label></div>
+							  <div class="form-group col-md-4 col-12"><label><?php echo $crecord->row()->city; ?></label></div>
+                              <div class="form-group col-md-2 col-12"><label>State :</label></div>
+							  <div class="form-group col-md-4 col-12"> <label><?php echo $crecord->row()->state; ?></label> </div>
                             </div>
 							<div class="row">
-                              <div class="form-group col-md-3 col-12"><label>Current Address :</label></div>
-							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->current_address; ?></label></div>
-                              <div class="form-group col-md-3 col-12"><label>Permanent Address :</label></div>
-							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->permanent_address; ?></label> </div>
+                              <div class="form-group col-md-2 col-12"><label>Current Address :</label></div>
+							  <div class="form-group col-md-4 col-12"><label><?php echo $crecord->row()->current_address; ?></label></div>
+                              <div class="form-group col-md-2 col-12"><label>Permanent Address :</label></div>
+							  <div class="form-group col-md-4 col-12"> <label><?php echo $crecord->row()->permanent_address; ?></label> </div>
                             </div>
 							<div class="row">
-                              <div class="form-group col-md-3 col-12"><label>Pincode :</label></div>
-							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->pin; ?></label></div>
-                              <div class="form-group col-md-3 col-12"><label>Email Id  :</label></div>
-							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->email; ?></label> </div>
+                              <div class="form-group col-md-2 col-12"><label>Pincode :</label></div>
+							  <div class="form-group col-md-4 col-12"><label><?php echo $crecord->row()->pin; ?></label></div>
+                              <div class="form-group col-md-2 col-12"><label>Email Id  :</label></div>
+							  <div class="form-group col-md-4 col-12"> <label><?php echo $crecord->row()->email; ?></label> </div>
                             </div>
 							<div class="row">
-                              <div class="form-group col-md-3 col-12"><label>Mobile No :</label></div>
-							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->mobilenumber; ?></label></div>
-                              <div class="form-group col-md-3 col-12"><label>Other Mobile No :</label></div>
-							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->altnumber; ?></label> </div>
+                              <div class="form-group col-md-2 col-12"><label>Mobile No :</label></div>
+							  <div class="form-group col-md-4 col-12"><label><?php echo $crecord->row()->mobilenumber; ?></label></div>
+                              <div class="form-group col-md-2 col-12"><label>Other Mobile No :</label></div>
+							  <div class="form-group col-md-4 col-12"> <label><?php echo $crecord->row()->altnumber; ?></label> </div>
                             </div>
 							<div class="row">
-                              <div class="form-group col-md-3 col-12"><label>Aadhar No :</label></div>
-							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->adhaarnumber; ?></label></div>
-                              <div class="form-group col-md-3 col-12"><label>Pan No :</label></div>
-							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->pannumber; ?></label> </div>
+                              <div class="form-group col-md-2 col-12"><label>Aadhar No :</label></div>
+							  <div class="form-group col-md-4 col-12"><label><?php echo $crecord->row()->adhaarnumber; ?></label></div>
+                              <div class="form-group col-md-2 col-12"><label>Pan No :</label></div>
+							  <div class="form-group col-md-4 col-12"> <label><?php echo $crecord->row()->pannumber; ?></label> </div>
                             </div>
 							<div class="row">
-                              <div class="form-group col-md-3 col-12"><label>User Id:</label></div>
-							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->username; ?></label></div>
-                              <div class="form-group col-md-3 col-12"><label>Date Of Birth :</label></div>
-							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->dob; ?></label> </div>
+                              <div class="form-group col-md-2 col-12"><label>User Id:</label></div>
+							  <div class="form-group col-md-4 col-12"><label><?php echo $crecord->row()->email; ?></label></div>
+                              <div class="form-group col-md-2 col-12"><label>Date Of Birth :</label></div>
+							  <div class="form-group col-md-4 col-12"> <label><?php echo $crecord->row()->dob; ?></label> </div>
                             </div>
 						
 							<div class="row">
-							 <div class="form-group col-md-3 col-12"><label>Position :</label></div>
-							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->position; ?></label> </div>
+							 <div class="form-group col-md-2 col-12"><label>Position :</label></div>
+							  <div class="form-group col-md-4 col-12"> <label><?php echo $crecord->row()->position; ?></label> </div>
                            
-                              <div class="form-group col-md-3 col-12"><label>Join Date:</label></div>
-							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->joining_date;?></label></div>
+                              <div class="form-group col-md-2 col-12"><label>Join Date:</label></div>
+							  <div class="form-group col-md-4 col-12"><label><?php echo $crecord->row()->joining_date;?></label></div>
                                 </div>
 							
 							
@@ -324,14 +330,37 @@
 							  <div class="form-group col-md-4 col-12">
 							        <?php 
 							       if($this->session->userdata("login_type")==1){  ?>
+							       
+							        <select class="form-control" id="gender" name="gender">
+                     
+                     
+                      <option value="1" <?php if($crecord->row()->gender==1){echo 'selected="selected"';}?> >Male</option>
+                      <option value="2" <?php if($crecord->row()->gender==2){echo 'selected="selected"';}?>>Female</option>
+                      <option value="3" <?php if($crecord->row()->gender==3){echo 'selected="selected"';}?>>Transgender</option>
+                     
+                    </select>	
 							   
-							      <input type="text" class="form-control" name="gen" value="<?php echo $crecord->row()->gender; ?>">
+							 
 							        <?php } else{ 
 							      if($crecord->row()->gender){
 							      ?> 
-							      <input type="text" class="form-control" name="gen" value="<?php  if($crecord->row()->gender==1){ echo "Male" ;}else{echo "Female"; }  ?>" readonly="">
+							      <select class="form-control" id="gender" name="gender">
+                     
+                     
+                      <option value="1" <?php if($crecord->row()->gender==1){echo 'selected="selected"';}?> >Male</option>
+                      <option value="2" <?php if($crecord->row()->gender==2){echo 'selected="selected"';}?>>Female</option>
+                      <option value="3" <?php if($crecord->row()->gender==3){echo 'selected="selected"';}?>>Transgender</option>
+                     
+                    </select>	
 							        <?php } else{ ?>
-                              <input type="text" class="form-control" name="gen" value="<?php echo $crecord->row()->gender; ?>">
+                            <select class="form-control" id="gender" name="gender">
+                     
+                      <option value="">-Select Gender-</option>
+                      <option value="1"  >Male</option>
+                      <option value="2" >Female</option>
+                      <option value="3">Transgender</option>
+                     
+                    </select>	
                                <?php } }?>
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
@@ -357,7 +386,9 @@
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
                               <div class="form-group col-md-2 col-12"><label>Upload Photo</label></div>
-                              <div class="form-group col-md-4 col-12"><input type="file" class="form-control" name="photo" value="">
+                              
+                              <div class="form-group col-md-4 col-12"><input type="file" class="form-control" name="photo" value="" accept="image/*" capture>
+                             
                                 <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>
@@ -368,6 +399,58 @@
                           </div>
                         </form>
                       </div>
+                       <?php if($this->session->userdata("login_type")==2){?> 
+                       <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="passwordc">
+                      <!--  <form method="post" class="needs-validation" action="<?php echo base_url();?>index.php/adminController/changePassword" enctype="multipart/form-data"   >-->
+                          <div class="card-header">
+                            <h4>Change Password Panel</h4>
+                          </div>
+                          <div class="card-body">
+                          
+						<div class="row">
+							<div class="form-group col-md-6 col-12"><label>Enter Current Password</label></div>
+							  <div class="form-group col-md-6 col-12"><input type="text" class="form-control" id="op" >
+                                <div class="invalid-feedback">Please fill in the first name</div>
+                              </div>
+                              <div class="form-group col-md-6 col-12"><label>New Password</label></div>
+                              <div class="form-group col-md-6 col-12"><input type="text" class="form-control" id="np" >
+                                <div class="invalid-feedback">Please fill in the last name </div>
+                              </div>
+                            </div>
+							 <div class="row">
+							<div class="form-group col-md-6 col-12"><label>Retype New Password</label></div>
+							  <div class="form-group col-md-6 col-12"><input type="text" class="form-control" id="rnp" >
+                                <div class="invalid-feedback">Please fill in the first name</div>
+                              </div>
+                             
+                            </div>
+                            <input type = "hidden" id ="userid" value = "<?php echo $crecord->row()->id;?>"/>
+							<div  class="col-md-6 col-12" id = "upmsg"></div>
+                          </div>
+                          <div class="card-footer text-right">
+                            <button class="btn btn-primary" id="changep">Change Password</button>
+                            <script>	
+                            $("#changep").click(function(){
+                            var userid = $("#userid").val();  
+						    var op = $("#op").val();
+						    var np = $("#np").val();
+						    var rnp = $("#rnp").val();
+						    if(np==rnp){
+						    $.post("<?php echo site_url('adminController/changePassword') ?>",{userid : userid , op : op, np : np , rnp : rnp},function(data){
+							$("#upmsg").html(data);
+							$("#op").val("");
+							$("#np").val("");
+							$("#rnp").val("");
+						    });
+						    }else{
+						       $("#upmsg").html('<div class ="alert alert-warning">Renter password mismatch</div>'); 
+						    }
+					    });
+                        </script>
+                          </div>
+                       <!-- </form>-->
+                      </div>
+                      <?php }?>
                     </div>
                   </div>
                 </div>

@@ -27,7 +27,7 @@ $sub = $this->db->query("select * from sub_study_plan where plan_id ='$row->id'"
                
 
                if ($('#splan<?php echo $srow->id;?>').prop('checked')) {
-            	   alert(sp);
+            	   //alert(sp);
             	   $.ajax({
                        
                        "url": "<?php echo site_url('adminController/supdatePermissionStatus') ?>",
@@ -45,7 +45,7 @@ $sub = $this->db->query("select * from sub_study_plan where plan_id ='$row->id'"
                         }
                     })
             	 } else {
-            		 alert("unchecked");
+            		 //alert("unchecked");
             		 $.ajax({
                          
                          "url": "<?php echo site_url('adminController/sdeletePermissionStatus') ?>",
@@ -73,12 +73,9 @@ $sub = $this->db->query("select * from sub_study_plan where plan_id ='$row->id'"
  $("#plan<?php echo $row->id;?>").change(function(){
                var sp = $("#plan<?php echo $row->id;?>").val();
                var eid = $("#eid").val();
-               
-
                if ($('#plan<?php echo $row->id;?>').prop('checked')) {
-            	   alert(sp);
+            	  // alert(sp);
             	   $.ajax({
-                       
                        "url": "<?php echo site_url('adminController/updatePermissionStatus') ?>",
                         "method": 'POST',
                         "data": {sp : sp , eid : eid},
@@ -94,7 +91,7 @@ $sub = $this->db->query("select * from sub_study_plan where plan_id ='$row->id'"
                         }
                     })
             	 } else {
-            		 alert("unchecked");
+            		 //alert("unchecked");
             		 $.ajax({
                          
                          "url": "<?php echo site_url('adminController/deletePermissionStatus') ?>",
@@ -120,4 +117,4 @@ $sub = $this->db->query("select * from sub_study_plan where plan_id ='$row->id'"
 </tr>
 <?php endforeach; }
 ?></table>
-<div class ="alert alert-info" id="updateBox"></div>
+<div class="col-xs-12 col-md-12 col-lg-12" id="updateBox"></div>

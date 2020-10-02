@@ -28,7 +28,7 @@ class Clogin extends CI_Controller{
 		$data['mainPage'] = 'Dashboard';
 		$data['subPage'] = 'dashboard';
 		$data['title'] = 'UMPL Customer Dashboard';
-		$data['headerCss'] = 'headerCss/dashboardCss';
+		$data['headerCss'] = 'headerCss/nullCss';
 		$data['footerJs'] = 'footerJs/dashboardJs';
 		$data['mainContent'] = 'customer/cdashboard';
 		$this->load->view("includes/mainContent", $data);
@@ -101,9 +101,9 @@ class Clogin extends CI_Controller{
 	    
 	}
 	public function customer_profile(){
-		$this->load->library("form_validation");
+	
 	//	$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
-		if($this->session->userdata("login_type") ==1){	
+		if($this->uri->segment(3)){	
 		    $id = $this->uri->segment(3);
 		    $data['crecord'] = $this->cmodel->getCrecord($id);
 		}else{	

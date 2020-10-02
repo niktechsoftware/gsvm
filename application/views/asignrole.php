@@ -25,7 +25,7 @@
 							            	
 										foreach($record->result() as $row):?>
 								<option value="<?php echo $row->id;?>">
-								<?php echo $row->employee_iname;?></option>
+								<?php echo $row->employee_iname."[".$row->id."]";?></option>
 							       <?php endforeach; }?>
 							    </select>  
 							</div>
@@ -41,8 +41,8 @@
 								</div>
 							<div class="col-md-9">
 							<div class="form-group">
-                             <input type="text" class="form-control" value="" name="address" id="name" required="required">               
-                     
+                             <input type="text" class="form-control" value="" name="address" id="name" onkeyup="autocomplet()" required="required">               
+                                <ul style="list-style: none; padding:0px;" id="student_list_id"> </ul>
                       			</div>
                       		</div>
                       	</div>
@@ -73,7 +73,6 @@
            <script>
            $("#eid").change(function(){
                var eid = $("#eid").val();
-               alert(eid);
                $.ajax({
                         
                           "url": "<?php echo site_url('adminController/getPermissionStatus') ?>",
@@ -93,5 +92,46 @@
 
            });
 
-           </script>     
              
+           
+           	function autocomplet() {
+								var min_length = 1; // min caracters to display the autocomplete
+								var keyword = $('#name').val();
+								if (keyword.length >= min_length) {
+									$.ajax({
+										url: '<?php echo site_url("adminController/searchEmp");?>',
+										type: 'POST',
+										data: {keyword:keyword},
+										success:function(data){
+											$('#student_list_id').show();
+											$('#student_list_id').html(data);
+										}
+									});
+								} else {
+									$('#student_list_id').hide();
+									
+									
+								}
+							}
+							function set_item(item) {
+							   $('#eid').val(item);
+							 var eid = $("#eid").val();
+                               $.ajax({
+                                        
+                                          "url": "<?php echo site_url('adminController/getPermissionStatus') ?>",
+                                           "method": 'POST',
+                                           "data": {eid : eid},
+                                           beforeSend: function(data) {
+                                              $("#setValue").html("<center><img src='<?php echo base_url(); ?>assets/images/loading.gif' /></center>")
+                                           },
+                                           success: function(data) {
+                                               $("#setValue").html(data);
+                                               $("#sms").hide();
+                                           },
+                                           error: function(data) {
+                                               $("#setValue").html(data)
+                                           }
+                                       })
+								
+							}
+             </script>   

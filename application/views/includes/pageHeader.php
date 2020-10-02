@@ -18,21 +18,15 @@
             </li>
           </ul>
          <strong><?php echo $this->session->userdata("business_name");?></strong>
-         
                       <?php if($this->session->userdata("login_type")==2){
                    ?> </div>
         </div><?php  $rc =   $this->cmodel->getCrecord($this->session->userdata("customer_id"))->row();
                     if(!$rc->status){
                     	?>
                     	 <a href="#" class="btn btn-danger">Inactive</a>
-                    	
-                    	   
                   <?php   }else{
                   	?>
-                  	
                     	 <a href="#" class="btn btn-success">Active</a>
-                    	
-                    	    
                   	<?php 
                       }}else{?>
                       
@@ -47,9 +41,14 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <li class="dropdown"><a href="#" data-toggle="dropdown"
               class="nav-link dropdown-toggle nav-link-lg nav-link-user"> 
-              <?php if(strlen($this->session->userdata('image'))>0){?>
-              <img alt="image" src="<?php echo base_url();?>assets/img/users/<?php echo $this->session->userdata('image');?>"
-              <?php }else {?>
+              <?php if(strlen($this->session->userdata('image'))>0){
+              if($this->session->userdata("login_type")==1){?>
+              <img alt="image" src="<?php echo base_url();?>assets/img/<?php echo $this->session->userdata('photo');?>"
+              <?php }else{?>
+              <img alt="image" src="<?php echo base_url();?>assets/img/users/<?php echo $this->session->userdata('photo');?>"
+             <?php  }
+              
+              }else {?>
               <img alt="image" src="<?php echo base_url();?>assets/img/default.jpg"
               
               <?php }?>

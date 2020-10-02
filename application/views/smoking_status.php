@@ -1,4 +1,7 @@
-<?php $uri=$this->uri->segment('3'); ?>
+<?php $uri=$this->uri->segment(3); 
+if($uri=="success"){
+$uri=$this->uri->segment(4);
+}?>
 <div class="main-content">
 	<div class="section">
 		<div class="section-body">
@@ -10,7 +13,7 @@
 
 						</div>
 						<form method="post"	action="<?php echo base_url()?>index.php/patient/patient_smokingstatus" enctype="multipart/Form-data" >
-							<input type="hidden" name="id" value="<?php echo $uri; ?>">
+						   <input type="hidden" name="pid" value="<?php echo $uri; ?>">
 							<div class="card-body">
 								<div class="row" id="regForm">
 									<div class="col-md-12 col-lg-12 col-xs-12">
@@ -20,13 +23,13 @@
 
 												<div class="form-group row">
 													<div class="col-md-2">
-														<label>ARE YOU SMOKING.?<span title="Required" style="color: red;">*</span></label>
+														<label>ARE YOU SMOKING.?<span title="Required"  style="color: red;">*</span></label>
 													</div>
 												
 													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																name="answer" value="yes" style="height:20px; width:20px;">
+																name="answer" value="yes" style="height:20px; width:20px;" required>
 																
 													
 														</div>
@@ -146,7 +149,7 @@
 														<div class="form-group">
 															PAAN WITH MASALA<input type="checkbox" class="form-control"
 																value="1" name="paan"
-															 style="height:20px; width:20px;">
+															 style="height:20px; width:20px;" >
 																
 														</div>
 													</div>

@@ -13,7 +13,7 @@
   <script src="<?php echo base_url();?>assets/bundles/echart/echarts.js"></script>
   <script src="<?php echo base_url();?>assets/bundles/chartjs/chart.min.js"></script>
   <!-- Page Specific JS File -->
-  <script src="<?php echo base_url();?>assets/js/page/index.js"></script>
+ 
   <!-- Template JS File -->
   <script src="<?php echo base_url();?>assets/js/scripts.js"></script>
   <!-- Custom JS File -->

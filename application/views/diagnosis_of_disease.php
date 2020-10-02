@@ -24,12 +24,16 @@
 										 	  	$this->db->where("employee_id",$this->session->userdata('customer_id'));
 										 	  	$this->db->where("plan_id", 3);
 										 	  		 $ap = $this->db->get("assign_plan");
-										 	  		$starray = array();$r=1; 
+										 	  		$starray = array();
+										 	  		$r=1; 
+										 	  		$starray['1']=0;
+										 	  		if($ap->num_rows()>0){
 										 	  		foreach($ap->result() as $get_ap):
 										 	  		if($get_ap->sub_plan_id){
 														$starray[$r]=$get_ap->sub_plan_id;
 										 	  		}
 										 	  		$r++; endforeach;
+										 	  		}
 										 	  		$this->db->where_in("id",$starray);
 										 	  		$sp = $this->db->get("sub_study_plan");
 										 	  		
