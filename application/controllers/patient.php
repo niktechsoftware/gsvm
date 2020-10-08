@@ -188,11 +188,11 @@ public function patient_list(){
 	}
 
 		function patient_diet(){
-			echo $this->input->post('pid');
+			//echo $this->input->post('pid');
 			exit();
 				$data=array(
 
-				'reg_id'=>$this->input->post('id'),
+				'reg_id'=>$this->input->post('pid'),
 					'dietary_habit'=>$this->input->post("dietary_habit"),
 					'break_fast'=>$this->input->post("breakfast"),
 					'lunch'=>$this->input->post('lunch'),

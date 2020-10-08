@@ -47,7 +47,7 @@ th {
 							<div class="col-md-12 col-lg-12 col-xs-12">
 										<div class="row">						
 
-										<table>
+										<table style="width:118%; margin-left:2%;">
   <tr>
     <th>S.NO.</th>
     <th>PARAMETER</th>

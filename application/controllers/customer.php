@@ -202,7 +202,7 @@ function Oral_Cancer(){
 		$this->load->view("includes/mainContent", $data);
 	    
 	}
-	function Biochemicl_Parameters(){
+	function bpi(){
 	    $data['pageTitle'] = 'Biochemicl_Parameters';
 		$data['smallTitle'] = 'Biochemicl_Parameters';
 		$data['mainPage'] = 'Biochemicl_Parameters';
