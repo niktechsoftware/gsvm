@@ -1,3 +1,4 @@
+
 <div class="main-content">
 	<div class="section">
 		<div class="section-body">
@@ -13,14 +14,20 @@
 								<div class="row" id="regForm">
 									<div class="col-md-12 col-lg-12 col-xs-12">
 										<div class="row">
-										
+										    <?php if($this->uri->segment(3)=="success"){?>
+										        <div class="alert alert-success col-md-12 col-lg-12 col-xs-12"> Employee Registration is done successfully!</div>
+										    <?php }else{
+										    if($this->uri->segment(3)){?>
+										     <div class="alert alert-warning col-md-12 col-lg-12 col-xs-12"> Please Try Again !</div>
+										    
+										   <?php  }}?>
 											<div class="col-xs-6 col-md-6 col-lg-6">
 
 												<div class="form-group row">
-													<div class="col-md-3">
+													<div class="col-md-5">
 														<label>EMPLOYEE NAME<span title="Required" style="color: red;">*</span></label>
 													</div>
-													<div class="col-md-9">
+													<div class="col-md-7">
 														<div class="form-group">
 															<input type="text" class="form-control"
 																value="" name="empname"
@@ -35,10 +42,10 @@
 												<div class="col-xs-6 col-md-6 col-lg-6">
 
 												<div class="form-group row">
-													<div class="col-md-3">
+													<div class="col-md-5">
 														<label>JOB TITTLE<span title="Required" style="color: red;">*</span></label>
 													</div>
-													<div class="col-md-9">
+													<div class="col-md-7">
 														<div class="form-group">
 															<input type="text" class="form-control"
 																value="" name="jobtittle"
@@ -53,16 +60,16 @@
 										</div>
 									</div>
 
-<div class="col-md-12 col-lg-12 col-xs-12">
+                                    <div class="col-md-12 col-lg-12 col-xs-12">
 										<div class="row">
 										
 											<div class="col-xs-6 col-md-6 col-lg-6">
 
 												<div class="form-group row">
-													<div class="col-md-3">
+													<div class="col-md-5">
 														<label>ADDRESS<span title="Required" style="color: red;">*</span></label>
 													</div>
-													<div class="col-md-9">
+													<div class="col-md-7">
 														<div class="form-group">
 															<input type="text" class="form-control"
 																value="" name="address"
@@ -77,10 +84,10 @@
 												<div class="col-xs-6 col-md-6 col-lg-6">
 
 												<div class="form-group row">
-													<div class="col-md-3">
+													<div class="col-md-5">
 														<label>STATE<span title="Required" style="color: red;">*</span></label>
 													</div>
-													<div class="col-md-9">
+													<div class="col-md-7">
 														<div class="form-group">
 															
 												<select class="form-control" name="state" id="state" value ="">
@@ -123,10 +130,10 @@
 											<div class="col-xs-6 col-md-6 col-lg-6">
 
 												<div class="form-group row">
-													<div class="col-md-3">
+													<div class="col-md-5">
 														<label>CITY<span title="Required" style="color: red;">*</span></label>
 													</div>
-													<div class="col-md-9">
+													<div class="col-md-7">
 														<div class="form-group">
 															
 								<select id="city" name="city" class="form-control">
@@ -154,10 +161,10 @@
 												<div class="col-xs-6 col-md-6 col-lg-6">
 
 												<div class="form-group row">
-													<div class="col-md-3">
+													<div class="col-md-5">
 														<label>AREA<span title="Required" style="color: red;">*</span></label>
 													</div>
-													<div class="col-md-9">
+													<div class="col-md-7">
 														<div class="form-group">
 														
 																 <select  class="form-control" id="area" name="area" >
@@ -173,33 +180,29 @@
 										</div>
 	</div>
 
-
-											</div>
 <div class="col-md-12 col-lg-12 col-xs-12">
 										<div class="row">
 										
 											<div class="col-xs-6 col-md-6 col-lg-6">
 
 												<div class="form-group row">
-													<div class="col-md-3">
+													<div class="col-md-5">
 														<label>PIN<span title="Required" style="color: red;">*</span></label>
 													</div>
-													<div class="col-md-9">
+													<div class="col-md-7">
 														<div class="form-group">
-															<input type="text" class="form-control"
-																value="" name="pincode"
-																id="pincode" required="required">
-										<script>
-                                     $("#area").change(function(){
-								var state = $("#state").val();
-								var city = $("#city").val();
-								var area = $("#area").val();
-								//alert(state);
-								$.post("<?php echo base_url() ?>index.php/common/getPin",{area : area,city : city,state : state},function(data){
-									$("#pincode").val(data);
-								});
-							});
-						</script>
+															<input type="text" class="form-control"	value="" name="pincode"	id="pincode" required="required">
+                        										<script>
+                                                                $("#area").change(function(){
+                                    								var state = $("#state").val();
+                                    								var city = $("#city").val();
+                                    								var area = $("#area").val();
+                                    								//alert(state);
+                                    								$.post("<?php echo base_url() ?>index.php/common/getPin",{area : area,city : city,state : state},function(data){
+                                    									$("#pincode").val(data);
+                                    								});
+                                    							});
+                                    						</script>
 
 														</div>
 								
@@ -209,12 +212,11 @@
 
 											</div>
 												<div class="col-xs-6 col-md-6 col-lg-6">
-
 												<div class="form-group row">
-													<div class="col-md-3">
+													<div class="col-md-5">
 														<label>DATE OF BIRTH<span title="Required" style="color: red;">*</span></label>
 													</div>
-													<div class="col-md-9">
+													<div class="col-md-7">
 														<div class="form-group">
 															<input type="date" class="form-control"
 																value="" name="dob"
@@ -230,20 +232,16 @@
 									</div>
 						<div class="col-md-12 col-lg-12 col-xs-12">
 										<div class="row">
-										<div class="col-md-12">
-														<label>COUNTRY</label>
-													</div>
 											<div class="col-xs-6 col-md-6 col-lg-6">
-
 												<div class="form-group row">
-													<div class="col-md-3">
-														<label><span title="Required" style="color: red;">*</span></label>
+													<div class="col-md-5">
+														<label>COUNTRY<span title="Required" style="color: red;">*</span></label>
 													</div>
-													<div class="col-md-9">
+													<div class="col-md-7">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="country"
-																id="name" required="required">
+																value="INDIA" name="country"
+																id="name" required="required" readonly>
 														</div>
 								
                                          </div>
@@ -254,10 +252,10 @@
 												<div class="col-xs-6 col-md-6 col-lg-6">
 
 												<div class="form-group row">
-													<div class="col-md-3">
+													<div class="col-md-5">
 														<label>MOBILE NUMBER<span title="Required" style="color: red;">*</span></label>
 													</div>
-													<div class="col-md-9">
+													<div class="col-md-7">
 														<div class="form-group">
 															<input type="text" class="form-control"
 																value="" name="mobile"
@@ -278,14 +276,14 @@
 											<div class="col-xs-6 col-md-6 col-lg-6">
 
 												<div class="form-group row">
-													<div class="col-md-3">
-														<label>ALTERNATE NUMBER<span title="Required" style="color: red;">*</span></label>
+													<div class="col-md-5">
+														<label>ALTERNATE NUMBER</label>
 													</div>
-													<div class="col-md-9">
+													<div class="col-md-7">
 														<div class="form-group">
 															<input type="text" class="form-control"
 																value="" name="number"
-																id="name" required="required">
+																id="name" >
 														</div>
 								
                                          </div>
@@ -296,14 +294,14 @@
 												<div class="col-xs-6 col-md-6 col-lg-6">
 
 												<div class="form-group row">
-													<div class="col-md-3">
-														<label>QUALIFICATION<span title="Required" style="color: red;">*</span></label>
+													<div class="col-md-5">
+														<label>QUALIFICATION</label>
 													</div>
-													<div class="col-md-9">
+													<div class="col-md-7">
 														<div class="form-group">
 															<input type="text" class="form-control"
 																value="" name="qualification"
-																id="name" required="required">
+																id="name" >
 														</div>
 								
                                          </div>
@@ -315,23 +313,21 @@
 									</div>
 <div class="col-md-12 col-lg-12 col-xs-12">
 										<div class="row">
-										
 											<div class="col-xs-6 col-md-6 col-lg-6">
-
 												<div class="form-group row">
-													<div class="col-md-3">
-															<label>EXPERIENCE(YEARS)<span title="Required" style="color: red;">*</span></label>
+													<div class="col-md-5">
+															<label>Gender</label>
 													</div>
-													<div class="col-md-9">
+													<div class="col-md-7">
 														<div class="form-group">
 
-                    <select class="form-control" id="experience" name="experience"
-                      value="">
-                      <option value="">-Experience-</option>
-                      <?php for($i = 0;$i<=10; $i++): ?>
-                      <option value="<?php if($i == 1){echo $i." Year";}else{echo $i." Years";}?>">
-                        <?php if($i == 1){echo $i." Year";}else{echo $i." Years";}?></option>
-                      <?php endfor; ?>
+                    <select class="form-control" id="gender" name="gender"
+                      value="" required="required">
+                      <option value="">-Select Gender-</option>
+                      <option value="1">Male</option>
+                      <option value="2">Female</option>
+                      <option value="3">Transgender</option>
+                     
                     </select>														</div>
 								
                                          </div>
@@ -342,14 +338,14 @@
 												<div class="col-xs-6 col-md-6 col-lg-6">
 
 												<div class="form-group row">
-													<div class="col-md-3">
-														<label>EMAIL<span title="Required" style="color: red;">*</span></label>
+													<div class="col-md-5">
+														<label>EMAIL</label>
 													</div>
-													<div class="col-md-9">
+													<div class="col-md-7">
 														<div class="form-group">
-															<input type="text" class="form-control"
+															<input type="email" class="form-control"
 																value="" name="email"
-																id="name" required="required">
+																id="name" >
 														</div>
 								
                                          </div>
@@ -366,14 +362,14 @@
 											<div class="col-xs-6 col-md-6 col-lg-6">
 
 												<div class="form-group row">
-													<div class="col-md-3">
-														<label>JOINING DATE<span title="Required" style="color: red;">*</span></label>
+													<div class="col-md-5">
+														<label>JOINING DATE</label>
 													</div>
-													<div class="col-md-9">
+													<div class="col-md-7">
 														<div class="form-group">
 															<input type="date" class="form-control"
 																value="" name="jdate"
-																id="name" required="required">
+																id="name" >
 														</div>
 								
                                          </div>
@@ -384,10 +380,10 @@
 												<div class="col-xs-6 col-md-6 col-lg-6">
 
 												<div class="form-group row">
-													<div class="col-md-3">
+													<div class="col-md-5">
 														<label>PASSWORD<span title="Required" style="color: red;">*</span></label>
 													</div>
-													<div class="col-md-9">
+													<div class="col-md-7">
 														<div class="form-group">
 															<input type="password" class="form-control"
 																value="" name="password"
@@ -404,8 +400,8 @@
 
 											<div class="col-xs-6 col-md-6 col-lg-6">
 												<div class="form-group row">
-													<div class="col-md-3"></div>
-													<div class="col-md-9">
+													<div class="col-md-5"></div>
+													<div class="col-md-7">
 														<div class="form-group">
 															<button type="submit" class="btn btn-primary"
 																id="regisbtn">
@@ -436,3 +432,4 @@
 		</div>
 	</div>
 </div>
+

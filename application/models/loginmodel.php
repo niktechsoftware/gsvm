@@ -30,7 +30,7 @@ class loginmodel extends CI_Model{
 				"customer_password" => $res->admin_password,
 				"photo" => $res->ico_logo,
 				"logo" => $res->logo,
-					"image" =>$res->logo,
+				"image" =>$res->logo,
 				"is_login" => true,
 				"is_lock" => true,
 				"login_date" => date("d-M-Y"),
@@ -39,9 +39,10 @@ class loginmodel extends CI_Model{
 			return $loginData;
 		} else {
 		//$this->db->where("status",0);
-			$this->db->where("username", $this->input->post("username"));
-			$this->db->where("password", $this->input->post("password"));
-			$query = $this->db->get("employee_info");
+		$uid =$this->input->post("username");
+		$pass =$this->input->post("password");
+		$query =	$this->db->query("select * from employee_info where  password = '$pass' and (id='$uid' or email ='$uid')" );
+		
 			
 			if ($query->num_rows() > 0) {
 
@@ -53,10 +54,10 @@ class loginmodel extends CI_Model{
 					"business_name" => $school->business_name,
 					"login_type" => 2,
 					"customer_id" => $res->id,
-					"parent_id" => $res->parent_id,
-					"name" => $res->employee_name,
+					"name" => $res->employee_iname,
 					"dob" => $res->dob,
-						"image"=>$res->image,
+					"image"=>$res->image,
+					"photo"=>$res->image,
 					"customer_username" => $res->username,
 					"customer_password" => $res->password,
 					"mobile_number" => $res->mobilenumber,
@@ -65,9 +66,6 @@ class loginmodel extends CI_Model{
 					"city" => $res->city,
 					"state" => $res->state,
 					"pin" => $res->pin,
-					"joiner_id" => $res->joiner_id,
-					"joiner_name" => $res->joiner_name,
-					"joiner_position" => $res->position,
 					"pan_number" => $res->pannumber,
 					"adhaar_number" => $res->adhaarnumber,
 					"status" => $res->status,

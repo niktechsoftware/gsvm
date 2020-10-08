@@ -1,8 +1,8 @@
-<?php 
-    class Patientmodel extends CI_Model{
+<?php class Patientmodel extends CI_Model{
     	public function addpatient($data){
     	$info=	$this->db->insert("reg_patient_info",$data);
-			return $info;
+    	$insertId = $this->db->insert_id();
+			return $insertId;
     	}
     	function pat_max($tblnm){
             $this->db->select_max('id');

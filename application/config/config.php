@@ -23,8 +23,8 @@
 |
 */
 
+//$config['base_url'] = 'https://niktechsoftware.com/gsvm/';
 $config['base_url'] = 'http://localhost/gsvm/';
-
 
 
 /*
@@ -367,7 +367,3 @@ $config['rewrite_short_tags'] = FALSE;
 |
 */
 $config['proxy_ips'] = '';
-
-
-/* End of file config.php */
-/* Location: ./application/config/config.php */

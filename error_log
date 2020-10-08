@@ -234,3 +234,28 @@
 [06-Mar-2020 00:04:51 Asia/Calcutta] PHP Fatal error:  Call to undefined function getOneLevelClients() in /home4/niktexfu/public_html/umpl.in.net/usoft/application/controllers/pin.php on line 34
 [06-Mar-2020 00:07:49 Asia/Calcutta] PHP Fatal error:  Call to undefined function length() in /home4/niktexfu/public_html/umpl.in.net/usoft/application/controllers/pin.php on line 37
 [06-Mar-2020 00:09:59 Asia/Calcutta] PHP Fatal error:  Call to undefined function getOneLevelClients() in /home4/niktexfu/public_html/umpl.in.net/usoft/application/controllers/pin.php on line 43
+[27-Sep-2020 10:43:38 Asia/Calcutta] PHP Fatal error:  Call to undefined method Daybook::outer_daybook() in /home/nikteund/public_html/gsvm/application/controllers/daybookController.php on line 27
+[27-Sep-2020 15:57:40 Asia/Calcutta] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/nikteund/public_html/gsvm/application/controllers/customer.php on line 114
+[27-Sep-2020 15:57:46 Asia/Calcutta] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/nikteund/public_html/gsvm/application/controllers/customer.php on line 114
+[27-Sep-2020 15:58:39 Asia/Calcutta] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/nikteund/public_html/gsvm/application/controllers/customer.php on line 114
+[01-Oct-2020 12:13:20 Asia/Calcutta] PHP Fatal error:  Call to undefined method Daybook::outer_daybook() in /home/nikteund/public_html/gsvm/application/controllers/daybookController.php on line 27
+[01-Oct-2020 12:13:55 Asia/Calcutta] PHP Fatal error:  Call to undefined method Daybook::inner_daybook() in /home/nikteund/public_html/gsvm/application/controllers/daybookController.php on line 30
+[01-Oct-2020 15:19:52 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/nikteund/public_html/gsvm/application/config/config.php on line 375
+[01-Oct-2020 15:20:04 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/nikteund/public_html/gsvm/application/config/config.php on line 375
+[01-Oct-2020 15:21:03 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/nikteund/public_html/gsvm/application/config/config.php on line 375
+[01-Oct-2020 15:21:06 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/nikteund/public_html/gsvm/application/config/config.php on line 375
+[01-Oct-2020 15:21:08 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/nikteund/public_html/gsvm/application/config/config.php on line 375
+[01-Oct-2020 15:38:56 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/nikteund/public_html/gsvm/application/config/config.php on line 375
+[01-Oct-2020 15:39:01 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/nikteund/public_html/gsvm/application/config/config.php on line 375
+[01-Oct-2020 15:39:13 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/nikteund/public_html/gsvm/application/config/config.php on line 375
+[01-Oct-2020 15:39:22 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/nikteund/public_html/gsvm/application/config/config.php on line 375
+[01-Oct-2020 15:40:28 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/nikteund/public_html/gsvm/application/config/config.php on line 375
+[01-Oct-2020 15:40:43 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/nikteund/public_html/gsvm/application/config/config.php on line 375
+[01-Oct-2020 15:58:18 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/nikteund/public_html/gsvm/application/config/config.php on line 375
+[01-Oct-2020 15:58:22 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/nikteund/public_html/gsvm/application/config/config.php on line 375
+[01-Oct-2020 15:58:24 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/nikteund/public_html/gsvm/application/config/config.php on line 375
+[01-Oct-2020 15:58:54 Asia/Calcutta] PHP Parse error:  syntax error, unexpected '===' (T_IS_IDENTICAL) in /home/nikteund/public_html/gsvm/application/config/config.php on line 375
+[02-Oct-2020 00:49:19 Asia/Calcutta] PHP Fatal error:  Call to undefined method stdClass::row() in /home/nikteund/public_html/gsvm/application/controllers/adminController.php on line 30
+[02-Oct-2020 00:49:27 Asia/Calcutta] PHP Fatal error:  Call to a member function row() on array in /home/nikteund/public_html/gsvm/application/controllers/adminController.php on line 30
+[02-Oct-2020 14:45:42 Asia/Calcutta] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/nikteund/public_html/gsvm/application/controllers/patient.php on line 316
+[02-Oct-2020 15:14:29 Asia/Calcutta] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/nikteund/public_html/gsvm/application/controllers/patient.php on line 322

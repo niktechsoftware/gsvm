@@ -7,10 +7,14 @@
           </div>
           <div class="sidebar-user">
             <div class="sidebar-user-picture">
-              <?php if(strlen($this->session->userdata('image'))>0){?>
-              <img alt="image" src="<?php echo base_url();?>assets/img/<?php echo $this->session->userdata('image');?>"
+              <?php if(strlen($this->session->userdata('image'))>0){
+              if($this->session->userdata("login_type")==1){?>
+              <img alt="image" src="<?php echo base_url();?>assets/img/<?php echo $this->session->userdata('photo');?>"/>
+              <?php }else{?>
+              <img alt="image" src="<?php echo base_url();?>assets/img/users/<?php echo $this->session->userdata('image');?>"/>
+              <?php }?>
               <?php }else {?>
-              <img alt="image" src="<?php echo base_url();?>assets/img/default.jpg"
+              <img alt="image" src="<?php echo base_url();?>assets/img/default.jpg"/>
               
               <?php }?>
             </div>
@@ -18,7 +22,7 @@
               <div class="user-name">
                   <?php echo $this->session->userdata("name");?>
                  [ <?php echo $this->session->userdata("customer_username");?>]</div>
-              <div class="user-role"><?php if($this->session->userdata("login_type")==1){echo "Administrator";}else{echo "Customer";}?></div>
+              <div class="user-role"><?php if($this->session->userdata("login_type")==1){echo "Administrator";}else{echo "Employee";}?></div>
             </div>
           </div>
           <!-- admin Menu Start -->
