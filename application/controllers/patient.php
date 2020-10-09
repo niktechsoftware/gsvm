@@ -163,8 +163,23 @@ public function patient_list(){
 
 }
 
-
-	
+	public function patient_profile(){
+		if($this->uri->segment(3)){	
+		    $id = $this->uri->segment(3);
+		    $result= $this->cmodel->getCrecordp($id);
+		    $data['crecord'] =$result->row() ;
+		   
+		$data['pageTitle'] = 'Patient Profile';
+		$data['smallTitle'] = 'Profile form';
+		$data['mainPage'] = 'Patient Profile';
+		$data['subPage'] = 'Patient Profile';
+		$data['title'] = 'Patient Profile Form';
+		$data['headerCss'] = 'headerCss/dashboardCss';
+		$data['footerJs'] = 'footerJs/customerJs';
+		$data['mainContent'] = 'patient/profile';
+		$this->load->view("includes/mainContent", $data);
+	}
+	}
 
 	function matchid(){
 		$username=$this->input->post("username");

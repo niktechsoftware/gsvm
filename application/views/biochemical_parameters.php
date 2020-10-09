@@ -1,25 +1,4 @@
 
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 20px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-th {
-  background-color: #6A5ACD;
-  color: white;
-}
-</style>
 <div class="main-content">
 	<div class="section">
 		<div class="section-body">
@@ -30,7 +9,57 @@ th {
 							<h4>Biochemical Parameters</h4>
 
 						</div>
+						<form method="post"	action="<?php echo base_url()?>index.php/customer/Breast_Cancer" enctype="multipart/Form-data" >
+							<div class="card-body">
+								<div class="row" id="regForm">
+									<div class="col-md-12 col-lg-12 col-xs-12">
+										<div class="row">
+											<div class="col-xs-6 col-md-6 col-lg-6">
+												<div class="form-group row">
+													<div class="col-md-4">
+														<label>Enter Patient ID<span title="Required" style="color: red;">*</span></label>
+													</div>
+													<div class="col-md-4">
+														<div class="form-group">
+															<input type="text" class="form-control"
+																value="" name="username"
+																id="reg_id" required="required">
+														</div>
+														
+												 </div>
+												 	<div class="col-md-4">
+														<div class="form-group">
+															<button type="submit" class="btn btn-primary"
+																id="regisbtn" style="">
+														<i class="fas fa-check">&nbsp;OK</i>
+												</button>
+											</div>
+										</div>
+											</div>
+										</div>
+											<div class="col-xs-6 col-md-6 col-lg-6">
+												<div class="form-group row">
+												    <table>
+												<?php if($uri){
+												    $this->db->where("reg_id",$id);
+												    $bcf = $this->db->get("breast_cancer_proforma");
+												    if($bcf->num_rows()>0){
+												        foreach($bcf->result() as $bc):?>
+												        <tr> <td><?php echo $bc->date;?></td></tr>
+												   <?php  endforeach; }
+												}?>
+												</table>
+									</div>
+								</div>
+							</div>
+						</div>
+				</form>
+				</div>
+				</div>
+				<?php if($uri){?>
+				<div class="alert alert-info col-xs-12 col-md-12 col-lg-12">    <?php echo $msg;?></div>
 						<form method="post"	action="<?php echo base_url()?>index.php/adminController/addemployeeinfo" enctype="multipart/Form-data" >
+						    	<input type ="hidden" name="preg" value = "<?php echo $id;?>" readonly>
 							<div class="card-body">
 								<div class="row" id="regForm">
 
@@ -569,6 +598,7 @@ th {
 								</div>
 							</form>
 						</div>
+						<?php }?>
 					</div>
 				</div>
 			</div>

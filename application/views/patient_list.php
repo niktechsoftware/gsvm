@@ -35,7 +35,7 @@
                         ?>
                           <tr>
                             <td><?php echo $i;?></td>
-                            <td class="align-middle"><a href="<?php echo base_url();?>index.php/clogin/customer_profile/<?php echo $data->id;?>"><?php echo $data->id;?></a></td>
+                            <td class="align-middle"><a href="<?php echo base_url();?>index.php/patient/patient_profile/<?php echo $data->id;?>"><?php echo $data->id;?></a></td>
                             <td><?php echo $data->first_name.$data->middle_name.$data->last_name;?></td>
                             <td><?php echo $data->father_name;?></td>
                             <td><?php echo $data->mobile_number;?></td>

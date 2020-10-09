@@ -23,7 +23,7 @@
 |
 */
 
-$config['base_url'] = 'https://niktechsoftware.com/gsvm/';
+$config['base_url'] = 'https://gsvmbiochemsitryresearch.com/gsvm/';
 
 
 
