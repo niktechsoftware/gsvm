@@ -105,6 +105,12 @@
         	$record = $this->db->get("employee_info");
         	return $record;
 	     	}
+	     	
+	     	function getCrecordp($id){
+        	$this->db->where('id',$id);
+        	$record = $this->db->get("reg_patient_info");
+        	return $record;
+	     	}
 		function pay_detail_insert($cust_id,$txn,$reffno)
 		{
 			$this->db->where("c_id",$cust_id);

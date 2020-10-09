@@ -42,7 +42,7 @@
               <ul class="dropdown-menu">
                  <?php $sp = $this->db->get("study_plan");
               foreach($sp->result() as $r):?>
-                <li><a href="<?php echo base_url();?>index.php/customer/customer_list/<?php echo $r->id;?>"><?php echo $r->plan_name;?> </a></li>
+                <li><a href="<?php echo base_url();?>index.php/daybookController/report/<?php echo $r->id;?>"><?php echo $r->plan_name;?> </a></li>
               <?php endforeach;
               ?>
               

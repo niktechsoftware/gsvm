@@ -259,3 +259,7 @@
 [02-Oct-2020 00:49:27 Asia/Calcutta] PHP Fatal error:  Call to a member function row() on array in /home/nikteund/public_html/gsvm/application/controllers/adminController.php on line 30
 [02-Oct-2020 14:45:42 Asia/Calcutta] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/nikteund/public_html/gsvm/application/controllers/patient.php on line 316
 [02-Oct-2020 15:14:29 Asia/Calcutta] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/nikteund/public_html/gsvm/application/controllers/patient.php on line 322
+[05-Oct-2020 16:03:55 Asia/Calcutta] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/nikteund/public_html/gsvmbiochemsitryresearch.com/gsvm/application/controllers/patient.php on line 345
+[06-Oct-2020 01:10:12 Asia/Calcutta] PHP Parse error:  syntax error, unexpected end of file in /home/nikteund/public_html/gsvmbiochemsitryresearch.com/gsvm/application/views/coronary_proforma.php on line 3950
+[06-Oct-2020 01:49:36 Asia/Calcutta] PHP Parse error:  syntax error, unexpected end of file in /home/nikteund/public_html/gsvmbiochemsitryresearch.com/gsvm/application/views/oral_cancer_proforma.php on line 1088
+[06-Oct-2020 02:11:29 Asia/Calcutta] PHP Parse error:  syntax error, unexpected end of file in /home/nikteund/public_html/gsvmbiochemsitryresearch.com/gsvm/application/views/hypertension_proforma.php on line 4462

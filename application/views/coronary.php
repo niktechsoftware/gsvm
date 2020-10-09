@@ -68,7 +68,8 @@
 													</div>
 													<div class="col-md-2">
 														<div class="form-group">
-															BREAK-FAST<input type="checkbox" class="form-control"
+															BREAK-FAST
+															<input type="checkbox" class="form-control"
 																value="breakfast" name="breakfast"
 
 																id="name" style="height:20px; width:20px;">
