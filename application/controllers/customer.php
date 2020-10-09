@@ -251,10 +251,10 @@ function bpi_submit(){
 	"hba1c_unit"=>$this->input->post("hba1unit"),
 	"s_tp_level"=>$this->input->post("stplevel"),
 	"s_tp-unit"=>$this->input->post("stpunit"),
-	
-	
-	
-	
+	"microprotein_level"=>$this->input->post("mplevel"),
+	"microprotein_unit"=>$this->input->post("mpunit"),
+	"s_albumin_level"=>$this->input->post("salevel"),
+	"s_albumin_unit"=>$this->input->post("saunit"),
 	"microalbumin_level"=>$this->input->post("malevel"),
 	"microalbumin_unit"=>$this->input->post("maunit"),
 	"a_g_ratio_level"=>$this->input->post("agrlevel"),
@@ -313,8 +313,8 @@ function bpi_submit(){
 	"ft4_unit"=>$this->input->post("ft4unit"),
 	"ct_level"=>$this->input->post("ctlevel"),
 	"ct_unit"=>$this->input->post("ctunit"),
-	
-	
+	"vb12_level"=>$this->input->post("b12level"),
+	"vb12_unit"=>$this->input->post("b12unit"),
 	"hv_d_level"=>$this->input->post("hvdlevel"),
 	"hv_d_unit"=>$this->input->post("hvdunit"),
 	"ue_c_level"=>$this->input->post("ueclevel"),
