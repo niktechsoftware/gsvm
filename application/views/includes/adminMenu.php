@@ -33,7 +33,7 @@
                 
               <li><a href="<?php echo base_url();?>index.php/patient/patient_list">Search Edit & Delete </a></li>
 
-               <li><a href="<?php echo base_url();?>index.php/patient/coronary">Coronary Artery Desease </a></li>
+               <li><a href="<?php echo base_url();?>index.php/customer/coronary">Coronary Artery Desease </a></li>
               </ul>
             </li>
             
