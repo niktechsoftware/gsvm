@@ -123,37 +123,6 @@
 
 
 function Oral_Cancer(){
-    
-    $data['uri'] =false;
-	    if($this->input->post("username")){
-	        $this->db->where("username",$this->input->post("username"));
-	       $getpi =  $this->db->get("reg_patient_info");
-	       if($getpi->num_rows()>0){
-	           $data['uri'] =true;
-	           $data['id']=$getpi->row()->id;
-	           $data['msg'] ="Username of patien ".$getpi->row()->username. " found";
-	       }
-	       else{
-	           $data['uri'] =0;
-	           $data['id']=0;
-	            $data['msg'] ="Username of patien is wrong";
-	       }
-	    }
-	     if($this->uri->segment(3)=="success"){
-	          $this->db->where("id",$this->uri->segment(4));
-	            $getpi =  $this->db->get("reg_patient_info");
-	       if($getpi->num_rows()>0){
-	           $data['uri'] =true;
-	           $data['id']=$getpi->row()->id;
-	           $data['msg'] ="Username of patien ".$getpi->row()->username. " found";
-	       }
-	       else{
-	           $data['uri'] =0;
-	           $data['id']=0;
-	            $data['msg'] ="Username of patien is wrong";
-	       }
-	         
-	     }   
 	    $data['pageTitle'] = 'Oral Cancer ';
 		$data['smallTitle'] = 'Oral Cancer ';
 		$data['mainPage'] = 'Oral Cancer ';
@@ -167,38 +136,6 @@ function Oral_Cancer(){
 	}
 
 	function Breast_Cancer(){
-	   
-	     $data['uri'] =false;
-	    if($this->input->post("username")){
-	        $this->db->where("username",$this->input->post("username"));
-	       $getpi =  $this->db->get("reg_patient_info");
-	       if($getpi->num_rows()>0){
-	           $data['uri'] =true;
-	           $data['id']=$getpi->row()->id;
-	           $data['msg'] ="Username of patien ".$getpi->row()->username. " found";
-	       }
-	       else{
-	           $data['uri'] =0;
-	           $data['id']=0;
-	            $data['msg'] ="Username of patien is wrong";
-	       }
-	    }
-	     if($this->uri->segment(3)=="success"){
-	          $this->db->where("id",$this->uri->segment(4));
-	            $getpi =  $this->db->get("reg_patient_info");
-	       if($getpi->num_rows()>0){
-	           $data['uri'] =true;
-	           $data['id']=$getpi->row()->id;
-	           $data['msg'] ="Username of patien ".$getpi->row()->username. " found";
-	       }
-	       else{
-	           $data['uri'] =0;
-	           $data['id']=0;
-	            $data['msg'] ="Username of patien is wrong";
-	       }
-	         
-	     }   
-	      
 	    $data['pageTitle'] = 'Breast Cancer ';
 		$data['smallTitle'] = 'Breast Cancer ';
 		$data['mainPage'] = 'Breast Cancer ';
@@ -211,42 +148,11 @@ function Oral_Cancer(){
 	    
 	}
 	function hypertension(){
-	    
-	     $data['uri'] =false;
-	    if($this->input->post("username")){
-	        $this->db->where("username",$this->input->post("username"));
-	       $getpi =  $this->db->get("reg_patient_info");
-	       if($getpi->num_rows()>0){
-	           $data['uri'] =true;
-	           $data['id']=$getpi->row()->id;
-	           $data['msg'] ="Username of patien ".$getpi->row()->username. " found";
-	       }
-	       else{
-	           $data['uri'] =0;
-	           $data['id']=0;
-	            $data['msg'] ="Username of patien is wrong";
-	       }
-	    }
-	     if($this->uri->segment(3)=="success"){
-	          $this->db->where("id",$this->uri->segment(4));
-	            $getpi =  $this->db->get("reg_patient_info");
-	       if($getpi->num_rows()>0){
-	           $data['uri'] =true;
-	           $data['id']=$getpi->row()->id;
-	           $data['msg'] ="Username of patien ".$getpi->row()->username. " found";
-	       }
-	       else{
-	           $data['uri'] =0;
-	           $data['id']=0;
-	            $data['msg'] ="Username of patien is wrong";
-	       }
-	         
-	     }   
-	    $data['pageTitle'] = 'Hypertension Proforma';
-		$data['smallTitle'] = 'Hypertension Proforma';
-		$data['mainPage'] = 'Hypertension Proforma';
-		$data['subPage'] = 'Hypertension Proforma';
-		$data['title'] = 'Hypertension Proforma';
+	    $data['pageTitle'] = 'Hypertension_Proforma';
+		$data['smallTitle'] = 'Hypertension_Proforma';
+		$data['mainPage'] = 'Hypertension_Proforma';
+		$data['subPage'] = 'Hypertension_Proforma';
+		$data['title'] = 'Hypertension_Proforma';
 		$data['headerCss'] = 'headerCss/dashboardCss';
 		$data['footerJs'] = 'footerJs/customerJs';
 		$data['mainContent'] = 'hypertension_proforma';
@@ -266,41 +172,11 @@ function Oral_Cancer(){
 	    
 	}
 	function diabetes(){
-	     $data['uri'] =false;
-	    if($this->input->post("username")){
-	        $this->db->where("username",$this->input->post("username"));
-	       $getpi =  $this->db->get("reg_patient_info");
-	       if($getpi->num_rows()>0){
-	           $data['uri'] =true;
-	           $data['id']=$getpi->row()->id;
-	           $data['msg'] ="Username of patien ".$getpi->row()->username. " found";
-	       }
-	       else{
-	           $data['uri'] =0;
-	           $data['id']=0;
-	            $data['msg'] ="Username of patien is wrong";
-	       }
-	    }
-	     if($this->uri->segment(3)=="success"){
-	          $this->db->where("id",$this->uri->segment(4));
-	            $getpi =  $this->db->get("reg_patient_info");
-	       if($getpi->num_rows()>0){
-	           $data['uri'] =true;
-	           $data['id']=$getpi->row()->id;
-	           $data['msg'] ="Username of patien ".$getpi->row()->username. " found";
-	       }
-	       else{
-	           $data['uri'] =0;
-	           $data['id']=0;
-	            $data['msg'] ="Username of patien is wrong";
-	       }
-	         
-	     }   
-	    $data['pageTitle'] = 'Diabetes Proforma';
-		$data['smallTitle'] = 'Diabetes Proforma';
-		$data['mainPage'] = 'Diabetes Proforma';
-		$data['subPage'] = 'Diabetes Proforma';
-		$data['title'] = 'Diabetes Proforma';
+	    $data['pageTitle'] = 'Diabetes_Proforma';
+		$data['smallTitle'] = 'Diabetes_Proforma';
+		$data['mainPage'] = 'Diabetes_Proforma';
+		$data['subPage'] = 'Diabetes_Proforma';
+		$data['title'] = 'Diabetes_Proforma';
 		$data['headerCss'] = 'headerCss/dashboardCss';
 		$data['footerJs'] = 'footerJs/customerJs';
 		$data['mainContent'] = 'diabetes_proforma';
@@ -308,41 +184,11 @@ function Oral_Cancer(){
 	    
 	}
 	function coronary(){
-	      $data['uri'] =false;
-	    if($this->input->post("username")){
-	        $this->db->where("username",$this->input->post("username"));
-	       $getpi =  $this->db->get("reg_patient_info");
-	       if($getpi->num_rows()>0){
-	           $data['uri'] =true;
-	           $data['id']=$getpi->row()->id;
-	           $data['msg'] ="Username of patien ".$getpi->row()->username. " found";
-	       }
-	       else{
-	           $data['uri'] =0;
-	           $data['id']=0;
-	            $data['msg'] ="Username of patien is wrong";
-	       }
-	    }
-	     if($this->uri->segment(3)=="success"){
-	          $this->db->where("id",$this->uri->segment(4));
-	            $getpi =  $this->db->get("reg_patient_info");
-	       if($getpi->num_rows()>0){
-	           $data['uri'] =true;
-	           $data['id']=$getpi->row()->id;
-	           $data['msg'] ="Username of patien ".$getpi->row()->username. " found";
-	       }
-	       else{
-	           $data['uri'] =0;
-	           $data['id']=0;
-	            $data['msg'] ="Username of patien is wrong";
-	       }
-	         
-	     }   
-	    $data['pageTitle'] = 'Coronary';
-		$data['smallTitle'] = 'Coronary proforma';
-		$data['mainPage'] = 'Coronary proforma';
-		$data['subPage'] = 'Coronary proforma';
-		$data['title'] = 'Coronary proforma';
+	    $data['pageTitle'] = 'Coronary_proforma';
+		$data['smallTitle'] = 'Coronary_proforma';
+		$data['mainPage'] = 'Coronary_proforma';
+		$data['subPage'] = 'Coronary_proforma';
+		$data['title'] = 'Coronary_proforma';
 		$data['headerCss'] = 'headerCss/dashboardCss';
 		$data['footerJs'] = 'footerJs/customerJs';
 		$data['mainContent'] = 'coronary_proforma';
@@ -350,36 +196,6 @@ function Oral_Cancer(){
 	    
 	}
 	function bpi(){
-	     $data['uri'] =false;
-	    if($this->input->post("username")){
-	        $this->db->where("username",$this->input->post("username"));
-	       $getpi =  $this->db->get("reg_patient_info");
-	       if($getpi->num_rows()>0){
-	           $data['uri'] =true;
-	           $data['id']=$getpi->row()->id;
-	           $data['msg'] ="Username of patien ".$getpi->row()->username. " found";
-	       }
-	       else{
-	           $data['uri'] =0;
-	           $data['id']=0;
-	            $data['msg'] ="Username of patien is wrong";
-	       }
-	    }
-	     if($this->uri->segment(3)=="success"){
-	          $this->db->where("id",$this->uri->segment(4));
-	            $getpi =  $this->db->get("reg_patient_info");
-	       if($getpi->num_rows()>0){
-	           $data['uri'] =true;
-	           $data['id']=$getpi->row()->id;
-	           $data['msg'] ="Username of patien ".$getpi->row()->username. " found";
-	       }
-	       else{
-	           $data['uri'] =0;
-	           $data['id']=0;
-	            $data['msg'] ="Username of patien is wrong";
-	       }
-	         
-	     }   
 	    $data['pageTitle'] = 'Biochemicl_Parameters';
 		$data['smallTitle'] = 'Biochemicl_Parameters';
 		$data['mainPage'] = 'Biochemicl_Parameters';
@@ -391,6 +207,168 @@ function Oral_Cancer(){
 		$this->load->view("includes/mainContent", $data);
 	    
 	}
+	function pestiside(){
+	    $data['pageTitle'] = 'Pesticide Parameters';
+		$data['smallTitle'] = 'Pesticide Parameters';
+		$data['mainPage'] = 'Pesticide Parameters';
+		$data['subPage'] = 'Pesticide Parameters';
+		$data['title'] = 'Pesticide Parameters';
+		$data['headerCss'] = 'headerCss/dashboardCss';
+		$data['footerJs'] = 'footerJs/customerJs';
+		$data['mainContent'] = 'pestiside_parameters';
+		$this->load->view("includes/mainContent", $data);
+	    
+	}
+	function pestiside_Submit(){
+		//print_r($this->input->post());
+		
+		$data=array(
+			   "kvm_name" => $this->input->post("kvmname"),
+			    "do_you_have_own_farm" => $this->input->post("ownfarm"),
+			   "how_many_acre_do_you_cultivate" => $this->input->post("cultivate"),
+			   "do_you_use_pesticides_at" => $this->input->post("pestiside"),
+			   "which_typeof_crop_you_are_cropping" => $this->input->post("cropping"),
+			   "name_and_class_of_pesticide" => $this->input->post("cop"),
+			   "gop_organophosphate"=> $this->input->post("gopo"),
+			   "gop_organochlorine"=> $this->input->post("gop_o"),
+			   "gop_carbamate"=> $this->input->post("gopc"),
+			   "gop_pyrethroid"=> $this->input->post("gopp"),
+			   "gop_bio_pesticides"=> $this->input->post("gopbp"),
+			   "nccacp"=> $this->input->post("ncccp"),
+			   "da_h"=> $this->input->post("dah"),
+			   "frequency_timing" => $this->input->post("freq"),
+			   "diposed"=> $this->input->post("disposed"),
+			   	"h_m_y_h_y_b_u_p" => $this->input->post("hmyhybup"),
+				"d_y_w_p_c_w_a_p" => $this->input->post("wear"),
+				"gloves"=> $this->input->post("gloves"),
+				"overalls"=> $this->input->post("overall"),
+				"eye_glasses" => $this->input->post("eye_g"),
+				 "face_mask" => $this->input->post("fm"),
+				"boot_shoes" => $this->input->post("bs"),
+				"long_sleeve_shirt" => $this->input->post("lss"),
+				"long_pants" => $this->input->post("lpant"),
+				"other"  => $this->input->post("others"),
+				"pump_spray" => $this->input->post("pummps"),
+				"fogging_gun" => $this->input->post("gun"),
+				"manually"  => $this->input->post("manually"),
+				"pa_yes_no" => $this->input->post("purposes"),
+				"pa_where"  => $this->input->post("purposesw"),
+				"rcd" => $this->input->post("rcd"),
+				"buried" => $this->input->post("bur"),
+				"burnt" => $this->input->post("burnt"),
+				"tiof"  => $this->input->post("tof"),
+				"pirt" => $this->input->post("rt"),
+				"other_s" => $this->input->post("othe"),
+				"hotf" => $this->input->post("hotf"),
+				"h_w" => $this->input->post("hw"),
+				"a_e_h_s" => $this->input->post("aehs"),
+				"f" => $this->input->post("friends"),
+				"sm_tv_r"  => $this->input->post("sm"),
+				"other_sp" => $this->input->post("o_sp"),
+				"organic_f" => $this->input->post("farming"),
+				"loa" => $this->input->post("loa"),
+				"wkn" => $this->input->post("weaknesss"),
+				"wl"      => $this->input->post("wl"),
+				"gfs"      => $this->input->post("gfs"),
+				"nit"       => $this->input->post("nit"),
+				"a_fatigue"     => $this->input->post("fati"),
+				"a_sp"          => $this->input->post("a_sp"),
+				"a_sob"    => $this->input->post("a_sob"),
+				"a_lh"    => $this->input->post("a_lh"),
+				"a_fhb"    => $this->input->post("a_fhb"),
+				"ch"    => $this->input->post("ch"),
+				"sas"    => $this->input->post("sas"),
+				"lgf"    => $this->input->post("lgf"),
+				"gba"    => $this->input->post("gba"),
+				"ldj"    => $this->input->post("ldj"),
+				"ldj_ycs"    => $this->input->post("ldj_ycs"),
+				"ldj_sps"    => $this->input->post("ldj_sps"),
+				"ldj_j"    => $this->input->post("ldj_j"),
+				"ldj_j_ap"    => $this->input->post("ldj_j_ap"),
+				"ldj_j_csc"    => $this->input->post("ldj_j_csc"),
+				"ldj_j_dcus"    => $this->input->post("ldj_j_dcus"),
+				"ldj_j_f"    => $this->input->post("ldj_j_f"),
+				"c_walprm"  => $this->input->post("walpr"),
+				"c_mlsdbeta" => $this->input->post("mlsdbe"),
+				"fsp"   => $this->input->post("fsp"),
+				"nvloa" => $this->input->post("nvla"),
+				"fwdms"  => $this->input->post("fwdms"),
+				"mtu" => $this->input->post("mtu"),
+				"stsoa" => $this->input->post("stsa"),
+				"sbhbp"   => $this->input->post("sbhbp"),
+				"sbedpa" => $this->input->post("sbedpa"),
+				"wheezing" => $this->input->post("wheez"),
+				"ctigt" => $this->input->post("chest_t"),
+				"wyg" => $this->input->post("cctmpm"),
+				"fri" => $this->input->post("fri"),
+				"loe" => $this->input->post("loe"),
+				"uwl" => $this->input->post("wloss"),
+				"safl" => $this->input->post("safl"),
+				"c_f"  => $this->input->post("fati"),
+				"c_ebb"   => $this->input->post("ebb"),
+				"c_loa"  => $this->input->post("loapp"),
+				"c_n"    => $this->input->post("nausea"),
+				"c_slfa"  => $this->input->post("sylfa"),
+				"c_wl" => $this->input->post("weitl"),
+				"c_is"  => $this->input->post("iskin"),
+				"c_j" => $this->input->post("ydse"),
+				"c_a" => $this->input->post("saya"),
+				"c_sbvs" => $this->input->post("sbvys"),
+				"c_rph"  => $this->input->post("rph"),
+				"c_csshe"   => $this->input->post("css"),
+				"c_walprm"  => $this->input->post("walprm"),
+				"c_mlsdbeta"   => $this->input->post("mlsdbeta")
+			  
+				);
+				
+			//$last_id = $this->db->insert_id();
+			//echo $last_id; 
+			$this->db->insert("pesticide_proforma",$data);
+				//redirect('customer/pestiside'); 
+	//*******************************************************************************************
+				$gname = $this->db->get("pestiside_group_name");
+					foreach($gname->result() as $groupInfo):
+						$this->db->where("group_name_id",$groupInfo->id);
+						 $phndetails = $this->db->get("pestiside_head_name");
+						$i=1;
+					foreach($phndetails->result() as $data):
+						$statusv="status".$data->id;
+						$crop="crop".$data->id;
+						$freq="freq".$data->id;
+						$area="area".$data->id;
+						$quantity="quantity".$data->id;
+						$resultArray['pestiside_head_id']=$data->id;										
+						$resultArray['status']=$this->input->post($statusv);
+						$resultArray['crop']=$this->input->post($crop);
+						$resultArray['frequency']=$this->input->post($freq);
+						$resultArray['area_covered']=$this->input->post($area);
+						$resultArray['quantity']=$this->input->post($quantity);
+						//$resultArray['p']=$this->input->post($p);
+						
+					$i++; endforeach;
+				endforeach;
+				$this->db->insert('pestiside_p_value',$resultArray);
+		//second table----------------------------------------------------	
+			$psie=$this->db->get("pestiside_siexposure");
+				foreach($psie->result() as $psi):
+				 $ps="psie".$psi->id;
+				$resultArray['siex_head_name']=$psi->id;
+				$resultArray['status']=$this->input->post($ps);
+				//$resultArray['p']=
+				endforeach;
+				$this->db->insert('siexposure_status',$resultArray);
+		//third table----------------------------------------------------	
+				$ephe=$this->db->get("pestiside_eph");
+				foreach($ephe->result() as $eph):
+				 $ephd="eph".$eph->id;
+				 $resultArray['eph_head_name']=$eph->id;
+				 $resultArray['status']=$this->input->post($ephd);
+				// $resultArray['p']=
+				endforeach;
+				$this->db->insert('pestiside_eph_status',$resultArray);
+				//echo "suvdd";
+	}
+	
 function bpi_submit(){
 	$data=array(
 	"hemoglobin_level"=>$this->input->post("himo_level"),
@@ -559,9 +537,7 @@ function observation(){
 
 
 	function oralcancer_proforma(){
-	 $uri=$this->input->post("preg");
 	$data=array(
-	    "reg_id"=>$this->input->post("preg"),
 		"date"=>date("Y-m-d"),
 	    "mother"=> $this->input->post("mother"),
 	    "father"=> $this->input->post("father"),
@@ -622,16 +598,14 @@ function observation(){
 	);
 			$this->load->model("Cmodel");
 			$this->Cmodel->oral_cancer_proforma($data);	 
-			redirect('customer/Oral_Cancer/success/'.$uri); 
+			redirect('customer/Oral_Cancer'); 
 			//echo "submmitted";
 				//print_r($data);
 }
 
 function breast_cancer_proforma(){
-    $uri=$this->input->post("preg");
 	$data=array(
-	    "reg_id"=>$this->input->post("preg"),
-		"date"=>date("Y-m-d H:i:s"),
+		"date"=>date("Y-m-d"),
 	    "many_children"=> $this->input->post("children"),
 	    "your_ageat_first_child_birth"=> $this->input->post("age"),
 	    "breast_feed_your_baby"=> $this->input->post("breastfeed"),
@@ -678,15 +652,14 @@ function breast_cancer_proforma(){
 	);
 			$this->load->model("Cmodel");
 			$this->Cmodel->breast_cancer_proforma($data);	 
-			redirect('customer/Breast_Cancer/success/'.$uri); 
-			
+			redirect('customer/Breast_Cancer'); 
+				//echo "submmitted";
+				//print_r($data);
 }
 
 function diabetes_proforma(){
- $uri=$this->input->post("preg");
 	$data=array(
-	    "reg_id"                    =>  $this->input->post("preg"),
-		"date"                      =>  date("Y-m-d H:i:s"),
+		"date"                      =>  date("Y-m-d"),
 	    "known_about_diabetes"      =>  $this->input->post("knownaboutdiabetes"),
 	    "family_history_diabetes"   =>  $this->input->post("familyhistory"),
 	    "whoom"                     =>  $this->input->post("whoom"),
@@ -823,16 +796,15 @@ function diabetes_proforma(){
     );
 			$this->load->model("Cmodel");
 			$this->Cmodel->diabetes_proforma($data);	 
-			redirect('customer/diabetes/success/'.$uri); 
-		
+			redirect('customer/diabetes'); 
+			echo "submmitted";
+				//print_r($data);
 }
 
 
 function hypertenstion_proforma(){
- $uri=$this->input->post("preg");
 	$data=array(
-	    "reg_id"=>$this->input->post("preg"),
-		"date"=>date("Y-m-d H:i:s"),
+		"date"=>date("Y-m-d"),
 	    "headache"=> $this->input->post("headache"),
 	    "anxity"=> $this->input->post("anxity"),
 	    "restlessness"=> $this->input->post("restlessness"),
@@ -933,16 +905,13 @@ function hypertenstion_proforma(){
 );
 			$this->load->model("Cmodel");
 			$this->Cmodel->hypertension_proforma($data);	 
-			redirect('customer/hypertension/success/'.$uri); 
+			redirect('customer/hypertension'); 
 			
 }
 
 function coronary_proforma(){
-  $uri=$this->input->post("preg");
- 
 	$data=array(
-	    "reg_id"=>$this->input->post("preg"),
-		"date"=>date("Y-m-d H:i:s"),
+		"date"=>date("Y-m-d"),
 	    "bp_too_low"=> $this->input->post("bp_too_low"),
 	    "bp_low_detail"=> $this->input->post("bp_low_detail"),
 	    "pain_your_chest"=> $this->input->post("pain_your_chest"),
@@ -976,11 +945,11 @@ function coronary_proforma(){
 	    "urine_loss"=> $this->input->post("urine_loss"),
 	    "pap_smear"=> $this->input->post("pap_smear"),
 	    "hormone_replacement_therapy"=> $this->input->post("hormone_replacement_therapy"),
-	    /*"heart_failure_detail"=> $this->input->post("heart_failure_detail"),
+	    "heart_failure_detail"=> $this->input->post("heart_failure_detail"),
 	    "enlarged_heart"=> $this->input->post("enlarged_heart"),
 	    "angina"=> $this->input->post("chest_pain"),
 	    "chest_pain_detail"=>$this->input->post("chest_pain_detail"),
-	    "coronary_bypass"=> $this->input->post("coronary_bypass"),*/
+	    "coronary_bypass"=> $this->input->post("coronary_bypass"),
 	    "prescription_taken"=> $this->input->post("prescription_taken"),
 	    "self_prescribed_medication"=> $this->input->post("self_prescribed_medication"),
 	    "date_of_physical_examination"=> $this->input->post("date_of_physical_examination"),
@@ -1008,7 +977,7 @@ function coronary_proforma(){
 	    "fainting_spells"=> $this->input->post("fainting_spells"),
 	    "epilepsy"=> $this->input->post("epilepsy"),
 	    "stroke2"=> $this->input->post("stroke2"),
-	    /*"tinglings_of_hand"=> $this->input->post("tinglings_of_hand"),*/
+	    "tinglings_of_hand"=> $this->input->post("tinglings_of_hand"),
 	    "diptheria"=> $this->input->post("diptheria"),
 	    "scarlet_fever"=> $this->input->post("scarlet_fever"),
 	    "infectious_mononucleosis"=> $this->input->post("infectious_mononucleosis"),
@@ -1072,20 +1041,7 @@ function coronary_proforma(){
     );
 			$this->load->model("Cmodel");
 			$this->Cmodel->coronary_proforma($data);	 
-			redirect('customer/coronary/success/'.$uri); 
-    }
-    
-    function pestiside(){
-        $data['pageTitle'] = 'Pestiside';
-		$data['smallTitle'] = 'Pestiside';
-		$data['mainPage'] = 'Pestiside Invesigations';
-		$data['subPage'] = ' Pestiside Parameters';
-		$data['title'] = 'Pestiside_Parameters';
-		$data['headerCss'] = 'headerCss/dashboardCss';
-		$data['footerJs'] = 'footerJs/customerJs';
-		$data['mainContent'] = 'pestiside_parameters';
-		$this->load->view("includes/mainContent", $data);
-	    
+			redirect('customer/coronary_proforma'); 
     }
 
 function matchempid(){
