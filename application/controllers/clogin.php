@@ -28,7 +28,7 @@ class Clogin extends CI_Controller{
 		$data['mainPage'] = 'Dashboard';
 		$data['subPage'] = 'dashboard';
 		$data['title'] = 'UMPL Customer Dashboard';
-		$data['headerCss'] = 'headerCss/dashboardCss';
+		$data['headerCss'] = 'headerCss/nullCss';
 		$data['footerJs'] = 'footerJs/dashboardJs';
 		$data['mainContent'] = 'customer/cdashboard';
 		$this->load->view("includes/mainContent", $data);
@@ -101,9 +101,9 @@ class Clogin extends CI_Controller{
 	    
 	}
 	public function customer_profile(){
-		$this->load->library("form_validation");
+	
 	//	$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
-		if($this->session->userdata("login_type") ==1){	
+		if($this->uri->segment(3)){	
 		    $id = $this->uri->segment(3);
 		    $data['crecord'] = $this->cmodel->getCrecord($id);
 		}else{	
@@ -316,106 +316,11 @@ class Clogin extends CI_Controller{
 		}
 		function downline(){
 			$tabv = $this->uri->segment("3");
-				if($tabv==6)
-				{
-				    $table="Over All Downline";
-				    	$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
-            		$data['cid'] = $this->session->userdata("customer_id");
-            		$count =0;
-            			$data['leftrootid']=0;
-				$data['rightrootid']=0;
-            	
-					
-				}
-			if($tabv==1){
-				$table="silver_tree";
-				$lposition="leftjoiner";
-				$rposition="rightjoiner";
-				$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
-				$cid =$this->session->userdata("customer_id");
-				$data['left']=$this->db->query("select * from silver_tree join customer_info where  silver_tree.leftjoiner='$cid' AND customer_info.id=silver_tree.left");
-				$data['right']=$this->db->query("select * from silver_tree join customer_info where  silver_tree.rightjoiner='$cid' AND customer_info.id=silver_tree.right");
-					
-			}
-			if($tabv==2){
-				$table="gold_tree";
-				$lposition="left";
-				$rposition="right";
-				$data['leftrootid']=0;
-				$data['rightrootid']=0;
-					$data['cid'] = $this->session->userdata("customer_id");
-				$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
-				$this->db->where('c_id', $this->session->userdata("customer_id"));
-    			$leftjoiner = $this->db->get($table);
-    			if($leftjoiner->num_rows()>0){
-    				if($leftjoiner->row()->left){
-    					$leftid =$leftjoiner->row()->left;
-    			$data['leftrootid']		=$leftid ;
-				$data['left']=$this->tree->mydownline($leftid,$lposition,$table,$tabv);
-    				}
-    				if($leftjoiner->row()->right){
-    					$rightid =$leftjoiner->row()->right;
-    					$data['rightrootid']		=$rightid;
-    					$data['right']=$this->tree->mydownline($rightid,$rposition,$table,$tabv);
-    					
-    				}
-				
-    			}
-			}
-			if($tabv==3){
-				$table="diamond_tree";
-			//$table="silver_tree";
-				$lposition="left";
-				$rposition="right";
-				$data['leftrootid']=0;
-				$data['rightrootid']=0;
-				$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
-				$this->db->where('c_id', $this->session->userdata("customer_id"));
-    			$leftjoiner = $this->db->get($table);
-    			if($leftjoiner->num_rows()>0){
-    				if($leftjoiner->row()->left){
-    					$leftid =$leftjoiner->row()->left;
-    			$data['leftrootid']		=$leftid ;
-				$data['left']=$this->tree->mydownline($leftid,$lposition,$table,$tabv);
-    				}
-    				if($leftjoiner->row()->right){
-    					$rightid =$leftjoiner->row()->right;
-    					$data['rightrootid']		=$rightid;
-    					$data['right']=$this->tree->mydownline($rightid,$rposition,$table,$tabv);
-    					
-    				}
-				
-    			}
-			}
-			if($tabv==4){
-				$table="crown_tree";
-			//$table="silver_tree";
-				$lposition="left";
-				$rposition="right";
-				$data['leftrootid']=0;
-				$data['rightrootid']=0;
-				$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
-				$this->db->where('c_id', $this->session->userdata("customer_id"));
-    			$leftjoiner = $this->db->get($table);
-    			if($leftjoiner->num_rows()>0){
-    				if($leftjoiner->row()->left){
-    					$leftid =$leftjoiner->row()->left;
-    			$data['leftrootid']		=$leftid ;
-				$data['left']=$this->tree->mydownline($leftid,$lposition,$table,$tabv);
-    				}
-    				if($leftjoiner->row()->right){
-    					$rightid =$leftjoiner->row()->right;
-    					$data['rightrootid']		=$rightid;
-    					$data['right']=$this->tree->mydownline($rightid,$rposition,$table,$tabv);
-    					
-    				}
-				
-    			}
-			}
+			
 			
 			$data['tabv']=$tabv;
 			$data['pageTitle'] = 'My Downline';
-			$data['smallTitle'] = $table.' Downline';
+			$data['smallTitle'] = ' Downline';
 			$data['mainPage'] = 'Downline';
 			$data['subPage'] = 'Downline';
 			$data['title'] = 'Customer Downline';

@@ -18,10 +18,12 @@
                             </th>
                             <th>Employee ID</th>
                             <th>Employee Name</th>
-                            <th>Job Tittle</th>
+                            <th>Father Name</th>
                             <th>Mobile Number</th>
                             <th>Email Id</th>
                             <th>Address</th>
+                            <th>User ID</th>
+                            
                             <th>Status</th>
                           </tr>
                         </thead>
@@ -35,12 +37,13 @@
                             <td><?php echo $i;?></td>
                             <td class="align-middle"><a href="<?php echo base_url();?>index.php/clogin/customer_profile/<?php echo $data->id;?>"><?php echo $data->id;?></a></td>
                             <td><?php echo $data->employee_iname;?></td>
-                            <td><?php echo $data->job_tittle;?></td>
+                            <td><?php echo $data->fname;?></td>
                             <td><?php echo $data->mobilenumber;?></td>
                             <td><?php echo $data->email;?></td>
                             
                             <td><?php echo $data->current_address;?></td>
-                    
+                    		  <td><?php echo $data->username;?></td>
+                    		  
                             <td> <div class="badge badge-success badge-shadow"><?php if($data->status==1){ echo "Active";}else{ "Inactive";}?></div></td>
               
                           </tr>

@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title><?php echo $title;?></title>
+  <title>GSVM Medical College</title>
   <!-- General CSS Files -->
   <link rel="stylesheet" href="<?php echo base_url();?>assets/css/app.min.css">
   <link rel="stylesheet" href="<?php echo base_url();?>assets/bundles/jqvmap/dist/jqvmap.min.css">
@@ -22,5 +22,4 @@
   <link rel='shortcut icon' type='image/x-icon' href='<?php echo base_url();?>assets/img/favicon.ico' />
  <?php echo $this->load->view($headerCss); ?>
   </head>
-
 

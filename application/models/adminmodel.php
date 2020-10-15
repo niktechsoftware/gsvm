@@ -1,5 +1,12 @@
 <?php 
     class Adminmodel extends CI_Model{
+    	
+    	function getEmployee(){
+    		$record = $this->db->query("select * from employee_info where status =1");
+    		//print_r($record->result());
+    		//exit();
+    		return $record;
+    	}
 function getrecord(){
         	$record = $this->db->get("general_settings");
         	return $record;

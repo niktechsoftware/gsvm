@@ -7,8 +7,8 @@
                 <div class="card author-box">
                   <div class="card-body">
                     <div class="author-box-center">
-					<?php if(strlen($crecord->row()->logo > 0)):?>
-													<img alt="" height="128" width="138" src="<?php echo base_url();?>assets/img/<?php echo $crecord->row()->logo;?>" />
+					<?php if(strlen($crecord->row()->ico_logo > 0)):?>
+													<img alt="" height="128" width="138" src="<?php echo base_url();?>assets/img/<?php echo $crecord->row()->ico_logo;?>" />
 												<?php else:?>
 													<img alt="" width="128" src="<?php echo base_url();?>assets/img/default.png" />	
 												<?php endif;?>
@@ -35,6 +35,10 @@
                         <a class="nav-link" id="profile-tab2" data-toggle="tab" href="#settings" role="tab"
                           aria-selected="false">Edit</a>
                       </li>
+                       <li class="nav-item">
+                        <a class="nav-link" id="passwordc" data-toggle="tab" href="#password" role="tab"
+                          aria-selected="false">Change Password</a>
+                      </li>
                     </ul>
                     <div class="tab-content tab-bordered" id="myTab3Content">
                       <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="home-tab2">
@@ -47,7 +51,7 @@
                               <div class="form-group col-md-3 col-12"><label>Name :</label></div>
 							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->customer_name; ?></label></div>
                               <div class="form-group col-md-3 col-12"><label>Status :</label></div>
-							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->status; ?></label> </div>
+							  <div class="form-group col-md-3 col-12"> <label><?php if($crecord->row()->status==1){echo "Active";} ?></label> </div>
                             </div>
 							
 							<div class="row">
@@ -95,8 +99,7 @@
 							<div class="row">
                               <div class="form-group col-md-3 col-12"><label>Join Date:</label></div>
 							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->created;?></label></div>
-                              <div class="form-group col-md-3 col-12"><label>Password :</label></div>
-							  <div class="form-group col-md-3 col-12"> <label><?php  echo $crecord->row()->admin_password;?></label> </div>
+                             
                             </div>
 							
 							
@@ -110,12 +113,12 @@
                           <div class="card-body">
                             <div class="row">
                                 <input type="hidden" class="form-control" name="id" value="<?php echo $crecord->row()->id; ?>">
-							<div class="form-group col-md-2 col-12"><label>Name</label></div>
+							<div class="form-group col-md-2 col-12"><label>Admin Name</label></div>
 							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="cname" value="<?php echo $crecord->row()->customer_name; ?>">
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
-                              <div class="form-group col-md-2 col-12"><label>Password</label></div>
-                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="fname" value="<?php echo $crecord->row()->admin_password; ?>">
+                              <div class="form-group col-md-2 col-12"><label>Status</label></div>
+                              <div class="form-group col-md-4 col-12"><?php if($crecord->row()->status==1){echo "Active";} ?>
                                 <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>
@@ -141,7 +144,7 @@
                             </div>
 							<div class="row">
 							<div class="form-group col-md-2 col-12"><label>Pincode</label></div>
-							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="pin" value="<?php echo $crecord->row()->pin; ?>">
+							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="pin" value="<?php echo $crecord->row()->pin; ?>" readonly>
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
                               <div class="form-group col-md-2 col-12"><label>Email 1 </label></div>
@@ -151,7 +154,7 @@
                             </div>
                             <div class="row">
 							<div class="form-group col-md-2 col-12"><label>Business Name</label></div>
-							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="pin" value="<?php echo $crecord->row()->business_name; ?>">
+							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="bisinessname" value="<?php echo $crecord->row()->business_name; ?>" readonly>
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
                               <div class="form-group col-md-2 col-12"><label>Email 2 </label></div>
@@ -181,21 +184,21 @@
                             </div>
 							 <div class="row">
 							<div class="form-group col-md-2 col-12"><label>Language</label></div>
-							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="gen" value="<?php echo $crecord->row()->language; ?>">
+							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="language" value="<?php echo $crecord->row()->language; ?>" readonly>
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
                               <div class="form-group col-md-2 col-12"><label>Nationality</label></div>
-                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="nat" value="<?php echo $crecord->row()->nationality; ?>">
+                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="nat" value="<?php echo $crecord->row()->nationality; ?>" readonly>
                                 <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>
 							<div class="row">
-							<div class="form-group col-md-2 col-12"><label>Icon Logo</label></div>
-							  <div class="form-group col-md-4 col-12"><input type="file" class="form-control" name="ico_logo" value="<?php echo $crecord->row()->ico_logo; ?>">
+							<div class="form-group col-md-2 col-12"><label>Profile Image</label></div>
+							  <div class="form-group col-md-4 col-12"><input type="file" class="form-control" name="profile_logo" value="<?php echo $crecord->row()->ico_logo; ?>" accept="image/*" capture>
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
                               <div class="form-group col-md-2 col-12"><label>Logo</label></div>
-                              <div class="form-group col-md-4 col-12"><input type="file" class="form-control" name="logo" value="<?php echo $crecord->row()->logo; ?>">
+                              <div class="form-group col-md-4 col-12"><input type="file" class="form-control" name="logo" value="<?php echo $crecord->row()->logo; ?>" accept="image/*" capture>
                                 <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>
@@ -206,6 +209,59 @@
                           </div>
                         </form>
                       </div>
+                      <!-- password -->
+                      
+                      <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="passwordc">
+                      <!--  <form method="post" class="needs-validation" action="<?php echo base_url();?>index.php/adminController/changePassword" enctype="multipart/form-data"   >-->
+                          <div class="card-header">
+                            <h4>Change Password Panel</h4>
+                          </div>
+                          <div class="card-body">
+                          
+						<div class="row">
+							<div class="form-group col-md-6 col-12"><label>Enter Current Password</label></div>
+							  <div class="form-group col-md-6 col-12"><input type="text" class="form-control" id="op" >
+                                <div class="invalid-feedback">Please fill in the first name</div>
+                              </div>
+                              <div class="form-group col-md-6 col-12"><label>New Password</label></div>
+                              <div class="form-group col-md-6 col-12"><input type="text" class="form-control" id="np" >
+                                <div class="invalid-feedback">Please fill in the last name </div>
+                              </div>
+                            </div>
+							 <div class="row">
+							<div class="form-group col-md-6 col-12"><label>Retype New Password</label></div>
+							  <div class="form-group col-md-6 col-12"><input type="text" class="form-control" id="rnp" >
+                                <div class="invalid-feedback">Please fill in the first name</div>
+                              </div>
+                             
+                            </div>
+                            <input type = "hidden" id ="userid" value = "<?php echo $crecord->row()->id;?>"/>
+							<div  class="col-md-6 col-12" id = "upmsg"></div>
+                          </div>
+                          <div class="card-footer text-right">
+                            <button class="btn btn-primary" id="changep">Change Password</button>
+                            <script>	
+                            $("#changep").click(function(){
+                            var userid = $("#userid").val();  
+						    var op = $("#op").val();
+						    var np = $("#np").val();
+						    var rnp = $("#rnp").val();
+						    if(np==rnp){
+						    $.post("<?php echo site_url('adminController/changePassword') ?>",{userid : userid , op : op, np : np , rnp : rnp},function(data){
+							$("#upmsg").html(data);
+							$("#op").val("");
+							$("#np").val("");
+							$("#rnp").val("");
+						    });
+						    }else{
+						       $("#upmsg").html('<div class ="alert alert-warning">Renter password mismatch</div>'); 
+						    }
+					    });
+                        </script>
+                          </div>
+                       <!-- </form>-->
+                      </div>
+                      <!--password end-->
                     </div>
                   </div>
                 </div>

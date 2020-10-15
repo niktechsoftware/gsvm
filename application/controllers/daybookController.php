@@ -20,15 +20,9 @@ class DaybookController extends CI_Controller{
 			redirect("welcome/lockPage");
 		}
   }
-  function daybook(){
+  function report(){
     $uri=$this->uri->segment(3);
    
-    if($uri==1){
-      $data['outdb']=$this->daybook->outer_daybook();
-    }
-    else{
-      $data['inndb']=$this->daybook->inner_daybook();
-    }
     $data['uri']=$uri;
     $data['pageTitle'] = 'Daybook';
     $data['smallTitle'] = 'Daybook ';
@@ -41,6 +35,14 @@ class DaybookController extends CI_Controller{
     $this->load->view("includes/mainContent", $data);
   }
   
+  function gerReport(){
+      $sdate = $this->input->post("sdate");
+      $edate = $this->input->post("edate");
+      $getv  = $this->input->post("getv");
+      if($getv==1){
+          
+      }
+  }
 
 function getroiandpool(){
  
