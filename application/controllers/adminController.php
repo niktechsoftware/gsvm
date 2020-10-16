@@ -7,6 +7,7 @@ Class AdminController extends CI_Controller{
 		$this->load->model('cmodel');
 	
 	}
+	
 	function is_login(){
 		$is_login = $this->session->userdata('is_login');
 		$is_lock = $this->session->userdata('is_lock');

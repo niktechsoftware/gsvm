@@ -10,57 +10,7 @@
 
 						</div>
 						
-						 <form method="post"	action="<?php echo base_url()?>index.php/customer/diabetes_proforma" enctype="multipart/Form-data" >
-							<div class="card-body">
-								<div class="row" id="regForm">
-									<div class="col-md-12 col-lg-12 col-xs-12">
-										<div class="row">
-											<div class="col-xs-6 col-md-6 col-lg-6">
-												<div class="form-group row">
-													<div class="col-md-4">
-														<label>Enter Patient ID<span title="Required" style="color: red;">*</span></label>
-													</div>
-													<div class="col-md-4">
-														<div class="form-group">
-															<input type="text" class="form-control"
-																value="" name="username"
-																id="reg_id" required="required">
-														</div>
-														
-												 </div>
-												 	<div class="col-md-4">
-														<div class="form-group">
-															<button type="submit" class="btn btn-primary"
-																id="regisbtn" style="">
-														<i class="fas fa-check">&nbsp;OK</i>
-												</button>
-											</div>
-										</div>
-											</div>
-										</div>
-											<div class="col-xs-6 col-md-6 col-lg-6">
-												<div class="form-group row">
-												    <table>
-												<?php if($uri){
-												    $this->db->where("reg_id",$id);
-												    $bcf = $this->db->get("diabetes_proforma");
-												    if($bcf->num_rows()>0){
-												        foreach($bcf->result() as $bc):?>
-												        <tr> <td><?php echo $bc->date;?></td></tr>
-												   <?php  endforeach; }
-												}?>
-												</table>
-									</div>
-								</div>
-							</div>
-						</div>
-				</form>
-				</div>
-				</div>
-				<?php if($uri){?>
-				<div class="alert alert-info col-xs-12 col-md-12 col-lg-12">    <?php echo $msg;?></div>
-						<form method="post"	action="<?php echo base_url()?>index.php/customer/diabetes_proforma" enctype="multipart/Form-data" >
-						    	<input type ="hidden" name="preg" value = "<?php echo $id;?>" readonly>
+						<form method="post"	action="<?php echo base_url()?>index.php/customer/update_diabetes_proforma" enctype="multipart/Form-data" >
 							<div class="card-body">
 								<div class="row" id="regForm">
 	
@@ -74,8 +24,8 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="knownaboutdiabetes"
-																id="name" required="required">
+																value="<?php echo $dp->row()->known_about_diabetes;?>" name="knownaboutdiabetes"
+																id="name" >
 														</div>
 								
                                          </div>
@@ -96,8 +46,8 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="famhis1" name="familyhistory"
-																  style="height:20px; width:20px;">
+																value="famhis1<?php echo $dp->row()->family_history_diabetes;?>" name="familyhistory"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -105,15 +55,15 @@
                                          <div class="col-md-2">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="famhis2" name="familyhistory"
-															  style="height:20px; width:20px;">
+																value="famhis2<?php echo $dp->row()->family_history_diabetes;?>" name="familyhistory"
+															  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
                                          </div>
  											<div class="col-md-3">
 														<div class="form-group">
-															<textarea name="whoom" id="famhisdetail" placeholder="IF YES, WHOOM?" class="form-control"></textarea>
+															<textarea name="whoom" id="famhisdetail" value="<?php echo $dp->row()->whoom;?>" placeholder="" class="form-control"></textarea>
 
 														</div>
 														</div>
@@ -126,7 +76,7 @@
 											$("#famhisdetail").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="famhis1")
+											if($(this).val()=="famhis1<?php echo $dp->row()->family_history_diabetes;?>")
 											{
 											$("#famhisdetail").show();
 											}
@@ -149,8 +99,8 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="suglev1" name="blood_sugar"
-																  style="height:20px; width:20px;">
+																value="suglev1famhis1<?php echo $dp->row()->blood_sugar_level;?>" name="blood_sugar"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -158,8 +108,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="suglev2" name="blood_sugar"
-															  style="height:20px; width:20px;">
+																value="suglev2famhis1<?php echo $dp->row()->blood_sugar_level;?>" name="blood_sugar"
+															  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -167,15 +117,15 @@
                                          <div class="col-md-2">
 														<div class="form-group">
 															NOT APPLICABLE<input type="radio" class="form-control"
-																value="suglev3" name="blood_sugar"
-															  style="height:20px; width:20px;">
+																value="suglev3famhis1<?php echo $dp->row()->blood_sugar_level;?>" name="blood_sugar"
+															  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
                                          </div>
                                          <div class="col-md-3">
 														<div class="form-group">
-															<textarea name="bloodsugardetail" id="sugardetail" placeholder="IF NO, WHY?" class="form-control"></textarea>
+															<textarea name="bloodsugardetail" value="famhis1<?php echo $dp->row()->why;?>" id="sugardetail" placeholder="IF NO, WHY?" class="form-control"></textarea>
 
 														</div>
 														</div>
@@ -190,7 +140,7 @@
 											$("#sugardetail").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="suglev2")
+											if($(this).val()=="suglev2<?php echo $dp->row()->blood_sugar_level;?>")
 											{
 											$("#sugardetail").show();
 											}
@@ -220,7 +170,7 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																 name="one" value="one"
+																 name="one" value="one<?php echo $dp->row()->one;?>"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -242,7 +192,7 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="two" name="two"
+																value="two<?php echo $dp->row()->two;?>" name="two"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -265,7 +215,7 @@
 													<div class="col-md-5">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="three" name="three"
+																value="three<?php echo $dp->row()->three;?>" name="three"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -287,7 +237,7 @@
 													<div class="col-md-5">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="more" name="more"
+																value="more<?php echo $dp->row()->more;?>" name="more"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -321,8 +271,8 @@
 													<div class="col-md-2">
 														<div class="form-group">
 															<input type="radio" class="form-control"
-																 name="whentest" value="breakfast"
-																  style="height:20px; width:20px;">
+																 name="whentest" value="breakfast<?php echo $dp->row()->when_you_test;?>"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -343,8 +293,8 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															<input type="radio" class="form-control"
-																value="lunch" name="whentest"
-																  style="height:20px; width:20px;">
+																value="lunch<?php echo $dp->row()->when_you_test;?>" name="whentest"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -366,8 +316,8 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															<input type="radio" class="form-control"
-																value="meal" name="whentest"
-																  style="height:20px; width:20px;">
+																value="meal<?php echo $dp->row()->when_you_test;?>" name="whentest"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -392,8 +342,8 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yeslbp" name="lbp"
-																  style="height:20px; width:20px;">
+																value="yeslbp<?php echo $dp->row()->low_blood_pressure;?>" name="lbp"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -401,8 +351,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="nolbp" name="lbp"
-															  style="height:20px; width:20px;">
+																value="nolbp<?php echo $dp->row()->low_blood_pressure;?>" name="lbp"
+															  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -416,14 +366,14 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="regular" placeholder="REGULAR">
+																value="<?php echo $dp->row()->regular;?>" name="regular" placeholder="REGULAR">
 																
 														</div>	
 													</div>
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="mixtard_insulin" placeholder="MIXTARD INSULIN">
+																value="<?php echo $dp->row()->mixtard_insulin;?>" name="mixtard_insulin" placeholder="MIXTARD INSULIN">
 																
 														</div>
 								
@@ -431,7 +381,7 @@
                                          <div class="col-md-4">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="oral_hypoglycemic_agents" placeholder="Oral Hypoglycemic Agents">
+																value="<?php echo $dp->row()->oral_hypoglycemic_agents;?>" name="oral_hypoglycemic_agents" placeholder="Oral Hypoglycemic Agents">
 																
 														</div>
 								
@@ -445,7 +395,7 @@
 											$("#insulin").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="yeslbp")
+											if($(this).val()=="yeslbp<?php echo $dp->row()->low_blood_pressure;?>")
 											{
 											$("#insulin").show();
 											}
@@ -474,7 +424,7 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																 name="morning" value="morning"
+																 name="morning" value="morning<?php echo $dp->row()->morning;?>"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -496,7 +446,7 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="midday" name="midday"
+																value="midday" name="midday<?php echo $dp->row()->midday;?>"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -518,7 +468,7 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="afternoon" name="afternoon"
+																value="afternoon<?php echo $dp->row()->afternoon;?>" name="afternoon"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -543,7 +493,7 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																 name="evening" value="evening"
+																 name="evening" value="evening<?php echo $dp->row()->evening;?>"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -562,7 +512,7 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="night" name="night"
+																value="night<?php echo $dp->row()->night;?>" name="night"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -587,7 +537,7 @@
 													<div class="col-md-6">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="treatlowbloodsugar">
+																value="<?php echo $dp->row()->treat_low_blood_pressure;?>" name="treatlowbloodsugar">
 														</div>
 								
                                          </div>
@@ -607,8 +557,8 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yeslostsense" name="lostsense"
-																  style="height:20px; width:20px;">
+																value="yeslostsense<?php echo $dp->row()->ever_lost_sensetolow_blood_pressure;?>" name="lostsense"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -616,8 +566,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="nolostsense" name="lostsense"
-															  style="height:20px; width:20px;">
+																value="nolostsense<?php echo $dp->row()->ever_lost_sensetolow_blood_pressure;?>" name="lostsense"
+															  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -625,7 +575,7 @@
                                           <div class="col-md-3">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="bloodsugar" placeholder="when did it last occur?" id="bldsgrdetail">
+																value="<?php echo $dp->row()->when_itlast_occur;?>" name="bloodsugar" placeholder="when did it last occur?" id="bldsgrdetail">
 																
 														</div>
 								
@@ -638,7 +588,7 @@
 											$("#bldsgrdetail").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="blsug1")
+											if($(this).val()=="yeslostsense<?php echo $dp->row()->ever_lost_sensetolow_blood_pressure;?>")
 											{
 											$("#bldsgrdetail").show();
 											}
@@ -660,8 +610,8 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="hbalc1" name="hbalc"
-																  style="height:20px; width:20px;">
+																value="hbalc1<?php echo $dp->row()->hba1c_blood_sugar_level;?>" name="hbalc"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -669,8 +619,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="hbalc2" name="hbalc"
-															  style="height:20px; width:20px;">
+																value="hbalc2<?php echo $dp->row()->hba1c_blood_sugar_level;?>" name="hbalc"
+															  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -678,7 +628,7 @@
                                           <div class="col-md-3">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="last_level" placeholder="What was last level?" id="hbalcdetail">
+																value="<?php echo $dp->row()->last_level ;?>" name="last_level" placeholder="What was last level?" id="hbalcdetail">
 																
 														</div>
 								
@@ -702,7 +652,7 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																 name="daily" value="daily"
+																 name="daily" value="daily<?php echo $dp->row()->daily ;?>"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -724,7 +674,7 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="week" name="weekly"
+																value="week<?php echo $dp->row()->weekly ;?>" name="weekly"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -746,7 +696,7 @@
 													<div class="col-md-5">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="month" name="monthly"
+																value="month<?php echo $dp->row()->monthly ;?>" name="monthly"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -768,7 +718,7 @@
 													<div class="col-md-6">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="other" name="other"
+																value="other<?php echo $dp->row()->other ;?>" name="other"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -788,7 +738,7 @@
 											$("#hbalcwhen").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="hbalc1")
+											if($(this).val()=="hbalc1<?php echo $dp->row()->hba1c_blood_sugar_level;?>")
 											{
 											$("#hbalcdetail").show();
 												$("#hbalcwhen").show();
@@ -819,7 +769,7 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																 name="bpmorning" value="bpmorning"
+																 name="bpmorning" value="bpmorning<?php echo $dp->row()->bpmorning;?>"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -841,7 +791,7 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="bpmidday" name="bpmidday"
+																value="bpmidday" name="bpmidday<?php echo $dp->row()->bpmidday;?>"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -863,7 +813,7 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="afternoon" name="bpafternoon"
+																value="afternoon<?php echo $dp->row()->bpafternoon;?>" name="bpafternoon"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -888,7 +838,7 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																 name="bpevening" value="evening"
+																 name="bpevening" value="evening<?php echo $dp->row()->bpevening;?>"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -907,7 +857,7 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="night" name="at_night"
+																value="night<?php echo $dp->row()->at_night;?>" name="at_night"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -941,8 +891,8 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															<input type="radio" class="form-control"
-																value="selftreat" name="treatsugar"
-																  style="height:20px; width:20px;">
+																value="selftreat<?php echo $dp->row()->treat_blood_sugar;?>" name="treatsugar"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -961,7 +911,7 @@
 													<div class="col-md-2">
 														<div class="form-group">
 															<input type="radio" class="form-control"
-																value="physicianadvise" name="treatsugar"
+																value="physicianadvise<?php echo $dp->row()->treat_blood_sugar;?>" name="treatsugar"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -978,7 +928,7 @@
 													<div class="col-md-12">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="addition_information">
+																value="<?php $bp->row()->addition_information; ?>" name="addition_information">
 																
 														</div>
 								
@@ -994,7 +944,7 @@
 													<div class="col-md-12">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="addition_information">
+																value="<?php $bp->row()->addition_information; ?>" name="addition_information">
 																
 														</div>
 								
@@ -1012,7 +962,7 @@
 											$("#selftreated").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="selftreat")
+											if($(this).val()=="selftreat<?php echo $dp->row()->treat_blood_sugar;?>")
 											{
 											$("#selftreated").show();
 											//	$("#hbalcwhen").show();
@@ -1027,7 +977,7 @@
 											$("#physicianadvisedetail").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="physicianadvise")
+											if($(this).val()=="physicianadvise<?php echo $dp->row()->treat_blood_sugar;?>")
 											{
 											$("#physicianadvisedetail").show();
 											//	$("#hbalcwhen").show();
@@ -1059,8 +1009,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="hbp1" name="hbpressure"
-																 style="height:20px; width:20px;">
+																value="hbp1<?php $bp->row()->high_bp; ?>" name="hbpressure"
+																 style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1068,8 +1018,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="hbp2" name="hbpressure"
-																  style="height:20px; width:20px;">
+																value="hbp2<?php $bp->row()->high_bp; ?>" name="hbpressure"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1077,7 +1027,7 @@
 
                                          <div class="col-md-4">
 														<div class="form-group">
-															<textarea name="hbpressuredtl" id="hbpressuredetail" placeholder="MEDICINE" class="form-control"></textarea>
+															<textarea name="hbpressuredtl" value="<?php $bp->row()->medicine; ?>" id="hbpressuredetail" placeholder="MEDICINE" class="form-control"></textarea>
 
 														</div>
 														</div>
@@ -1090,7 +1040,7 @@
 											$("#hbpressuredetail").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="hbp1")
+											if($(this).val()=="hbp1<?php $bp->row()->high_bp; ?>")
 											{
 											$("#hbpressuredetail").show();
 											
@@ -1120,8 +1070,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="hrtdisyes" name="hrtdisease"
-																 style="height:20px; width:20px;">
+																value="hrtdisyes<?php $bp->row()->high_bp; ?>" name="hrtdisease"
+																 style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1129,8 +1079,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="hrtdisno" name="hrtdisease"
-																  style="height:20px; width:20px;">
+																value="hrtdisno<?php $bp->row()->high_bp; ?>" name="hrtdisease"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1138,7 +1088,7 @@
 
                                          <div class="col-md-4">
 														<div class="form-group">
-															<textarea name="hrtdiseasedetail" id="hrtdiseasedetail" placeholder="MEDICINE " class="form-control"></textarea>
+															<textarea name="hrtdiseasedetail" id="hrtdiseasedetail" placeholder=" " value="<?php $bp->row()->hd_medicine; ?>" class="form-control"></textarea>
 
 														</div>
 														</div>
@@ -1151,7 +1101,7 @@
 											$("#hrtdiseasedetail").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="hrtdisyes")
+											if($(this).val()=="hrtdisyes<?php $bp->row()->high_bp; ?>")
 											{
 											$("#hrtdiseasedetail").show();
 											
@@ -1181,8 +1131,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="hghcholeyes" name="hghcholestrol"
-																 style="height:20px; width:20px;">
+																value="hghcholeyes<?php $bp->row()->high_bp; ?>" name="hghcholestrol"
+																 style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1190,8 +1140,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="hghcholeno" name="hghcholestrol"
-																  style="height:20px; width:20px;">
+																value="hghcholeno<?php $bp->row()->high_bp; ?>" name="hghcholestrol"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1199,7 +1149,7 @@
 
                                          <div class="col-md-4">
 														<div class="form-group">
-															<textarea name="hghcholestroldetail" id="hghcholestroldetail" placeholder="MEDICINE " class="form-control"></textarea>
+															<textarea name="hghcholestroldetail" value="<?php $bp->row()->hc_medicine;?>" id="hghcholestroldetail" placeholder="MEDICINE " class="form-control"></textarea>
 
 														</div>
 														</div>
@@ -1212,7 +1162,7 @@
 											$("#hghcholestroldetail").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="hghcholeyes")
+											if($(this).val()=="hghcholeyes<?php $bp->row()->high_bp;?>")
 											{
 											$("#hghcholestroldetail").show();
 											
@@ -1242,8 +1192,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="hghtrigyes" name="hghtrigly"
-																 style="height:20px; width:20px;">
+																value="hghtrigyes<?php $bp->row()->high_triglycerides; ?>" name="hghtrigly"
+																 style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1251,8 +1201,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="hghtrigno" name="hghtrigly"
-																  style="height:20px; width:20px;">
+																value="hghtrigno<?php $bp->row()->high_triglycerides; ?>" name="hghtrigly"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1260,7 +1210,7 @@
 
                                          <div class="col-md-4">
 														<div class="form-group">
-															<textarea name="hghtriglydetail" id="hghtriglydetail" placeholder="MEDICINE " class="form-control"></textarea>
+															<textarea name="hghtriglydetail" value="<?php $bp->row()->htri_medicine; ?>" id="hghtriglydetail" placeholder="MEDICINE " class="form-control"></textarea>
 
 														</div>
 														</div>
@@ -1273,7 +1223,7 @@
 											$("#hghtriglydetail").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="hghtrigyes")
+											if($(this).val()=="hghtrigyes<?php $bp->row()->high_triglycerides; ?>")
 											{
 											$("#hghtriglydetail").show();
 											
@@ -1303,8 +1253,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="glaucomayes" name="glaucoma"
-																 style="height:20px; width:20px;">
+																value="glaucomayes<?php $bp->row()->glaucomano; ?>" name="glaucoma"
+																 style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1312,8 +1262,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="glaucomano" name="glaucoma"
-																  style="height:20px; width:20px;">
+																value="glaucomano<?php $bp->row()->glaucomano; ?>" name="glaucoma"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1321,7 +1271,7 @@
 
                                          <div class="col-md-4">
 														<div class="form-group">
-															<textarea name="glaucomadetail" id="glaucomadetail" placeholder="MEDICINE " class="form-control"></textarea>
+															<textarea name="glaucomadetail" value="<?php $bp->row()->ct_medicine; ?>" id="glaucomadetail" placeholder="MEDICINE " class="form-control"></textarea>
 
 														</div>
 														</div>
@@ -1334,7 +1284,7 @@
 											$("#glaucomadetail").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="glaucomayes")
+											if($(this).val()=="glaucomayes<?php $bp->row()->glaucomano; ?>")
 											{
 											$("#glaucomadetail").show();
 											
@@ -1364,8 +1314,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="stroke1" name="stroke"
-																 style="height:20px; width:20px;">
+																value="stroke1<?php $bp->row()->stroke_medicine; ?>" name="stroke"
+																 style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1373,8 +1323,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="stroke2" name="stroke"
-																  style="height:20px; width:20px;">
+																value="stroke2<?php $bp->row()->stroke_medicine; ?>" name="stroke"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1382,7 +1332,7 @@
 
                                          <div class="col-md-4">
 														<div class="form-group">
-															<textarea name="strokedetail" id="strokedetail" placeholder="MEDICINE " class="form-control"></textarea>
+															<textarea name="strokedetail" value="<?php $bp->row()->stroke_medicine; ?>" id="strokedetail" placeholder="MEDICINE " class="form-control"></textarea>
 
 														</div>
 														</div>
@@ -1395,7 +1345,7 @@
 											$("#strokedetail").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="stroke1")
+											if($(this).val()=="stroke1<?php $bp->row()->stroke_medicine; ?>")
 											{
 											$("#strokedetail").show();
 											
@@ -1425,8 +1375,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="retina1" name="retinopathy"
-																 style="height:20px; width:20px;">
+																value="retina1<?php $bp->row()->retinotherapy; ?>" name="retinopathy"
+																 style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1434,8 +1384,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="retina2" name="retinopathy"
-																  style="height:20px; width:20px;">
+																value="retina2<?php $bp->row()->retinotherapy; ?>" name="retinopathy"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1443,7 +1393,7 @@
 
                                          <div class="col-md-4">
 														<div class="form-group">
-															<textarea name="retinopathydetail" id="retinopathydetail" placeholder="MEDICINE " class="form-control"></textarea>
+															<textarea name="retinopathydetail" value="<?php $bp->row()->retina_medicine; ?>" id="retinopathydetail" placeholder="MEDICINE " class="form-control"></textarea>
 
 														</div>
 														</div>
@@ -1456,7 +1406,7 @@
 											$("#retinopathydetail").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="retina1")
+											if($(this).val()=="retina1<?php $bp->row()->retinotherapy; ?>")
 											{
 											$("#retinopathydetail").show();
 											
@@ -1486,8 +1436,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="kdnyprblmyes" name="kidneyproblem"
-																 style="height:20px; width:20px;">
+																value="kdnyprblmyes<?php $bp->row()->kidney_problem; ?>" name="kidneyproblem"
+																 style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1495,8 +1445,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="kdnyprblmno" name="kidneyproblem"
-																  style="height:20px; width:20px;">
+																value="kdnyprblmno<?php $bp->row()->kidney_problem; ?>" name="kidneyproblem"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1504,7 +1454,7 @@
 
                                          <div class="col-md-4">
 														<div class="form-group">
-															<textarea name="kidneyprobdetail" id="kidneyproblemdetail" placeholder="MEDICINE " class="form-control"></textarea>
+															<textarea name="kidneyprobdetail" value="<?php $bp->row()->kid_medicine; ?>" id="kidneyproblemdetail" placeholder=" " class="form-control"></textarea>
 
 														</div>
 														</div>
@@ -1517,7 +1467,7 @@
 											$("#kidneyproblemdetail").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="kdnyprblmyes")
+											if($(this).val()=="kdnyprblmyes<?php $bp->row()->kidney_problem; ?>")
 											{
 											$("#kidneyproblemdetail").show();
 											
@@ -1547,8 +1497,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="nerveyes" name="neuropathy"
-																 style="height:20px; width:20px;">
+																value="nerveyes<?php $bp->row()->neuropathy; ?>" name="neuropathy"
+																 style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1556,8 +1506,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="nerveno" name="neuropathy"
-																  style="height:20px; width:20px;">
+																value="nerveno<?php $bp->row()->neuropathy; ?>" name="neuropathy"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1565,7 +1515,7 @@
 
                                          <div class="col-md-4">
 														<div class="form-group">
-															<textarea name="neuropathydetail" id="neuropathydetail" placeholder="MEDICINE " class="form-control"></textarea>
+															<textarea name="neuropathydetail" value="<?php $bp->row()->neuropathy_medicine; ?>" id="neuropathydetail" placeholder="MEDICINE " class="form-control"></textarea>
 
 														</div>
 														</div>
@@ -1578,7 +1528,7 @@
 											$("#neuropathydetail").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="nerveyes")
+											if($(this).val()=="nerveyes<?php $bp->row()->neuropathy; ?>")
 											{
 											$("#neuropathydetail").show();
 											
@@ -1608,8 +1558,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="teeth1" name="teethndgum"
-																 style="height:20px; width:20px;">
+																value="teeth1<?php $bp->row()->teeth_gum; ?>" name="teethndgum"
+																 style="height:20px; width:20px;"> checked
 																
 														</div>
 								
@@ -1617,8 +1567,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="teeth2" name="teethndgum"
-																  style="height:20px; width:20px;">
+																value="teeth2<?php $bp->row()->teeth_gum; ?>" name="teethndgum"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1626,7 +1576,7 @@
 
                                          <div class="col-md-4">
 														<div class="form-group">
-															<textarea name="teethndgumdetail" id="teethndgumdetail" placeholder="MEDICINE " class="form-control"></textarea>
+															<textarea name="teethndgumdetail" value="<?php $bp->row()->teeth_medicine; ?>" id="teethndgumdetail" placeholder="MEDICINE " class="form-control"></textarea>
 
 														</div>
 														</div>
@@ -1639,7 +1589,7 @@
 											$("#teethndgumdetail").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="teeth1")
+											if($(this).val()=="teeth1<?php $bp->row()->teeth_gum; ?>")
 											{
 											$("#teethndgumdetail").show();
 											
@@ -1669,8 +1619,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="osteoyes" name="osteoporosis"
-																 style="height:20px; width:20px;">
+																value="osteoyes<?php $bp->row()->osteoporosis; ?>" name="osteoporosis"
+																 style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1678,8 +1628,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="osteono" name="osteoporosis"
-																  style="height:20px; width:20px;">
+																value="osteono<?php $bp->row()->osteoporosis; ?>" name="osteoporosis"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1687,7 +1637,7 @@
 
                                          <div class="col-md-4">
 														<div class="form-group">
-															<textarea name="osteoporosisdetail" id="osteodetail" placeholder="MEDICINE " class="form-control"></textarea>
+															<textarea name="osteoporosisdetail" value="<?php $bp->row()->osteoporosis_medicine; ?>" id="osteodetail" placeholder="MEDICINE " class="form-control"></textarea>
 
 														</div>
 														</div>
@@ -1700,7 +1650,7 @@
 											$("#osteodetail").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="osteoyes")
+											if($(this).val()=="osteoyes<?php $bp->row()->osteoporosis; ?>")
 											{
 											$("#osteodetail").show();
 											
@@ -1730,8 +1680,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="dysfuncyes" name="dysfunction"
-																 style="height:20px; width:20px;">
+																value="dysfuncyes<?php $bp->row()->sexual_dysfunction; ?>" name="dysfunction"
+																 style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1739,8 +1689,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="dysfuncno" name="dysfunction"
-																  style="height:20px; width:20px;">
+																value="dysfuncno<?php $bp->row()->sexual_dysfunction; ?>" name="dysfunction"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1748,7 +1698,7 @@
 
                                          <div class="col-md-4">
 														<div class="form-group">
-															<textarea name="sexual_medicine" id="dysfuncdetail" placeholder="MEDICINE " class="form-control"></textarea>
+															<textarea name="sexual_medicine" value="<?php $bp->row()->sexual_medicine; ?>" id="dysfuncdetail" placeholder=" " class="form-control"></textarea>
 
 														</div>
 														</div>
@@ -1761,7 +1711,7 @@
 											$("#dysfuncdetail").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="dysfunc1")
+											if($(this).val()=="dysfunc1<?php $bp->row()->sexual_dysfunction; ?>")
 											{
 											$("#dysfuncdetail").show();
 											
@@ -1791,8 +1741,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="organ1" name="organ_transplant"
-																 style="height:20px; width:20px;">
+																value="organ1<?php $bp->row()->organ_transplant; ?>" name="organ_transplant"
+																 style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1800,8 +1750,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="organ2" name="organ_transplant"
-																  style="height:20px; width:20px;">
+																value="organ2<?php $bp->row()->organ_transplant; ?>" name="organ_transplant"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1809,7 +1759,7 @@
 
                                          <div class="col-md-4">
 														<div class="form-group">
-															<textarea name="Organ_transplant_medicine" id="organtransdetail" placeholder="MEDICINE " class="form-control"></textarea>
+															<textarea name="Organ_transplant_medicine" id="organtransdetail" placeholder="MEDICINE " class="form-control" value="<?php $bp->row()->Organ_transplant_medicine; ?>"></textarea>
 
 														</div>
 														</div>
@@ -1822,7 +1772,7 @@
 											$("#organtransdetail").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="organ1")
+											if($(this).val()=="organ1<?php $bp->row()->organ_transplant; ?>")
 											{
 											$("#organtransdetail").show();
 											
@@ -1852,8 +1802,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="thyroidyes" name="thyroiddys"
-																 style="height:20px; width:20px;">
+																value="thyroidyes<?php $bp->row()->thyroid_dysfunction; ?>" name="thyroiddys"
+																 style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1861,8 +1811,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="thyroidno" name="thyroiddys"
-																  style="height:20px; width:20px;">
+																value="thyroidno<?php $bp->row()->thyroid_dysfunction; ?>" name="thyroiddys"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1870,7 +1820,7 @@
 
                                          <div class="col-md-4">
 														<div class="form-group">
-															<textarea name="thyroiddysdetail" id="thyroiddetail" placeholder="MEDICINE " class="form-control"></textarea>
+															<textarea name="thyroiddysdetail" value="<?php $bp->row()->thyroid_dysfunction_medicine; ?>" id="thyroiddetail" placeholder="MEDICINE " class="form-control"></textarea>
 
 														</div>
 														</div>
@@ -1883,7 +1833,7 @@
 											$("#thyroiddetail").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="thyroidyes")
+											if($(this).val()=="thyroidyes<?php $bp->row()->thyroid_dysfunction; ?>")
 											{
 											$("#thyroiddetail").show();
 											
@@ -1913,8 +1863,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="ovarianyes" name="polycystic"
-																 style="height:20px; width:20px;">
+																value="ovarianyes<?php $bp->row()->polycystic_ovarian_disease; ?>" name="polycystic"
+																 style="height:20px; width:20px;" checked> 
 																
 														</div>
 								
@@ -1922,8 +1872,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="ovarianno" name="polycystic"
-																  style="height:20px; width:20px;">
+																value="ovarianno<?php $bp->row()->polycystic_ovarian_disease; ?>" name="polycystic"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1931,7 +1881,7 @@
 
                                          <div class="col-md-4">
 														<div class="form-group">
-															<textarea name="polycysticdetail" id="ovariandetail" placeholder="MEDICINE " class="form-control"></textarea>
+															<textarea name="polycysticdetail" value="<?php $bp->row()->polycystic_ovarian_disease_medicine; ?>" id="ovariandetail" placeholder="MEDICINE " class="form-control"></textarea>
 
 														</div>
 														</div>
@@ -1944,7 +1894,7 @@
 											$("#ovariandetail").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="ovarianyes")
+											if($(this).val()=="ovarianyes<?php $bp->row()->polycystic_ovarian_disease; ?>")
 											{
 											$("#ovariandetail").show();
 											
@@ -1974,8 +1924,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="other1" name="others"
-																 style="height:20px; width:20px;">
+																value="other1<?php $bp->row()->polycystic_ovarian_disease; ?>" name="others"
+																 style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1983,8 +1933,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="other2" name="others"
-																  style="height:20px; width:20px;">
+																value="other2<?php $bp->row()->polycystic_ovarian_disease; ?> name="others"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -1992,7 +1942,7 @@
 
                                          <div class="col-md-4">
 														<div class="form-group">
-															<textarea name="" id="otherdetail" placeholder="MEDICINE " class="form-control"></textarea>
+															<textarea name="" id="otherdetail" value="<?php echo $dp->row()->other_medicine;?>" placeholder=" " class="form-control"></textarea>
 
 														</div>
 														</div>
@@ -2005,7 +1955,7 @@
 											$("#otherdetail").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="other1")
+											if($(this).val()=="other1<?php echo $dp->row()->polycystic_ovarian_disease;?>")
 											{
 											$("#otherdetail").show();
 											
@@ -2030,8 +1980,8 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="compldiabetesyes" name="complication"
-																  style="height:20px; width:20px;">
+																value="compldiabetesyes<?php echo $dp->row()->complication_of_diabetes;?>" name="complication"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -2039,8 +1989,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="compldiabetesno" name="complication"
-															  style="height:20px; width:20px;">
+																value="compldiabetesno<?php echo $dp->row()->complication_of_diabetes;?>" name="complication"
+															  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -2048,7 +1998,7 @@
                                                 <div class="col-md-4">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="compldiabetesdetail" placeholder="If Yes, Please list any medications you take and when" id="complicationdetail">
+																value="<?php echo $dp->row()->taking_any_medicine;?>" name="compldiabetesdetail" placeholder="If Yes, Please list any medications you take and when" id="complicationdetail">
 																
 														</div>
 								
@@ -2061,7 +2011,7 @@
 											$("#complicationdetail").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="compldiabetesyes")
+											if($(this).val()=="compldiabetesyes<?php echo $dp->row()->complication_of_diabetes;?>")
 											{
 											$("#complicationdetail").show();
 											}
@@ -2083,8 +2033,8 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="1" name="lense"
-																  style="height:20px; width:20px;">
+																value="1<?php echo $dp->row()->seewell_with_lense;?>" name="lense"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -2092,8 +2042,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="0" name="lense"
-															  style="height:20px; width:20px;">
+																value="0<?php echo $dp->row()->seewell_with_lense;?>" name="lense"
+															  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -2119,8 +2069,8 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="take_pills_yes" name="take_pills"
-																  style="height:20px; width:20px;">
+																value="take_pills_yes<?php echo $dp->row()->take_pills_for_diabetes;?>" name="take_pills"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -2128,8 +2078,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="take_pills_no" name="take_pills"
-															  style="height:20px; width:20px;">
+																value="take_pills_no<?php echo $dp->row()->take_pills_for_diabetes;?>" name="take_pills"
+															  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -2152,7 +2102,7 @@
 													<div class="col-md-12">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																 name="type_of_pill" value="" placeholder="TYPE OF PILL">
+																 name="type_of_pill" value="<?php echo $dp->row()->type_of_pill;?>" >
 																
 														</div>
 								
@@ -2168,7 +2118,7 @@
 													<div class="col-md-12">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																 name="time_of_day" value="" placeholder="TIME OF DAY">
+																 name="time_of_day" value="<?php echo $dp->row()->time_of_day;?>">
 																
 														</div>
 								
@@ -2184,7 +2134,7 @@
 													<div class="col-md-12">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																 name="duration_of_use" value="" placeholder="Duration of use(for how long?)">
+																 name="duration_of_use" value="<?php echo $dp->row()->duration_of_use;?>" placeholder="Duration of use(for how long?)">
 																
 														</div>
 								
@@ -2203,7 +2153,7 @@
 											$("#pilltype").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="take_pills_yes")
+											if($(this).val()=="take_pills_yes<?php echo $dp->row()->take_pills_for_diabetes;?>")
 											{
 											$("#pilltype").show();
 											}
@@ -2225,8 +2175,8 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="takeinsulin" name="take_insulin"
-																  style="height:20px; width:20px;">
+																value="takeinsulin<?php echo $dp->row()->take_insulin;?>" name="take_insulin"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -2234,8 +2184,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="notakeinsulin" name="take_insulin"
-															  style="height:20px; width:20px;">
+																value="notakeinsulin<?php echo $dp->row()->take_insulin;?>" name="take_insulin"
+															  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -2249,14 +2199,14 @@
 													<div class="col-md-6">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="regular_insulin" placeholder="REGULAR">
+																value="<?php echo $dp->row()->regular_insulin;?>" name="regular_insulin" placeholder="REGULAR">
 																
 														</div>	
 													</div>
 													<div class="col-md-6">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="take_mixtard_insulin" placeholder="MIXTARD INSULIN">
+																value="<?php echo $dp->row()->take_mixtard_insulin;?>" name="take_mixtard_insulin" placeholder="MIXTARD INSULIN">
 																
 														</div>
 								
@@ -2271,7 +2221,7 @@
 											$("#takeinsulindetail").hide();
 											$(document).ready(function(){
 											$("input[type='radio']").change(function(){
-											if($(this).val()=="takeinsulin")
+											if($(this).val()=="takeinsulin<?php echo $dp->row()->take_insulin;?>")
 											{
 											$("#takeinsulindetail").show();
 											}
@@ -2303,7 +2253,7 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																 name="monthly" value="monthly"
+																 name="monthly" value="monthly<?php echo $dp->row()->see_doctor_monthly;?>""
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -2322,7 +2272,7 @@
 													<div class="col-md-2">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="every_3month" name="every_3month"
+																value="every_3month<?php echo $dp->row()->every_3month;?>" name="every_3month"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -2342,7 +2292,7 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																 name="every_6month" value="every_6month"
+																 name="every_6month" value="every_6month<?php echo $dp->row()->every_6month;?>"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -2361,7 +2311,7 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																 name="not_visited" value="not_visited"
+																 name="not_visited" value="not_visited<?php echo $dp->row()->not_visited;?>"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -2391,7 +2341,7 @@
                                          <div class="col-md-3">
 														<div class="form-group">
 															<input type="date" class="form-control"
-																value="" name="last_eye_checkup">
+																value="<?php echo $dp->row()->last_eye_checkup;?>" name="last_eye_checkup">
 																
 														</div>
 								
@@ -2418,7 +2368,7 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																 name="angry" value="angry"
+																 name="angry" value="angry<?php echo $dp->row()->angry;?>"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -2440,7 +2390,7 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="afraid" name="afraid"
+																value="afraid<?php echo $dp->row()->afraid;?>" name="afraid"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -2462,7 +2412,7 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="confused" name="confused"
+																value="confused<?php echo $dp->row()->confused;?>" name="confused"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -2487,7 +2437,7 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																 name="sad" value="sad"
+																 name="sad" value="sad<?php echo $dp->row()->sad;?>"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -2506,7 +2456,7 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="upset" name="upset"
+																value="upset<?php echo $dp->row()->sad;?>" name="upset"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -2533,7 +2483,7 @@
                                          <div class="col-md-3">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="eat_better_other">
+																value="<?php echo $dp->row()->eat_better_other;?>" name="eat_better_other">
 																
 														</div>
 								
@@ -2552,8 +2502,8 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="yesstrees" name="much_stresss"
-																  style="height:20px; width:20px;">
+																value="yesstrees<?php echo $dp->row()->much_stresss;?>" name="much_stresss"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -2561,8 +2511,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="nostrees" name="much_stresss"
-															  style="height:20px; width:20px;">
+																value="nostrees<?php echo $dp->row()->much_stresss;?>" name="much_stresss"
+															  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -2570,7 +2520,7 @@
                                           <div class="col-md-3">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="stress_example" placeholder="EXAMPLE?" id="stressexmple">
+																value="<?php echo $dp->row()->stress_example;?>" name="stress_example" placeholder="EXAMPLE?" id="stressexmple">
 																
 														</div>
 								
@@ -2612,7 +2562,7 @@
                                          <div class="col-md-3">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="handle_stress">
+																value="<?php echo $dp->row()->handle_stress;?>" name="handle_stress">
 																
 														</div>
 								
@@ -2631,8 +2581,8 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="everdepressedyes" name="depressed"
-																  style="height:20px; width:20px;">
+																value="everdepressedyes<?php echo $dp->row()->depressed;?>" name="depressed"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -2640,8 +2590,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="everdepressedno" name="depressed"
-															  style="height:20px; width:20px;">
+																value="everdepressedno<?php echo $dp->row()->depressed;?>" name="depressed"
+															  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -2649,7 +2599,7 @@
                                           <div class="col-md-3">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="depressed_example" placeholder="EXAMPLE?" id="everdepressedexmple">
+																value="<?php echo $dp->row()->depressed_example;?>" name="depressed_example" placeholder="EXAMPLE?" id="everdepressedexmple">
 																
 														</div>
 								
@@ -2688,8 +2638,8 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="1" name="dietplan"
-																  style="height:20px; width:20px;">
+																value="1<?php echo $dp->row()->diabetes_diet_plan;?>" name="dietplan"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -2697,8 +2647,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="0" name="dietplan"
-															  style="height:20px; width:20px;">
+																value="0<?php echo $dp->row()->diabetes_diet_plan;?>" name="dietplan"
+															  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -2723,8 +2673,8 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="radio" class="form-control"
-																 name="specialmeal" value="vegeterian"
-																  style="height:20px; width:20px;">
+																 name="specialmeal" value="vegeterian<?php echo $dp->row()->special_meal;?>"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -2742,8 +2692,8 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="radio" class="form-control"
-																 name="specialmeal" value="vegan"
-																  style="height:20px; width:20px;">
+																 name="specialmeal" value="vegan<?php echo $dp->row()->special_meal;?>"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -2761,8 +2711,8 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="radio" class="form-control"
-																 name="specialmeal" value="both"
-																  style="height:20px; width:20px;">
+																 name="specialmeal" value="both<?php echo $dp->row()->special_meal;?>"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -2788,7 +2738,7 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																 name="low_crbohydrate" value="lowcrbohydrate"
+																 name="low_crbohydrate" value="lowcrbohydrate<?php echo $dp->row()->low_crbohydrate;?>"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -2807,7 +2757,7 @@
 													<div class="col-md-2">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																 name="low_cholestrol" value="lowcholestrol"
+																 name="low_cholestrol" value="lowcholestrol<?php echo $dp->row()->low_crbohydrate;?>"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -2826,7 +2776,7 @@
 													<div class="col-md-10">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																 name="other_meal" value=""
+																 name="other_meal" value="<?php echo $dp->row()->other_meal;?>"
 																  >
 																
 														</div>
@@ -2896,8 +2846,8 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="1" name="change_weight"
-																  style="height:20px; width:20px;">
+																value="1<?php echo $dp->row()->change_weight;?>" name="change_weight"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -2905,8 +2855,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="0" name="change_weight"
-															  style="height:20px; width:20px;">
+																value="0<?php echo $dp->row()->change_weight;?>" name="change_weight"
+															  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -2928,7 +2878,7 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																 name="gain" value="gain"
+																 name="gain" value="gain<?php echo $dp->row()->gain;?>"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -2937,7 +2887,7 @@
                                          <div class="col-md-6">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																 name="gain_weight_in_kg" value="" id="gaindetail" placeholder="HOW MANY KILOGRAMS ?">
+																 name="gain_weight_in_kg" value="<?php echo $dp->row()->gain_weight_in_kg;?>" id="gaindetail" placeholder="HOW MANY KILOGRAMS ?">
 																
 														</div>
 								
@@ -2955,7 +2905,7 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																 name="loss" value="loss"
+																 name="loss" value="loss<?php echo $dp->row()->loss;?>"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -2964,7 +2914,7 @@
                                          <div class="col-md-6">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																 name="loss_weight_in_kg" value="" placeholder="HOW MANY KILOGRAMS ?">
+																 name="loss_weight_in_kg" value="<?php echo $dp->row()->loss;?>" placeholder="HOW MANY KILOGRAMS ?">
 																
 														</div>
 								
@@ -3009,7 +2959,7 @@
                                          <div class="col-md-6">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																 name="height" value="" placeholder="Your Height">
+																 name="height" value="<?php echo $dp->row()->height;?>" placeholder="Your Height">
 																
 														</div>
 								
@@ -3028,7 +2978,7 @@
                                          <div class="col-md-6">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																 name="age" value="" placeholder="Your Age">
+																 name="age" value="<?php echo $dp->row()->age;?>" placeholder="Your Age">
 																
 														</div>
 								
@@ -3072,7 +3022,7 @@
                                          <div class="col-md-5">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="current_weight">
+																value="<?php echo $dp->row()->current_weight;?>" name="current_weight">
 																
 														</div>
 								
@@ -3111,8 +3061,8 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="1" name="happyyrweight"
-																  style="height:20px; width:20px;">
+																value="1<?php echo $dp->row()->happy_with_your_current_weight;?>" name="happyyrweight"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -3120,8 +3070,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="0" name="happyyrweight"
-															  style="height:20px; width:20px;">
+																value="0<?php echo $dp->row()->happy_with_your_current_weight;?>" name="happyyrweight"
+															  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -3140,8 +3090,8 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="1" name="loosingweight"
-																  style="height:20px; width:20px;">
+																value="1<?php echo $dp->row()->loosing_weight;?>" name="loosingweight"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -3149,8 +3099,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="0" name="loosingweight"
-															  style="height:20px; width:20px;">
+																value="0<?php echo $dp->row()->loosing_weight;?>" name="loosingweight"
+															  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -3169,8 +3119,8 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="foodalergies1" name="foodalergies"
-																  style="height:20px; width:20px;">
+																value="foodalergies1<?php echo $dp->row()->food_alergies;?>" name="foodalergies"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -3178,8 +3128,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="foodalergies0" name="foodalergies"
-															  style="height:20px; width:20px;">
+																value="foodalergies0<?php echo $dp->row()->food_alergies;?>" name="foodalergies"
+															  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -3187,7 +3137,7 @@
                                           <div class="col-md-3">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="food_name" placeholder="FOODs" id="foodalergy">
+																value="<?php echo $dp->row()->food_name;?>" name="food_name" placeholder="FOODs" id="foodalergy">
 																
 														</div>
 								
@@ -3226,8 +3176,8 @@
 													<div class="col-md-1">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="intolerance1" name="bevarage_intolerance"
-																  style="height:20px; width:20px;">
+																value="intolerance1<?php echo $dp->row()->bevarage_intolerance;?>" name="bevarage_intolerance"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -3235,8 +3185,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="intolerance0" name="bevarage_intolerance"
-															  style="height:20px; width:20px;">
+																value="intolerance0<?php echo $dp->row()->bevarage_intolerance;?>" name="bevarage_intolerance"
+															  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -3244,7 +3194,7 @@
                                           <div class="col-md-3">
 														<div class="form-group">
 															<input type="text" class="form-control"
-																value="" name="intolerancefood" placeholder="FOODs" id="intolerancefood">
+																value="<?php echo $dp->row()->bev_foods_name;?>" name="intolerancefood" placeholder="FOODs" id="intolerancefood">
 																
 														</div>
 								
@@ -3289,8 +3239,8 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="radio" class="form-control"
-																 name="your_appetite" value="good"
-																  style="height:20px; width:20px;">
+																 name="your_appetite" value="good<?php echo $dp->row()->your_appetite;?>"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -3308,8 +3258,8 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="radio" class="form-control"
-																 name="your_appetite" value="fair"
-																  style="height:20px; width:20px;">
+																 name="your_appetite" value="fair<?php echo $dp->row()->your_appetite;?>"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -3327,8 +3277,8 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="radio" class="form-control"
-																 name="your_appetite" value="poor"
-																  style="height:20px; width:20px;">
+																 name="your_appetite" value="poor<?php echo $dp->row()->your_appetite;?>"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -3352,8 +3302,8 @@
 													<div class="col-md-2">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="digestion1" name="digestionprblm"
-																  style="height:20px; width:20px;">
+																value="digestion1<?php echo $dp->row()->digestion_problem;?>" name="digestionprblm"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -3361,8 +3311,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="digestion0" name="digestionprblm"
-															  style="height:20px; width:20px;">
+																value="digestion0<?php echo $dp->row()->digestion_problem;?>" name="digestionprblm"
+															  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -3388,7 +3338,7 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																 name="chewing" value="chewing"
+																 name="chewing" value="chewing<?php echo $dp->row()->chewing;?>"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -3410,7 +3360,7 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="swallowing" name="swallowing"
+																value="swallowing<?php echo $dp->row()->swallowing;?>" name="swallowing"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -3432,7 +3382,7 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="stomachache" name="stomachache"
+																value="stomachache<?php echo $dp->row()->stomachache;?>" name="stomachache"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -3457,7 +3407,7 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																 name="diarrhea" value="diarrhea"
+																 name="diarrhea" value="diarrhea<?php echo $dp->row()->diarrhea;?>"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -3476,7 +3426,7 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="constipation" name="constipation"
+																value="constipation<?php echo $dp->row()->constipation;?>" name="constipation"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -3541,8 +3491,8 @@
 													<div class="col-md-2">
 														<div class="form-group">
 															YES<input type="radio" class="form-control"
-																value="suppliments1" name="taking_vitamin"
-																  style="height:20px; width:20px;">
+																value="suppliments1<?php echo $dp->row()->taking_vitamin;?>" name="taking_vitamin"
+																  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -3550,8 +3500,8 @@
                                          <div class="col-md-1">
 														<div class="form-group">
 															NO<input type="radio" class="form-control"
-																value="suppliments2" name="taking_vitamin"
-															  style="height:20px; width:20px;">
+																value="suppliments2<?php echo $dp->row()->taking_vitamin;?>" name="taking_vitamin"
+															  style="height:20px; width:20px;" checked>
 																
 														</div>
 								
@@ -3573,7 +3523,7 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																 name="niacin" value="niacin"
+																 name="niacin" value="niacin<?php echo $dp->row()->niacin;?>"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -3592,7 +3542,7 @@
 													<div class="col-md-2">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="subtitute" name="salt_subtitute"
+																value="subtitute<?php echo $dp->row()->salt_subtitute;?>" name="salt_subtitute"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -3611,7 +3561,7 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="vitamind" name="vitamin_d"
+																value="vitamind<?php echo $dp->row()->vitamin_d;?>" name="vitamin_d"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -3636,7 +3586,7 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																 name="calcium" value="calcium"
+																 name="calcium" value="calcium<?php echo $dp->row()->calcium;?>"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -3655,7 +3605,7 @@
 													<div class="col-md-2">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="chromium" name="chromium"
+																value="chromium<?php echo $dp->row()->chromium;?>" name="chromium"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -3674,7 +3624,7 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="selenium" name="selenium"
+																value="selenium<?php echo $dp->row()->selenium;?>" name="selenium"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -3699,7 +3649,7 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																 name="iron" value="iron"
+																 name="iron" value="iron<?php echo $dp->row()->iron;?>"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -3718,7 +3668,7 @@
 													<div class="col-md-2">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="folicacid" name="folicacid"
+																value="folicacid<?php echo $dp->row()->folic_acid;?>" name="folicacid"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -3737,7 +3687,7 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="vitamine" name="vitamin_e"
+																value="vitamine<?php echo $dp->row()->vitamin_e;?>" name="vitamin_e"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -3762,7 +3712,7 @@
 													<div class="col-md-3">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																 name="vitaminb6" value="vitaminb6"
+																 name="vitaminb6" value="vitaminb6<?php echo $dp->row()->vitamin_b6;?>"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -3782,7 +3732,7 @@
 													<div class="col-md-4">
 														<div class="form-group">
 															<input type="checkbox" class="form-control"
-																value="vitaminb12" name="vitaminb12"
+																value="vitaminb12<?php echo $dp->row()->vitamin_b12;?>" name="vitaminb12"
 																  style="height:20px; width:20px;">
 																
 														</div>
@@ -3886,7 +3836,7 @@
 														<div class="form-group">
 															<button type="submit" class="btn btn-primary"
 																id="regisbtn">
-																<i class="far fa-edit">&nbsp;Submit</i>
+																<i class="far fa-edit">&nbsp;Update</i>
 															</button>
 														</div>
 													</div>
@@ -3908,7 +3858,7 @@
                 </div>
             </form>
             </div>
-        <?php }?>
+       
         </div>
         </div>
     </div>

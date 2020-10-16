@@ -59,7 +59,8 @@ public function coronary()
 				'aadhar_card'=>$this->input->post("adhaar"),
 				'pan_card'=>$this->input->post("pancard"),
 				'password'=>$this->input->post("password"),
-				'martial_status'=>$this->input->post("martial")
+				'martial_status'=>$this->input->post("martial"),
+				'date'      =>date("Y-m-d H:i:s")
 	        );
 	  if (!empty($_FILES['image']['name'])) {
 	       $this->load->library('upload');
@@ -151,11 +152,11 @@ public function coronary()
 public function patient_list(){
 		$this->load->model('Patientmodel');
 		$data['row']=$this->Patientmodel->getpatientinfo();
-		$data['pageTitle'] = ' Employee list';
-		$data['smallTitle'] =' Employee list';
-		$data['mainPage'] =  'Employee list';
-		$data['subPage'] =' Employee list';
-		$data['title'] =' Employee list';
+		$data['pageTitle'] = 'Patient list';
+		$data['smallTitle'] =' Patient list';
+		$data['mainPage'] =  'Patient list';
+		$data['subPage'] =' Patient list';
+		$data['title'] =' Patient list';
 		$data['headerCss'] = 'headerCss/customerlistcss';
 		$data['footerJs'] = 'footerJs/customerlistjs';
 		$data['mainContent'] = 'patient_list';
@@ -225,16 +226,18 @@ public function patient_list(){
 					'number_of_chicken_timing'=>$this->input->post('number_of_chicken_timing'),
 					'fried_food'=>$this->input->post('fried_food'),
 					'fried_routine'=>$this->input->post('fried_routine'),
+
 					'number_of_fried_timing'=>$this->input->post('number_of_fried_timing'),
 					'milk'=>$this->input->post('milk'),
-					'number_of_glassesof_milk'=>$this->input->post('number_of_glassesof_milk'),
 					'number_of_timimg'=>$this->input->post('number_of_timimg'),
 					'tea'=>$this->input->post('tea'),
-					'number_of_glassesof_tea'=>$this->input->post('number_of_glassesof_tea'),
+					'number_of_timimg'=>$this->input->post('number_of_timimg'),
+
 					'coffee'=>$this->input->post('coffee'),
 					'number_of_cupof_coffee'=>$this->input->post('number_of_cupof_coffee'),
+
 					'water'=>$this->input->post('water'),
-					'number_of_glassesof_water'=>$this->input->post('number_of_glassesof_water'),
+					'number_of_timimg'=>$this->input->post('number_of_timimg'),
 					'date'=>date("Y-m-d H:i:s")
 					);
 				$this->load->model('Patientmodel');
@@ -340,5 +343,39 @@ public function patient_list(){
             }
 
 		}
+		
+		function deleteRegistration(){
+		    $reg_id = $this->input->post("reg_id");
+		    if($this->session->userdata("login_type")==1){
+		    $this->db->where("id",$reg_id);
+		    if($this->db->delete("reg_patient_info")){
+		    echo "1";
+		    }
+		    else{
+		        echo "2";
+		    }
+		}else{
+		    echo "2";
+		}
+		}
+function viewprofile(){
+		$data['pageTitle'] = 'Patient Profile';
+		$data['smallTitle'] = 'Patient Profile';
+		$data['mainPage'] = 'Patient Profile';
+		$data['subPage'] = 'Patient Profile';
+		$data['title'] = 'Patient Profile';
+		$data['headerCss'] = 'headerCss/dashboardCss';
+		$data['footerJs'] = 'footerJs/customerJs';
+		$data['mainContent'] = 'patient_profile';
+		$uri=$this->uri->segment(3);
+		$this->db->where("id",$uri);
+		$crecord=$this->db->get("reg_patient_info");
+		$data['crecord']=$crecord;
+		$this->load->view("includes/mainContent", $data);
+} 
+
+
+
+
  
 }

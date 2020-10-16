@@ -103,26 +103,27 @@
   </tr>
    <tr>
    	<td >3</td>
-    <td >Differential leucocyte Count (DLC)<br/><br/>
+    <td >Differential leucocyte Count (DLC)<br/><br/><br/>
     </br> a)Neutrophils<br/>
     </br>  b)Lymphocyte<br/>
     </br>  c)Monocyte <br/>
     </br> d)Basophils <br/>
-	</br> e)Eosinophils <br/>                                         
+	</br> e)Eosinophils    <br/>                                     
 	</td>
+	
     <td>
-	<input type="text" class="form-control" value="" name="dlcnlevel" ><br/>
-	<input type="text" class="form-control" value="" name="dlcllevel" ><br/>
-	<input type="text" class="form-control" value="" name="dlcmlevel" ><br/>
-	<input type="text" class="form-control" value="" name="dlcblevel" ><br/>
-	<input type="text" class="form-control" value="" name="dlcelevel" ><br/>
-	</td>
+        <input type="text" class="form-control" value="" name="dlcnlevel" ><br/> 
+        <input type="text" class="form-control" value="" name="dlcllevel" ><br/> 
+        <input type="text" class="form-control" value="" name="dlcmlevel" ><br/> 
+        <input type="text" class="form-control" value="" name="dlcblevel" ><br/> 
+        <input type="text" class="form-control" value="" name="dlcelevel" ><br/> 
+    </td>
     <td>
-	<input type="text" class="form-control" value="" name="dlcnunit" ><br/>
-    <input type="text" class="form-control" value="" name="dlclunit" ><br/>
-    <input type="text" class="form-control" value="" name="dlcmunit" ><br/>
-    <input type="text" class="form-control" value="" name="dlcbunit" ><br/>
-    <input type="text" class="form-control" value="" name="dlceunit" ><br/>
+        <input type="text" class="form-control" value="" name="dlcnunit" ><br/> 
+        <input type="text" class="form-control" value="" name="dlclunit" ><br/> 
+        <input type="text" class="form-control" value="" name="dlcmunit" ><br/> 
+	    <input type="text" class="form-control" value="" name="dlcbunit" ><br/> 
+	    <input type="text" class="form-control" value="" name="dlceunit" ><br/> 
 	</td>
 	
    
@@ -558,97 +559,95 @@
   </tr>
   <tr>
   	<td >51</td>
-    <td >URINE EXAMINATION(Routine) PHYSICAL :-<br/><br/> 
-    </br> COLOUR <br/>
-</br>    pH      <br/>
-</br>     Specific Gravity<br/>
-</td><br/>
+    <td >URINE EXAMINATION(Routine) PHYSICAL :-  <br/>
+    </br> COLOUR <br/> 
+</br>    pH      <br/> 
+</br>     Specific Gravity<br/> 
+</td>
     <td>
-	    <input type="text" class="form-control" value="" name="ueclevel" ><br/>
-		<input type="text" class="form-control" value="" name="uephlevel" ><br/>
-		<input type="text" class="form-control" value="" name="uesglevel" ><br/>
+        <input type="text" class="form-control" value="" name="ueclevel" ><br/>
+        <input type="text" class="form-control" value="" name="uephlevel" ><br/>
+        <input type="text" class="form-control" value="" name="uesglevel" ><br/>
     </td>
     <td>
-	    <input type="text" class="form-control" value="" name="uecunit" ><br/>
+        <input type="text" class="form-control" value="" name="uecunit" ><br/>
         <input type="text" class="form-control" value="" name="uephunit" ><br/>
         <input type="text" class="form-control" value="" name="uesgunit" ><br/>
-	</td>
+    </td>
    
   </tr>
    <tr>
    	<td >52</td>
-    <td >CHEMICAL:- <br/><br/>
-    	</br>Suger Glucose  <br/>          
-    	  </br> Ketone    <br/> 
+    <td >CHEMICAL:- <br/>
+    	</br>Suger Glucose <br/>           
+    	  </br> Ketone     <br/>
     	  </br> Protine  <br/>
-    	  </br>Urobilinogen   <br/>      
-    	   </br> Blood<br/>
+    	  </br>Urobilinogen  <br/>       
+    	   </br> Blood
 </td>
     <td>
-	<input type="text" class="form-control" value="" name="csglevel" ><br/>
-	<input type="text" class="form-control" value="" name="cklevel" ><br/>
-    <input type="text" class="form-control" value="" name="cplevel" ><br/>
-	<input type="text" class="form-control" value="" name="culevel" ><br/>
-	<input type="text" class="form-control" value="" name="cblevel" ><br/>
+        <input type="text" class="form-control" value="" name="csglevel" >
+        <input type="text" class="form-control" value="" name="cklevel" >
+        <input type="text" class="form-control" value="" name="cplevel" >
+        <input type="text" class="form-control" value="" name="culevel" >
+        <input type="text" class="form-control" value="" name="cblevel" >
     </td>
     <td>
-	<input type="text" class="form-control" value="" name="csgunit" ><br/>
-    <input type="text" class="form-control" value="" name="ckunit" ><br/>
-	<input type="text" class="form-control" value="" name="cpunit" ><br/>
-    <input type="text" class="form-control" value="" name="cuunit" ><br/>
-    <input type="text" class="form-control" value="" name="cbunit" ><br/>
-	</td>
- 
+        <input type="text" class="form-control" value="" name="csgunit" >
+        <input type="text" class="form-control" value="" name="ckunit" >
+        <input type="text" class="form-control" value="" name="cpunit" >
+        <input type="text" class="form-control" value="" name="cuunit" >
+        <input type="text" class="form-control" value="" name="cbunit" >
+    </td>
+
   </tr>
   <tr>
   	<td >53</td>
     <td >MICROSCOPIC: - <br/><br/>
-     </br> Leucocytes   <br/>                             
+     </br> Leucocytes<br/>                                
       </br> RCBs <br/>
-       </br>Casts     <br/>        
-        </br>Crystals  <br/>     
-         </br> Epithelial Cells   <br/>          
+       </br>Casts <br/>            
+        </br>Crystals   <br/>    
+         </br> Epithelial Cells  <br/>           
          </br>Fungal Budding <br/>
         </br>Differential Leucocytes  Count<br/>
 </td>
     <td>
-	<input type="text" class="form-control" value="" name="mllevel" ><br/>
-    <input type="text" class="form-control" value="" name="mrlevel" ><br/>
-	<input type="text" class="form-control" value="" name="mclevel" ><br/>
-	<input type="text" class="form-control" value="" name="mcrlevel" ><br/>
-	<input type="text" class="form-control" value="" name="meclevel" ><br/>
-	<input type="text" class="form-control" value="" name="mfblevel" ><br/>
-	<input type="text" class="form-control" value="" name="mdlclevel" ><br/>
+        <input type="text" class="form-control" value="" name="mllevel" ><br/>
+        <input type="text" class="form-control" value="" name="mrlevel" ><br/>
+        <input type="text" class="form-control" value="" name="mclevel" ><br/>
+        <input type="text" class="form-control" value="" name="mcrlevel" ><br/>
+        <input type="text" class="form-control" value="" name="meclevel" ><br/>
+        <input type="text" class="form-control" value="" name="mfblevel" ><br/>
+        <input type="text" class="form-control" value="" name="mdlclevel" ><br/>
+    </td>
+    <td>
+        <input type="text" class="form-control" value="" name="mlunit" ><br/>
+        <input type="text" class="form-control" value="" name="mrunit" ><br/>
+        <input type="text" class="form-control" value="" name="mcunit" ><br/>
+        <input type="text" class="form-control" value="" name="mcrunit" ><br/>
+        <input type="text" class="form-control" value="" name="mecunit" ><br/>
+        <input type="text" class="form-control" value="" name="mfbunit" ><br/>
+        <input type="text" class="form-control" value="" name="mdlcunit" ><br/>
     </td>
 
-	<td>
-    <input type="text" class="form-control" value="" name="mlunit" ><br/>
-    <input type="text" class="form-control" value="" name="mrunit" ><br/>
-    <input type="text" class="form-control" value="" name="mcunit" ><br/>
-    <input type="text" class="form-control" value="" name="mcrunit" ><br/>
-    <input type="text" class="form-control" value="" name="mecunit" ><br/>
-    <input type="text" class="form-control" value="" name="mfbunit" ><br/>
-    <input type="text" class="form-control" value="" name="mdlcunit" ><br/>
-	</td>
-	
-  
   </tr>
    <tr>
    	<td >54</td>
-    <td >VIRAL MARKER:-<br/><br/>  
-    </br>HIV<br/>
-    </br> HBsAg  <br/>
-    </br> HCV<br/>
+    <td >VIRAL MARKER:-  
+    </br>HIV
+    </br> HBsAg  
+    </br> HCV
 </td>
-    <td><input type="text" class="form-control" value="" name="vmhivlevel" ><br/>
-	<input type="text" class="form-control" value="" name="vmhblevel" ><br/>
-	<input type="text" class="form-control" value="" name="vmhcvlevel" ><br/>
+    <td><input type="text" class="form-control" value="" name="vmhivlevel" >
+	<input type="text" class="form-control" value="" name="vmhblevel" >
+	<input type="text" class="form-control" value="" name="vmhcvlevel" >
 	</td>
-    <td><input type="text" class="form-control" value="" name="vmhivunit" ><br/>
+    <td><input type="text" class="form-control" value="" name="vmhivunit" >
 	
-    <input type="text" class="form-control" value="" name="vmhbunit" ><br/>
+    <input type="text" class="form-control" value="" name="vmhbunit" >
 	
-    <input type="text" class="form-control" value="" name="vmhcvunit" ><br/></td>
+    <input type="text" class="form-control" value="" name="vmhcvunit" ></td>
 	
     
   </tr>
@@ -659,6 +658,7 @@
 <center><button type="submit"> Submit </button></center>
 									</div>
 								</div>
+							
 							</form>
 						</div>
 						<?php }?>

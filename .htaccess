@@ -20,7 +20,7 @@ RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ 
 
 #  Set the “ea-php54” package as the default “PHP” programming language.
 <IfModule mime_module>
-Header add Cache-Control:  "no-store, no-cache, must-revalidate"
+#Header add Cache-Control:  "no-store, no-cache, must-revalidate"
 AddHandler application/x-httpd-ea-php54 .php .php7 .phtml
 </IfModule>
 

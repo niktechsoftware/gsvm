@@ -217,11 +217,6 @@
 		 	return $coronary;
 		 	
 		 }
-		 function pesticide_proforma($data){
-		    $pesticide=	$this->db->insert("pesticide proforma",$data);
-		 	return $pesticide;
-		 	
-		 }
 		 
 		
 		//aarju mathods

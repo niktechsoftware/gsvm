@@ -22,7 +22,6 @@ class DaybookController extends CI_Controller{
   }
   function report(){
     $uri=$this->uri->segment(3);
-   
     $data['uri']=$uri;
     $data['pageTitle'] = 'Daybook';
     $data['smallTitle'] = 'Daybook ';
@@ -40,8 +39,86 @@ class DaybookController extends CI_Controller{
       $edate = $this->input->post("edate");
       $getv  = $this->input->post("getv");
       if($getv==1){
-          
+          $registration = $this->db->query("select * from reg_patient_info where DATE(date) >= '$sdate' and DATE(date) <='$edate'");
+          $data['sdate']=$sdate;
+          $data['edate']=$edate;
+          $data['row']=$registration;
+          $data['pageTitle'] = 'Daybook';
+            $data['smallTitle'] = 'Daybook ';
+            $data['mainPage'] = 'Registration';
+            $data['subPage'] = 'Accounting';
+            $data['title'] = 'Daybook';
+            $data['headerCss'] = 'headerCss/customerlistcss';
+            $data['footerJs'] = 'footerJs/customerlistjs';
+            $data['mainContent'] = 'registrationReport';
+            $this->load->view("includes/mainContent", $data);
       }
+       if($getv==2){
+          $pr = $this->db->query("select * from pesticide_proforma where DATE(date) >= '$sdate' and DATE(date) <='$edate'");
+          $data['sdate']=$sdate;
+          $data['edate']=$edate;
+          $data['row']=$pr;
+          $data['pageTitle'] = 'Daybook';
+            $data['smallTitle'] = 'Daybook ';
+            $data['mainPage'] = 'Registration';
+            $data['subPage'] = 'Accounting';
+            $data['title'] = 'Daybook';
+            $data['headerCss'] = 'headerCss/customerlistcss';
+            $data['footerJs'] = 'footerJs/customerlistjs';
+            $data['mainContent'] = 'pesticidereport';
+            $this->load->view("includes/mainContent", $data);
+      }
+       if($getv==3){
+          $sspid =  $this->input->post("ssp");
+          if($sspid==1){
+              $table="coronary_proforma";
+          }
+           if($sspid==2){
+              $table="breast_cancer_proforma";
+          }
+           if($sspid==3){
+              $table="oral_cancer_proforma";
+          }
+           if($sspid==4){
+              $table="hypertension_proforma";
+          }
+           if($sspid==5){
+              $table="diabetes_proforma";
+          }
+          
+          $dod = $this->db->query("select * from $table where DATE(date) >= '$sdate' and DATE(date) <='$edate'");
+          $data['sdate']=$sdate;
+          $data['edate']=$edate;
+          $data['row']=$dod;
+          $data['table']=$table;
+          $data['sspid']=$sspid;
+          $data['pageTitle'] = 'Daybook';
+            $data['smallTitle'] = 'Daybook ';
+            $data['mainPage'] = 'Registration';
+            $data['subPage'] = 'Accounting';
+            $data['title'] = 'Daybook';
+            $data['headerCss'] = 'headerCss/customerlistcss';
+            $data['footerJs'] = 'footerJs/customerlistjs';
+            $data['mainContent'] = 'dodReport';
+            $this->load->view("includes/mainContent", $data);
+      }
+      
+      if($getv==4){
+           $bpi = $this->db->query("select * from bpi_investigation where DATE(date) >= '$sdate' and DATE(date) <='$edate'");
+          $data['sdate']=$sdate;
+          $data['edate']=$edate;
+          $data['row']=$bpi;
+          $data['pageTitle'] = 'Daybook';
+            $data['smallTitle'] = 'Daybook ';
+            $data['mainPage'] = 'Registration';
+            $data['subPage'] = 'Accounting';
+            $data['title'] = 'Daybook';
+            $data['headerCss'] = 'headerCss/customerlistcss';
+            $data['footerJs'] = 'footerJs/customerlistjs';
+            $data['mainContent'] = 'bpiReport';
+            $this->load->view("includes/mainContent", $data);
+      }
+          
   }
 
 function getroiandpool(){

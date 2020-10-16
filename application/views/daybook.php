@@ -9,6 +9,8 @@
                   </div>
                   <div class="card-body">
                   <div class="col-md-12 col-lg-12 col-xs-12">
+                  
+                      	<form method="post"	action="<?php echo base_url()?>index.php/daybookController/gerReport" enctype="multipart/Form-data" >
 										<div class="row">
 											<div class="col-xs-12 col-md-12 col-lg-12">
 												<div class="form-group row">
@@ -32,7 +34,16 @@
 													$spd = $this->db->get("study_plan")->row();
 												
 													?>
-													<label><?php 	echo $spd->plan_name;;?><input type ="text" name ="getv" value="<?php echo $spd->id;?>"</label>
+													<label><?php 	echo $spd->plan_name;;?><input type ="hidden" name ="getv" value="<?php echo $spd->id;?>"</label>
+													<?php if($uri==3){$this->db->where("plan_id",$uri);
+													             $ssp=   $this->db->get("sub_study_plan");?>
+													<select id="ssp" name="ssp" class="form-control" required > 
+													<?php if($ssp->num_rows()>0){
+													    foreach($ssp->result() as $sspr):?>
+													<option value="<?php echo $sspr->id;?>"><?php echo $sspr->sub_plan_name;?></option>
+													
+													<?php endforeach;}?></select>
+													<?php }?>
                                                     </div>
                                                    
                                                     <div class="col-md-5">
